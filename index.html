@@ -35,9 +35,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(124,146,184,0.1), transparent 22%),
-        radial-gradient(circle at top right, rgba(255,255,255,0.72), transparent 20%),
-        linear-gradient(180deg, #f7faff 0%, #eef3f9 100%);
+        radial-gradient(circle at top left, rgba(143,170,220,0.18), transparent 22%),
+        radial-gradient(circle at top right, rgba(200,210,240,0.25), transparent 20%),
+        linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
       line-height: 1.6;
     }
 
@@ -58,7 +58,7 @@
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -113,31 +113,33 @@
 
     .nav-chip {
       padding: 4px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.28);
-      border: 1px solid rgba(255,255,255,0.34);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
     }
 
     .nav-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
+      min-height: 34px;
       padding: 0 14px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148, 163, 184, 0.14);
-      color: #55657c;
-      font-size: 0.84rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+      color: #5b6b82;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid rgba(148,163,184,0.18);
+      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+      transition: 0.2s ease;
       font-weight: 700;
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
       transform: translateY(-1px);
-      background: #ffffff;
-      color: var(--text);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 12px 26px rgba(124,146,184,0.35);
+      opacity: 0.95;
     }
 
     .section { padding: 28px 0; }
@@ -215,7 +217,7 @@
     }
 
     .hero-title {
-      font-size: clamp(2rem, 4vw, 3.35rem);
+      font-size: clamp(1.8rem, 3.6vw, 2.8rem);
       line-height: 1.02;
       letter-spacing: -0.05em;
       max-width: 10ch;
@@ -241,9 +243,10 @@
     }
 
     .hero-text {
-      margin-top: 14px;
-      max-width: 58ch;
-      font-size: 0.96rem;
+      margin-top: 12px;
+      max-width: 56ch;
+      color: var(--muted);
+      font-size: 0.9rem;
       position: relative;
       z-index: 1;
     }
@@ -279,15 +282,16 @@
     }
 
     .btn-primary {
-      background: linear-gradient(180deg, #fefefe, #edf3fb);
-      color: var(--text);
-      border-color: rgba(148,163,184,0.18);
+      background: linear-gradient(135deg, #8fb3ff, #9b8cff);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 10px 26px rgba(124,146,184,0.28);
     }
 
     .btn-secondary {
-      background: rgba(236,243,255,0.96);
-      color: var(--accent-strong);
-      border-color: rgba(148,163,184,0.16);
+      background: linear-gradient(135deg, #dbe6ff, #e7e0ff);
+      color: #5f6fb0;
+      border: none;
     }
 
     .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
@@ -391,7 +395,7 @@
     }
 
     .section-title {
-      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
       letter-spacing: -0.04em;
       margin-bottom: 16px;
     }
