@@ -583,6 +583,13 @@
       align-items: start;
     }
 
+    .card-and-viewer {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 18px;
+      align-items: start;
+    }
+
     .showcase-list {
       display: grid;
       gap: 18px;
@@ -622,6 +629,36 @@
       letter-spacing: -0.03em;
       margin-top: 10px;
       color: #203040;
+    }
+
+    .card-thumb {
+      width: 112px;
+      height: 112px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(238,243,251,0.95));
+      border: 1px solid rgba(148,163,184,0.16);
+      box-shadow: 0 10px 20px rgba(15,23,42,0.08);
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #4f6282;
+      flex-shrink: 0;
+    }
+
+    .card-split {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .card-description {
+      margin-top: 10px;
+      color: #516274;
+      font-size: 0.9rem;
+      line-height: 1.55;
     }
 
     .meta-line {
@@ -1147,45 +1184,44 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Education</h2>
-          <div class="pager-ui"><span class="pager-btn muted" id="eduPrev">Prev</span><span class="pager-count" id="eduCount">1 / 3</span><span class="pager-btn" id="eduNext">Next</span></div>
         </div>
-        <div class="showcase-grid">
+        <div class="card-and-viewer">
           <div class="showcase-list" id="eduList">
             <article class="info-card edu-card active" data-viewer="edu" data-title="Bachelor of Information Systems (Honours) (Data Analytics)" data-file="PDF/Transcript BSDA.pdf">
               <div class="card-badge">Sunway University</div>
-              <div class="edu-layout">
-                <div class="logo-box">SU</div>
+              <div class="card-split">
+                <div class="card-thumb">SU</div>
                 <div>
                   <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
                   <p class="meta-line">Sep 2023 - Present</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA</span></div>
-                  <div class="big-stat">3.66</div>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA 3.66</span><span class="chip">Current Study</span></div>
+                  <p class="card-description">Focused on data analytics, information systems, and applied coursework involving analysis, databases, visualisation, and digital solution design.</p>
                 </div>
               </div>
             </article>
 
             <article class="info-card edu-card" data-viewer="edu" data-title="Foundation in Arts (FIA)" data-file="PDF/RESULT FIA.pdf">
               <div class="card-badge">Sunway College</div>
-              <div class="edu-layout">
-                <div class="logo-box">SC</div>
+              <div class="card-split">
+                <div class="card-thumb">FIA</div>
                 <div>
                   <h3>Foundation in Arts (FIA)</h3>
                   <p class="meta-line">July 2022 - July 2023</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA</span></div>
-                  <div class="big-stat">3.91</div>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA 3.91</span><span class="chip">Pre-University</span></div>
+                  <p class="card-description">Built the academic foundation before degree studies and maintained excellent performance across the programme.</p>
                 </div>
               </div>
             </article>
 
             <article class="info-card edu-card" data-viewer="edu" data-title="Sijil Pelajaran Malaysia (SPM)" data-file="PDF/RESULT SPM.pdf">
               <div class="card-badge">SMK Bukit Mertajam</div>
-              <div class="edu-layout">
-                <div class="logo-box">SPM</div>
+              <div class="card-split">
+                <div class="card-thumb">SPM</div>
                 <div>
                   <h3>Sijil Pelajaran Malaysia (SPM)</h3>
                   <p class="meta-line">Jan 2017 - Mac 2022</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">Result</span></div>
-                  <div class="big-stat">7As</div>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">7As</span><span class="chip">Secondary School</span></div>
+                  <p class="card-description">Completed secondary education with strong results that supported scholarship and further study opportunities.</p>
                 </div>
               </div>
             </article>
@@ -1198,6 +1234,14 @@
                 <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
               </div>
               <div class="pdf-frame-wrap">
+                <iframe class="pdf-frame" id="eduReader" src="PDF/Transcript BSDA.pdf"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="awards">
       <div class="container">
         <div class="section-head">
@@ -1206,25 +1250,40 @@
 
         <div class="award-block">
           <h3 class="mega-title">Dean List Award</h3>
-          <div class="showcase-grid">
+          <div class="card-and-viewer">
             <div class="showcase-list" id="deanList">
               <article class="info-card active" data-viewer="award" data-title="Dean List Award — April 2025" data-file="PDF/Dean List Award April 2025.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">April 2025</p>
-                <p class="meta-note">Awarded in recognition of outstanding academic performance for the semester.</p>
+                <div class="card-split">
+                  <div class="card-thumb">DLA</div>
+                  <div>
+                    <h3>Dean List Award</h3>
+                    <p class="meta-line">April 2025</p>
+                    <p class="card-description">Recognised for outstanding academic performance in the semester under the Bachelor of Information Systems (Hons) (Data Analytics) programme.</p>
+                  </div>
+                </div>
               </article>
               <article class="info-card" data-viewer="award" data-title="Dean List Award — September 2024" data-file="PDF/Dean List Award September 2024.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">September 2024</p>
-                <p class="meta-note">Recognised for strong semester academic achievement.</p>
+                <div class="card-split">
+                  <div class="card-thumb">DLA</div>
+                  <div>
+                    <h3>Dean List Award</h3>
+                    <p class="meta-line">September 2024</p>
+                    <p class="card-description">Awarded based on strong semester results and consistent academic excellence.</p>
+                  </div>
+                </div>
               </article>
               <article class="info-card" data-viewer="award" data-title="Dean List Award — April 2024" data-file="PDF/Dean List Award April 2024.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">April 2024</p>
-                <p class="meta-note">Maintained excellent results in the programme.</p>
+                <div class="card-split">
+                  <div class="card-thumb">DLA</div>
+                  <div>
+                    <h3>Dean List Award</h3>
+                    <p class="meta-line">April 2024</p>
+                    <p class="card-description">One of the early recognitions received during degree studies for high academic achievement.</p>
+                  </div>
+                </div>
               </article>
             </div>
             <div class="viewer-panel">
@@ -1243,44 +1302,80 @@
 
         <div class="award-block">
           <h3 class="mega-title">Jeffrey Cheah ACE Scholarship Award</h3>
-          <div class="showcase-grid">
-            <div class="showcase-list" id="aceList">
+          <div class="card-and-viewer">
+            <div class="showcase-list">
               <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 1" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
-                <p class="meta-line">Achieved CGPA 3.9 or above during Foundation in Arts</p>
+                <div class="card-split">
+                  <div class="card-thumb">ACE</div>
+                  <div>
+                    <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
+                    <p class="meta-line">Based on Foundation in Arts performance</p>
+                    <p class="card-description">Awarded after achieving CGPA 3.9 or above during Foundation in Arts, supporting the first year of degree studies.</p>
+                  </div>
+                </div>
               </article>
               <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 2" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 2.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
-                <p class="meta-line">Maintained CGPA 3.65 or above during Year 1</p>
+                <div class="card-split">
+                  <div class="card-thumb">ACE</div>
+                  <div>
+                    <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
+                    <p class="meta-line">Maintained required CGPA during Year 1</p>
+                    <p class="card-description">Continued scholarship support by maintaining CGPA 3.65 or above in the first year of the programme.</p>
+                  </div>
+                </div>
               </article>
               <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 3" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 3.pdf">
                 <div class="card-badge">Sunway University</div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
-                <p class="meta-line">Scholarship continuation and academic maintenance</p>
+                <div class="card-split">
+                  <div class="card-thumb">ACE</div>
+                  <div>
+                    <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
+                    <p class="meta-line">Scholarship continuation</p>
+                    <p class="card-description">Extended scholarship support into Year 3 as part of ongoing academic achievement.</p>
+                  </div>
+                </div>
               </article>
+            </div>
+            <div class="viewer-panel">
+              <div class="pdf-reader">
+                <div class="pdf-reader-toolbar">
+                  <div class="pdf-reader-title" id="awardReaderTitle2">ACE Scholarship — Year 1</div>
+                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
+                </div>
+                <div class="pdf-frame-wrap">
+                  <iframe class="pdf-frame" id="awardReader2" src="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf"></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="award-block">
           <h3 class="mega-title">Jeffrey Cheah Entrance Scholarship Award</h3>
-          <div class="showcase-grid one-award">
+          <div class="card-and-viewer">
             <div class="showcase-list">
-              <article class="info-card" data-viewer="award" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf">
+              <article class="info-card" data-viewer="entrance" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf">
                 <div class="card-badge">Sunway College</div>
-                <h3>RM6,000 Tuition Fee Deduction</h3>
-                <p class="meta-line">Obtained 7As during SPM</p>
-                <p class="meta-note">Entrance scholarship awarded based on strong academic results before foundation studies.</p>
+                <div class="card-split">
+                  <div class="card-thumb">JCE</div>
+                  <div>
+                    <h3>RM6,000 Tuition Fee Deduction</h3>
+                    <p class="meta-line">Obtained 7As during SPM</p>
+                    <p class="card-description">Entrance scholarship awarded based on secondary school results before starting Foundation in Arts.</p>
+                  </div>
+                </div>
               </article>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="extracurricular">                 </div>
+            <div class="viewer-panel">
+              <div class="pdf-reader">
+                <div class="pdf-reader-toolbar">
+                  <div class="pdf-reader-title" id="entranceReaderTitle">Jeffrey Cheah Entrance Scholarship Award</div>
+                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
+                </div>
+                <div class="pdf-frame-wrap">
+                  <iframe class="pdf-frame" id="entranceReader" src="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf"></iframe>
                 </div>
               </div>
             </div>
@@ -1601,6 +1696,8 @@
 
     setupPdfGroup('edu', 'eduReader', 'eduReaderTitle', 'eduCount', 'eduPrev', 'eduNext');
     setupPdfGroup('award', 'awardReader', 'awardReaderTitle');
+    setupPdfGroup('award', 'awardReader2', 'awardReaderTitle2');
+    setupPdfGroup('entrance', 'entranceReader', 'entranceReaderTitle');
   </script>
 </body>
 </html>
