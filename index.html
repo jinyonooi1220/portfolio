@@ -601,6 +601,19 @@
 
     .info-card {
       padding: 18px;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .info-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .info-card.active {
+      border-color: rgba(124,146,184,0.38);
+      box-shadow: 0 18px 34px rgba(124,146,184,0.12);
+      background: rgba(255,255,255,0.8);
     }
 
     .info-card h3 {
@@ -615,6 +628,13 @@
       margin-top: 6px;
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    .meta-note {
+      margin-top: 10px;
+      color: #4f5f74;
+      font-size: 0.9rem;
+      line-height: 1.55;
     }
 
     .card-badge {
@@ -667,6 +687,59 @@
 
     .viewer-panel {
       padding: 18px;
+    }
+
+    .pdf-reader {
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .pdf-reader-toolbar {
+      height: 64px;
+      background: #3c3b3f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      color: #fff;
+    }
+
+    .pdf-reader-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .pdf-reader-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pdf-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+    }
+
+    .pdf-frame-wrap {
+      background: #eef2f8;
+      padding: 10px;
+    }
+
+    .pdf-frame {
+      width: 100%;
+      height: 530px;
+      border: 0;
+      border-radius: 14px;
+      background: #fff;
     }
 
     .viewer-panel.bordered,
@@ -1074,11 +1147,11 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Education</h2>
-          <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
+          <div class="pager-ui"><span class="pager-btn muted" id="eduPrev">Prev</span><span class="pager-count" id="eduCount">1 / 3</span><span class="pager-btn" id="eduNext">Next</span></div>
         </div>
         <div class="showcase-grid">
-          <div class="showcase-list">
-            <article class="info-card edu-card active">
+          <div class="showcase-list" id="eduList">
+            <article class="info-card edu-card active" data-viewer="edu" data-title="Bachelor of Information Systems (Honours) (Data Analytics)" data-file="PDF/Transcript BSDA.pdf">
               <div class="card-badge">Sunway University</div>
               <div class="edu-layout">
                 <div class="logo-box">SU</div>
@@ -1091,7 +1164,7 @@
               </div>
             </article>
 
-            <article class="info-card edu-card">
+            <article class="info-card edu-card" data-viewer="edu" data-title="Foundation in Arts (FIA)" data-file="PDF/RESULT FIA.pdf">
               <div class="card-badge">Sunway College</div>
               <div class="edu-layout">
                 <div class="logo-box">SC</div>
@@ -1104,7 +1177,7 @@
               </div>
             </article>
 
-            <article class="info-card edu-card">
+            <article class="info-card edu-card" data-viewer="edu" data-title="Sijil Pelajaran Malaysia (SPM)" data-file="PDF/RESULT SPM.pdf">
               <div class="card-badge">SMK Bukit Mertajam</div>
               <div class="edu-layout">
                 <div class="logo-box">SPM</div>
@@ -1119,60 +1192,49 @@
           </div>
 
           <div class="viewer-panel">
-            <div class="viewer-toolbar">
-              <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
-            </div>
-            <div class="mock-pdf big">
-              <div class="mock-pdf-top"></div>
-              <div class="mock-page">
-                <div class="mock-doc-title">Progress Report</div>
-                <div class="mock-table">
-                  <div></div><div></div><div></div>
-                  <div></div><div></div><div></div>
-                  <div></div><div></div><div></div>
-                  <div></div><div></div><div></div>
-                </div>
+            <div class="pdf-reader">
+              <div class="pdf-reader-toolbar">
+                <div class="pdf-reader-title" id="eduReaderTitle">Bachelor of Information Systems (Honours) (Data Analytics)</div>
+                <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+              <div class="pdf-frame-wrap">
     <section class="section" id="awards">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title accent-title">Honour & Award</h2>
-          <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
         </div>
 
         <div class="award-block">
           <h3 class="mega-title">Dean List Award</h3>
           <div class="showcase-grid">
-            <div class="showcase-list">
-              <article class="info-card">
+            <div class="showcase-list" id="deanList">
+              <article class="info-card active" data-viewer="award" data-title="Dean List Award — April 2025" data-file="PDF/Dean List Award April 2025.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>Dean List Award</h3>
                 <p class="meta-line">April 2025</p>
+                <p class="meta-note">Awarded in recognition of outstanding academic performance for the semester.</p>
               </article>
-              <article class="info-card">
+              <article class="info-card" data-viewer="award" data-title="Dean List Award — September 2024" data-file="PDF/Dean List Award September 2024.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>Dean List Award</h3>
                 <p class="meta-line">September 2024</p>
+                <p class="meta-note">Recognised for strong semester academic achievement.</p>
               </article>
-              <article class="info-card">
+              <article class="info-card" data-viewer="award" data-title="Dean List Award — April 2024" data-file="PDF/Dean List Award April 2024.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>Dean List Award</h3>
                 <p class="meta-line">April 2024</p>
+                <p class="meta-note">Maintained excellent results in the programme.</p>
               </article>
             </div>
             <div class="viewer-panel">
-              <div class="mock-pdf big certificate">
-                <div class="mock-pdf-top"></div>
-                <div class="mock-page center">
-                  <div class="cert-logo">SUNWAY UNIVERSITY</div>
-                  <div class="cert-title">Dean's List Award</div>
-                  <div class="cert-name">OOI JIN YON</div>
+              <div class="pdf-reader">
+                <div class="pdf-reader-toolbar">
+                  <div class="pdf-reader-title" id="awardReaderTitle">Dean List Award — April 2025</div>
+                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
+                </div>
+                <div class="pdf-frame-wrap">
+                  <iframe class="pdf-frame" id="awardReader" src="PDF/Dean List Award April 2025.pdf"></iframe>
                 </div>
               </div>
             </div>
@@ -1182,33 +1244,22 @@
         <div class="award-block">
           <h3 class="mega-title">Jeffrey Cheah ACE Scholarship Award</h3>
           <div class="showcase-grid">
-            <div class="showcase-list">
-              <article class="info-card">
+            <div class="showcase-list" id="aceList">
+              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 1" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
-                <p class="meta-line">Achieved CGPA 3.9 or above during Foundation in Art</p>
+                <p class="meta-line">Achieved CGPA 3.9 or above during Foundation in Arts</p>
               </article>
-              <article class="info-card">
+              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 2" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 2.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
                 <p class="meta-line">Maintained CGPA 3.65 or above during Year 1</p>
               </article>
-              <article class="info-card">
+              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 3" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 3.pdf">
                 <div class="card-badge">Sunway University</div>
                 <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
-                <p class="meta-line">Scholarship continuation</p>
+                <p class="meta-line">Scholarship continuation and academic maintenance</p>
               </article>
-            </div>
-            <div class="viewer-panel">
-              <div class="mock-pdf big letter">
-                <div class="mock-pdf-top"></div>
-                <div class="mock-page left-doc">
-                  <div class="letter-head">JEFFREY CHEAH ACE SCHOLARSHIP</div>
-                  <div class="letter-lines">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1217,20 +1268,19 @@
           <h3 class="mega-title">Jeffrey Cheah Entrance Scholarship Award</h3>
           <div class="showcase-grid one-award">
             <div class="showcase-list">
-              <article class="info-card">
+              <article class="info-card" data-viewer="award" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf">
                 <div class="card-badge">Sunway College</div>
                 <h3>RM6,000 Tuition Fee Deduction</h3>
                 <p class="meta-line">Obtained 7As during SPM</p>
+                <p class="meta-note">Entrance scholarship awarded based on strong academic results before foundation studies.</p>
               </article>
             </div>
-            <div class="viewer-panel">
-              <div class="mock-pdf big letter">
-                <div class="mock-pdf-top"></div>
-                <div class="mock-page left-doc">
-                  <div class="letter-head">JEFFREY CHEAH ENTRANCE SCHOLARSHIP</div>
-                  <div class="letter-lines short">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="extracurricular">                 </div>
                 </div>
               </div>
             </div>
@@ -1517,6 +1567,40 @@
         item.style.display = text.includes(keyword) ? '' : 'none';
       });
     });
+
+    function setupPdfGroup(groupName, frameId, titleId, countId, prevId, nextId) {
+      const items = Array.from(document.querySelectorAll(`[data-viewer="${groupName}"]`));
+      const frame = document.getElementById(frameId);
+      const title = document.getElementById(titleId);
+      const count = document.getElementById(countId);
+      const prev = prevId ? document.getElementById(prevId) : null;
+      const next = nextId ? document.getElementById(nextId) : null;
+      if (!items.length || !frame || !title) return;
+
+      let index = Math.max(0, items.findIndex(item => item.classList.contains('active')));
+      if (index === -1) index = 0;
+
+      function render(i) {
+        index = i;
+        items.forEach((item, idx) => item.classList.toggle('active', idx === index));
+        const active = items[index];
+        frame.src = active.dataset.file;
+        title.textContent = active.dataset.title;
+        if (count) count.textContent = `${index + 1} / ${items.length}`;
+      }
+
+      items.forEach((item, idx) => {
+        item.addEventListener('click', () => render(idx));
+      });
+
+      if (prev) prev.addEventListener('click', () => render((index - 1 + items.length) % items.length));
+      if (next) next.addEventListener('click', () => render((index + 1) % items.length));
+
+      render(index);
+    }
+
+    setupPdfGroup('edu', 'eduReader', 'eduReaderTitle', 'eduCount', 'eduPrev', 'eduNext');
+    setupPdfGroup('award', 'awardReader', 'awardReaderTitle');
   </script>
 </body>
 </html>
