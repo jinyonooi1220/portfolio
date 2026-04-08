@@ -522,11 +522,394 @@
       gap: 18px;
     }
 
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .mega-title {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+      color: #c56f43;
+      font-weight: 900;
+    }
+
+    .accent-title {
+      color: #c56f43;
+    }
+
+    .pager-ui {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .pager-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(124,146,184,0.28);
+      color: #453d7b;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    }
+
+    .pager-btn.muted {
+      color: #8e84b0;
+      border-color: rgba(142,132,176,0.28);
+    }
+
+    .pager-count {
+      color: var(--text);
+      min-width: 48px;
+      text-align: center;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .showcase-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-card,
+    .viewer-panel,
+    .project-board {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-lg);
+      border-radius: 28px;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .info-card {
+      padding: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-top: 10px;
+      color: #203040;
+    }
+
+    .meta-line {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #ebd46d;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #293241;
+    }
+
+    .card-badge.lime {
+      background: #ebd46d;
+    }
+
+    .card-badge.green {
+      background: #d9ec64;
+    }
+
+    .edu-layout {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .logo-box {
+      height: 108px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(148,163,184,0.16);
+      box-shadow: 0 8px 18px rgba(15,23,42,0.08);
+      font-weight: 900;
+      color: #2d4062;
+    }
+
+    .big-stat {
+      margin-top: 8px;
+      font-size: 2.25rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      color: #203040;
+    }
+
+    .viewer-panel {
+      padding: 18px;
+    }
+
+    .viewer-panel.bordered,
+    .project-board {
+      border-color: rgba(193,154,39,0.7);
+    }
+
+    .viewer-toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .mock-pdf {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #2f3136;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+    }
+
+    .mock-pdf.big {
+      min-height: 430px;
+    }
+
+    .mock-pdf-top {
+      height: 72px;
+      background: #3a3a3a;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mock-page {
+      margin: 0 10px 10px;
+      min-height: 330px;
+      background: #f7f7f7;
+      border-radius: 0 0 12px 12px;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .mock-page.center {
+      display: grid;
+      place-items: center;
+      align-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .mock-page.left-doc {
+      padding: 28px 24px;
+    }
+
+    .mock-doc-title,
+    .cert-logo,
+    .letter-head,
+    .project-doc-title {
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.03em;
+    }
+
+    .cert-title {
+      font-size: 1.9rem;
+      font-style: italic;
+      color: #0f172a;
+    }
+
+    .cert-name {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .mock-table {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .mock-table div,
+    .letter-lines span {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(100,116,139,0.24);
+    }
+
+    .letter-lines {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .letter-lines.short span:nth-child(odd) { width: 72%; }
+    .letter-lines.short span:nth-child(even) { width: 88%; }
+    .letter-lines.dense span:nth-child(3n) { width: 96%; }
+    .letter-lines.dense span:nth-child(3n+1) { width: 92%; }
+    .letter-lines.dense span:nth-child(3n+2) { width: 84%; }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .activity-card ul {
+      margin: 12px 0 0 18px;
+      padding: 0;
+      color: #223140;
+    }
+
+    .activity-card li {
+      margin-bottom: 6px;
+    }
+
+    .tab-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tab-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-weight: 800;
+      color: #203040;
+    }
+
+    .tab-chip.active {
+      background: #e7d267;
+      border-color: #c2a73b;
+    }
+
+    .project-board {
+      padding: 16px;
+    }
+
+    .project-showcase {
+      gap: 14px;
+    }
+
+    .project-info h3 {
+      font-size: 1rem;
+    }
+
+    .project-pdf {
+      min-height: 500px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(148,163,184,0.18);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+      padding: 8px;
+    }
+
+    .project-doc {
+      background: #ffffff;
+      min-height: 440px;
+      border-radius: 14px;
+      box-shadow: inset 0 0 0 1px rgba(148,163,184,0.16);
+    }
+
+    .project-doc-title {
+      font-size: 1.8rem;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
     .footer {
       padding: 18px 0 44px;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-wrap,
+      .grid-2,
+      .document-grid,
+      .project-grid,
+      .showcase-grid,
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        width: min(calc(100% - 28px), 1000px);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        width: min(calc(100% - 20px), 960px);
+        border-radius: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-main,
+      .panel,
+      .quote-card,
+      .document-shell,
+      .project-card,
+      .viewer-panel,
+      .project-board,
+      .info-card {
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .viewer-box,
+      .mock-pdf.big,
+      .project-pdf {
+        height: auto;
+        min-height: 320px;
+      }
+
+      .edu-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mega-title {
+        font-size: clamp(1.6rem, 7vw, 2.4rem);
+      }
     }
 
     @media (max-width: 1040px) {
@@ -589,9 +972,11 @@
         <span>Ooi Jin Yon</span>
       </a>
       <nav class="nav-links">
-        <div class="nav-chip"><a href="#about">About</a></div>
-        <div class="nav-chip"><a href="#resume">Resume</a></div>
-        <div class="nav-chip"><a href="#projects">Projects</a></div>
+        <div class="nav-chip"><a href="#home">Home</a></div>
+        <div class="nav-chip"><a href="#education">Education</a></div>
+        <div class="nav-chip"><a href="#awards">Honour & Award</a></div>
+        <div class="nav-chip"><a href="#extracurricular">Extracurricular</a></div>
+        <div class="nav-chip"><a href="#projects">Assignment & Project</a></div>
         <div class="nav-chip"><a href="#contact">Contact</a></div>
       </nav>
     </div>
@@ -681,6 +1066,286 @@
               supporting research, governance-related analysis, reporting tasks, and system improvement work.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Education</h2>
+          <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
+        </div>
+        <div class="showcase-grid">
+          <div class="showcase-list">
+            <article class="info-card edu-card active">
+              <div class="card-badge">Sunway University</div>
+              <div class="edu-layout">
+                <div class="logo-box">SU</div>
+                <div>
+                  <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
+                  <p class="meta-line">Sep 2023 - Present</p>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA</span></div>
+                  <div class="big-stat">3.66</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="info-card edu-card">
+              <div class="card-badge">Sunway College</div>
+              <div class="edu-layout">
+                <div class="logo-box">SC</div>
+                <div>
+                  <h3>Foundation in Arts (FIA)</h3>
+                  <p class="meta-line">July 2022 - July 2023</p>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA</span></div>
+                  <div class="big-stat">3.91</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="info-card edu-card">
+              <div class="card-badge">SMK Bukit Mertajam</div>
+              <div class="edu-layout">
+                <div class="logo-box">SPM</div>
+                <div>
+                  <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                  <p class="meta-line">Jan 2017 - Mac 2022</p>
+                  <div class="chips" style="margin-top:10px;"><span class="chip">Result</span></div>
+                  <div class="big-stat">7As</div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="viewer-panel">
+            <div class="viewer-toolbar">
+              <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
+            </div>
+            <div class="mock-pdf big">
+              <div class="mock-pdf-top"></div>
+              <div class="mock-page">
+                <div class="mock-doc-title">Progress Report</div>
+                <div class="mock-table">
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title accent-title">Honour & Award</h2>
+          <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 3</span><span class="pager-btn">Next</span></div>
+        </div>
+
+        <div class="award-block">
+          <h3 class="mega-title">Dean List Award</h3>
+          <div class="showcase-grid">
+            <div class="showcase-list">
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>Dean List Award</h3>
+                <p class="meta-line">April 2025</p>
+              </article>
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>Dean List Award</h3>
+                <p class="meta-line">September 2024</p>
+              </article>
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>Dean List Award</h3>
+                <p class="meta-line">April 2024</p>
+              </article>
+            </div>
+            <div class="viewer-panel">
+              <div class="mock-pdf big certificate">
+                <div class="mock-pdf-top"></div>
+                <div class="mock-page center">
+                  <div class="cert-logo">SUNWAY UNIVERSITY</div>
+                  <div class="cert-title">Dean's List Award</div>
+                  <div class="cert-name">OOI JIN YON</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="award-block">
+          <h3 class="mega-title">Jeffrey Cheah ACE Scholarship Award</h3>
+          <div class="showcase-grid">
+            <div class="showcase-list">
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
+                <p class="meta-line">Achieved CGPA 3.9 or above during Foundation in Art</p>
+              </article>
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
+                <p class="meta-line">Maintained CGPA 3.65 or above during Year 1</p>
+              </article>
+              <article class="info-card">
+                <div class="card-badge">Sunway University</div>
+                <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
+                <p class="meta-line">Scholarship continuation</p>
+              </article>
+            </div>
+            <div class="viewer-panel">
+              <div class="mock-pdf big letter">
+                <div class="mock-pdf-top"></div>
+                <div class="mock-page left-doc">
+                  <div class="letter-head">JEFFREY CHEAH ACE SCHOLARSHIP</div>
+                  <div class="letter-lines">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="award-block">
+          <h3 class="mega-title">Jeffrey Cheah Entrance Scholarship Award</h3>
+          <div class="showcase-grid one-award">
+            <div class="showcase-list">
+              <article class="info-card">
+                <div class="card-badge">Sunway College</div>
+                <h3>RM6,000 Tuition Fee Deduction</h3>
+                <p class="meta-line">Obtained 7As during SPM</p>
+              </article>
+            </div>
+            <div class="viewer-panel">
+              <div class="mock-pdf big letter">
+                <div class="mock-pdf-top"></div>
+                <div class="mock-page left-doc">
+                  <div class="letter-head">JEFFREY CHEAH ENTRANCE SCHOLARSHIP</div>
+                  <div class="letter-lines short">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="extracurricular">
+      <div class="container">
+        <h2 class="mega-title">Extracurricular Activities</h2>
+        <div class="activity-grid">
+          <article class="info-card activity-card">
+            <div class="card-badge">Sunway University</div>
+            <h3>BIS2102 Project Pitching Competition</h3>
+            <p class="meta-line">August 2025</p>
+            <ul>
+              <li>Contributed to enhance an existing application.</li>
+              <li>Collaborated in a team to design and present an AI powered travel assistant prototype.</li>
+            </ul>
+          </article>
+
+          <article class="info-card activity-card">
+            <div class="card-badge">Sunway University</div>
+            <h3>Paradox of Theron</h3>
+            <p class="meta-line">February 2025</p>
+            <ul>
+              <li>Emerged as the top team in Paradox of Theron.</li>
+              <li>Enhanced teamwork experience during the discussion and strategy planning.</li>
+            </ul>
+          </article>
+
+          <article class="info-card activity-card">
+            <div class="card-badge">Cisco Networking Academy (Online)</div>
+            <h3>CCNA: Introduction to Networks</h3>
+            <p class="meta-line">December 2023</p>
+            <ul>
+              <li>Achieved student level credential for completing the course.</li>
+              <li>Configured a small network.</li>
+            </ul>
+          </article>
+
+          <article class="info-card activity-card">
+            <div class="card-badge">ACCA & Multimedia University (Online)</div>
+            <h3>ACCA-MMU Inter-School Accounting Quiz (AMISAQ) 2021</h3>
+            <p class="meta-line">August 2021</p>
+            <ul>
+              <li>Attended the quiz challenge with classmate and teacher.</li>
+            </ul>
+          </article>
+
+          <article class="info-card activity-card">
+            <div class="card-badge">University Sains Malaysia (Online)</div>
+            <h3>Accounting Professional Avenue 2021</h3>
+            <p class="meta-line">April 2021</p>
+            <ul>
+              <li>Participated different talks during the period.</li>
+              <li>Attended the quiz challenge with classmate and teacher.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="mega-title">Assignment & Project</h2>
+          <div class="tab-row">
+            <span class="tab-chip">Sunway University Year 3</span>
+            <span class="tab-chip active">Sunway University Year 2</span>
+            <span class="tab-chip">Sunway University Year 1</span>
+            <span class="tab-chip">Other</span>
+          </div>
+        </div>
+
+        <div class="project-board">
+          <div class="showcase-grid project-showcase">
+            <div class="showcase-list">
+              <article class="info-card project-info">
+                <div class="card-badge lime">Year 2 Semester 3</div>
+                <h3>Information Systems Analysis & Design</h3>
+                <p class="meta-line">Group Assignment & Individual Assignment (Page 1 - 5)</p>
+                <div class="chips"><span class="chip">Figma</span></div>
+              </article>
+
+              <article class="info-card project-info">
+                <div class="card-badge lime">Year 2 Semester 3</div>
+                <h3>IS Management and Strategy</h3>
+                <p class="meta-line">Group Assignment (Page 6 - 8)</p>
+                <div class="chips"><span class="chip">Figma</span></div>
+              </article>
+
+              <article class="info-card project-info">
+                <div class="card-badge green">Year 2 Semester 2</div>
+                <h3>Enterprise Architecture</h3>
+                <p class="meta-line">Group Assignment (Page 9)</p>
+                <div class="chips"><span class="chip">CSVLOD</span></div>
+              </article>
+            </div>
+
+            <div class="viewer-panel bordered">
+              <div class="viewer-toolbar">
+                <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 9</span><span class="pager-btn">Next</span></div>
+              </div>
+              <div class="mock-pdf project-pdf">
+                <div class="mock-page left-doc project-doc">
+                  <div class="project-doc-title">Enhancing Booking.com AI-Powered for a Seamless Travel Experience</div>
+                  <div class="letter-lines dense">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -782,55 +1447,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Selected Work</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="eyebrow">System Project</div>
-            <h3>Inventory Management Solution</h3>
-            <p>
-              Designed and built an operational inventory workflow using Power Apps,
-              Power Automate, reporting logic, and structured transaction tracking.
-            </p>
-            <div class="tags">
-              <span class="tag">Power Apps</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Reporting</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="eyebrow">Research Project</div>
-            <h3>Student Residence Behaviour Analysis</h3>
-            <p>
-              Analysed residence incidents and behavioural patterns to support governance,
-              recommendations, and operational improvement within student accommodation.
-            </p>
-            <div class="tags">
-              <span class="tag">Research</span>
-              <span class="tag">Analytics</span>
-              <span class="tag">Presentation</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="eyebrow">Portfolio</div>
-            <h3>GitHub Portfolio Website</h3>
-            <p>
-              A one-page portfolio designed around Jin Yon’s actual academic profile,
-              internship background, skills, and document showcase.
-            </p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">GitHub Pages</span>
-            </div>
-          </article>
         </div>
       </div>
     </section>
