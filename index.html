@@ -3,73 +3,184 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ooi Jin Yon | Light Portfolio</title>
+  <meta name="description" content="Ooi Jin Yon portfolio website showcasing education, awards, extracurricular activities, projects, resume, and supporting PDF documents." />
+
+  <title>Ooi Jin Yon | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f4f7fb;
-      --bg-soft: #edf2f8;
-      --surface: rgba(255, 255, 255, 0.72);
-      --surface-strong: rgba(255, 255, 255, 0.9);
-      --surface-deep: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --line: rgba(148, 163, 184, 0.18);
-      --line-strong: rgba(148, 163, 184, 0.28);
-      --accent: #7c92b8;
-      --accent-soft: #edf3ff;
-      --accent-strong: #5f759d;
-      --shadow-lg: 0 24px 48px rgba(15, 23, 42, 0.08);
-      --shadow-md: 0 14px 28px rgba(15, 23, 42, 0.06);
-      --radius-2xl: 34px;
+      --bg: #f8f9ff;
+      --bg-soft: #f1f5ff;
+      --surface: #ffffff;
+      --surface-soft: rgba(255, 255, 255, 0.84);
+      --surface-tint: #f7f9ff;
+      --text: #1f2440;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --line: rgba(91, 112, 246, 0.12);
+      --line-strong: rgba(91, 112, 246, 0.22);
+      --primary: #5b70f6;
+      --primary-dark: #3843a8;
+      --primary-soft: rgba(91, 112, 246, 0.09);
+      --blue: #4f8df7;
+      --cyan: #35b8d0;
+      --violet: #8a7cf7;
+      --pink: #b98cff;
+      --amber: #d89a27;
+      --green: #10b981;
+      --gradient-main: linear-gradient(135deg, #5b70f6 0%, #6f8cff 48%, #35b8d0 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(91,112,246,0.12), rgba(111,140,255,0.10), rgba(53,184,208,0.08));
+      --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.92));
+      --shadow-lg: 0 24px 70px rgba(65, 83, 180, 0.11);
+      --shadow-md: 0 14px 38px rgba(65, 83, 180, 0.085);
+      --shadow-sm: 0 8px 20px rgba(65, 83, 180, 0.06);
       --radius-xl: 26px;
       --radius-lg: 20px;
       --radius-md: 16px;
       --radius-sm: 12px;
-      --max-width: 1180px;
+      --max: 1140px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(143,170,220,0.18), transparent 22%),
-        radial-gradient(circle at top right, rgba(200,210,240,0.25), transparent 20%),
-        linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
       line-height: 1.6;
+      background:
+        radial-gradient(circle at 8% -4%, rgba(91,112,246,0.16), transparent 34%),
+        radial-gradient(circle at 92% 0%, rgba(53,184,208,0.14), transparent 36%),
+        radial-gradient(circle at 50% 42%, rgba(138,124,247,0.07), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #fbfcff 42%, #f2f6ff 100%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(91,112,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(53,184,208,0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, black, transparent 76%);
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto -12% -30% -12%;
+      height: 420px;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(91,112,246,0.10), transparent 62%);
+      z-index: -1;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    h1,h2,h3,h4,p { margin: 0; }
+    button, input { font: inherit; }
 
     .container {
-      width: min(calc(100% - 28px), var(--max-width));
+      width: min(calc(100% - 48px), var(--max));
       margin: 0 auto;
     }
 
+    .section {
+      padding: 72px 0;
+      scroll-margin-top: 96px;
+    }
+
+    .glass {
+      background: var(--gradient-card);
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 9px;
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--gradient-main);
+    }
+
+    .section-title,
+    .hero-title,
+    .mega-title {
+      font-family: "Noto Sans", system-ui, sans-serif;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+      font-weight: 900;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 2.8vw, 2.65rem);
+      max-width: 720px;
+    }
+
+    .section-copy {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Navbar kept from current design */
     .topbar {
       position: sticky;
-      top: 18px;
-      z-index: 50;
-      background: transparent;
+      top: 10px;
+      z-index: 999;
+      padding: 10px 0;
     }
 
     .nav {
-      min-height: 64px;
+      width: min(calc(100% - 36px), 1040px);
+      margin: 0 auto;
+      min-height: 58px;
+      padding: 8px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      width: min(calc(100% - 28px), 960px);
-      margin: 0 auto;
-      padding: 12px 14px;
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.42);
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      box-shadow: var(--shadow-lg);
+      gap: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -77,814 +188,689 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 8px 10px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.42);
-      border: 1px solid rgba(255,255,255,0.5);
-      font-size: 0.92rem;
+      gap: 9px;
+      padding: 5px 10px 5px 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
       font-weight: 800;
       letter-spacing: -0.02em;
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
     }
 
     .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 14px;
+      width: 32px;
+      height: 32px;
       display: grid;
       place-items: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,244,252,0.92));
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      box-shadow: var(--shadow-md);
-      color: var(--accent-strong);
-      font-size: 0.8rem;
+      border-radius: 12px;
+      background: var(--gradient-main);
+      color: white;
+      font-size: 0.72rem;
       font-weight: 900;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.20);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 6px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.24);
-      border: 1px solid rgba(255,255,255,0.42);
-    }
-
-    .nav-chip {
-      padding: 4px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.28);
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
+      min-height: 32px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 34px;
-      padding: 0 14px;
+      padding: 0 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.85);
-      color: #5b6b82;
-      font-size: 0.78rem;
-      font-weight: 700;
-      border: 1px solid rgba(148,163,184,0.18);
-      box-shadow: 0 4px 12px rgba(15,23,42,0.06);
-      transition: 0.2s ease;
-      font-weight: 700;
+      color: #58667a;
+      font-size: 0.72rem;
+      font-weight: 750;
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow-sm);
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(124,146,184,0.35);
-      opacity: 0.95;
     }
 
-    .section { padding: 28px 0; }
+    .nav-cta {
+      min-height: 32px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #635bff, #4f46e5);
+      color: white !important;
+      box-shadow: 0 8px 18px rgba(47, 75, 117, 0.18);
+    }
+
+    .menu-toggle { display: none; }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.78);
+      place-items: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .menu-btn span,
+    .menu-btn span::before,
+    .menu-btn span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--text);
+      position: relative;
+    }
+
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-btn span::before { top: -6px; }
+    .menu-btn span::after { top: 6px; }
 
     .hero {
-      padding: 34px 0 18px;
+      padding: 42px 0 64px;
     }
 
-    .hero-wrap {
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.22fr 0.78fr;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
       gap: 20px;
       align-items: stretch;
     }
 
-    .hero-main,
-    .panel,
-    .document-shell,
-    .project-card,
-    .quote-card {
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.66);
-      border-radius: var(--radius-2xl);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
     .hero-main {
-      padding: 34px;
+      min-height: 430px;
+      padding: clamp(28px, 4vw, 46px);
+      border-radius: 34px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(246,247,255,0.90)),
+        radial-gradient(circle at top right, rgba(139,92,246,0.20), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(59,130,246,0.14), transparent 42%);
+      border: 1px solid rgba(255,255,255,0.94);
+      box-shadow: var(--shadow-lg);
     }
 
     .hero-main::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
-      pointer-events: none;
+      right: 28px;
+      top: 28px;
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      background: var(--gradient-soft);
+      border: 1px solid rgba(99,91,255,0.12);
+      transform: rotate(10deg);
     }
 
     .hero-main::after {
       content: "";
       position: absolute;
-      right: -40px;
-      top: -40px;
-      width: 180px;
-      height: 180px;
-      border-radius: 40px;
-      background: radial-gradient(circle, rgba(124,146,184,0.16), transparent 68%);
-      pointer-events: none;
+      right: -90px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,91,255,0.18), transparent 68%);
     }
 
-    .eyebrow {
+    .hero-label {
+      position: relative;
+      z-index: 1;
+      width: fit-content;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 14px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(99,91,255,0.10);
+      border: 1px solid rgba(99,91,255,0.14);
+      color: var(--primary-dark);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
+      margin-bottom: 18px;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 4px;
-      height: 16px;
-      border-radius: 999px;
-      background: var(--accent);
+    .hero-label-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(5, 150, 105, 0.12);
     }
 
     .hero-title {
-      font-size: clamp(1.8rem, 3.6vw, 2.8rem);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      max-width: 10ch;
       position: relative;
       z-index: 1;
+      max-width: 720px;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      margin-bottom: 16px;
     }
 
-    .hero-title .underline {
-      background: linear-gradient(transparent 62%, rgba(124,146,184,0.2) 62%);
-      padding: 0 6px;
-    }
-
-    .hero-text,
-    .body-copy,
-    .quote-card p,
-    .panel p,
-    .project-card p,
-    .contact-link span,
-    .doc-subtitle,
-    .doc-item span,
-    .metric span {
-      color: var(--muted);
+    .hero-title span {
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-text {
-      margin-top: 12px;
-      max-width: 56ch;
-      color: var(--muted);
-      font-size: 0.9rem;
       position: relative;
       z-index: 1;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
     }
 
     .hero-actions {
-      margin-top: 22px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
       position: relative;
       z-index: 1;
-    }
-
-    .btn-wrap {
-      padding: 4px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.3);
-      border: 1px solid rgba(255,255,255,0.38);
-      display: inline-flex;
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .btn {
-      min-height: 42px;
-      padding: 0 16px;
+      min-height: 40px;
+      padding: 0 15px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 0.9rem;
+      gap: 8px;
       border: 1px solid transparent;
+      font-size: 0.86rem;
+      font-weight: 800;
       transition: 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #8fb3ff, #9b8cff);
-      color: #ffffff;
-      border: none;
-      box-shadow: 0 10px 26px rgba(124,146,184,0.28);
+      color: white;
+      background: var(--gradient-main);
+      box-shadow: 0 14px 28px rgba(99, 91, 255, 0.22);
     }
 
     .btn-secondary {
-      background: linear-gradient(135deg, #dbe6ff, #e7e0ff);
-      color: #5f6fb0;
-      border: none;
+      color: var(--primary-dark);
+      background: white;
+      border-color: var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
-    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
 
     .hero-metrics {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
       position: relative;
       z-index: 1;
-    }
-
-    .metric,
-    .mini-row,
-    .split-item,
-    .contact-link,
-    .document-sidebar,
-    .document-viewer,
-    .doc-item,
-    .chip,
-    .tag {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
 
     .metric {
-      padding: 14px;
+      padding: 15px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(99,91,255,0.12);
+      box-shadow: 0 8px 22px rgba(99,91,255,0.07);
     }
 
     .metric strong {
       display: block;
-      font-size: 0.98rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 2px;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 4px;
+      font-weight: 900;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
     }
 
     .hero-side {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
 
-    .quote-card,
-    .panel,
-    .project-card {
+    .profile-card,
+    .highlight-card {
+      border-radius: 28px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.92);
+      box-shadow: var(--shadow-md);
+    }
+
+    .profile-card {
       padding: 24px;
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,255,0.88)),
+        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 40%);
     }
 
-    .quote-card h3,
-    .project-card h3 {
-      font-size: 1.08rem;
-      letter-spacing: -0.03em;
+    .profile-card::before {
+      display: none;
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: var(--gradient-main);
+      color: white;
+      font-size: 1.35rem;
+      font-weight: 900;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.20);
+    }
+
+    .profile-card h2 {
+      font-size: 1.38rem;
+      line-height: 1.1;
       margin-bottom: 8px;
+      letter-spacing: -0.035em;
+    }
+
+    .profile-card p,
+    .panel p,
+    .project-paper p {
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .highlight-card {
+      padding: 20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,255,0.88)),
+        radial-gradient(circle at bottom left, rgba(139,92,246,0.10), transparent 42%);
     }
 
     .mini-stack,
-    .split-list,
-    .contact-links,
     .doc-list,
-    .tags {
+    .contact-links,
+    .split-list {
       display: grid;
       gap: 10px;
-      margin-top: 14px;
+    }
+
+    .mini-row,
+    .split-item,
+    .contact-link,
+    .doc-item {
+      background: var(--surface-tint);
+      border: 1px solid var(--line);
+      box-shadow: none;
     }
 
     .mini-row,
     .split-item,
     .contact-link {
-      padding: 15px 16px;
-      border-radius: 18px;
-    }
-
-    .mini-row,
-    .split-item {
+      padding: 12px 13px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .mini-row span:first-child,
+    .mini-row strong,
     .split-item strong,
-    .contact-link strong,
-    .doc-item strong {
-      color: #435268;
-      font-size: 0.94rem;
-      font-weight: 700;
+    .contact-link strong {
+      font-size: 0.85rem;
+      font-weight: 800;
     }
 
     .badge {
-      padding: 7px 11px;
+      min-height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.86);
-      border: 1px solid var(--line);
-      font-size: 0.82rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.72rem;
       font-weight: 800;
       white-space: nowrap;
-      color: #55657c;
-    }
-
-    .section-title {
-      font-size: clamp(1.4rem, 2vw, 1.8rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 16px;
+      border: 1px solid rgba(37, 99, 235, 0.12);
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .label {
-      margin-top: 14px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .chips,
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip,
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 13px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: #516479;
-    }
-
-    .tag {
-      background: var(--accent-soft);
-      color: var(--accent-strong);
-    }
-
-    .document-shell {
-      padding: 18px;
-    }
-
-    .document-grid {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 14px;
-      min-height: 590px;
-    }
-
-    .document-sidebar,
-    .document-viewer {
-      border-radius: 24px;
-      padding: 14px;
-    }
-
-    .search-box {
-      width: 100%;
-      height: 46px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.88);
-      padding: 0 14px;
-      font: inherit;
-      font-size: 0.92rem;
-      color: var(--text);
-      outline: none;
-      margin-bottom: 12px;
-    }
-
-    .doc-item {
-      width: 100%;
-      text-align: left;
-      color: var(--text);
-      border-radius: 16px;
-      padding: 14px 12px;
-      cursor: pointer;
-      transition: 0.18s ease;
-    }
-
-    .doc-item:hover,
-    .doc-item.active {
-      background: rgba(255,255,255,0.9);
-      border-color: var(--line-strong);
-      box-shadow: var(--shadow-md);
-    }
-
-    .doc-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .doc-title {
-      font-size: 0.98rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .viewer-box {
-      height: 500px;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: #edf3fb;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-    }
-
-    .viewer-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      background: #edf3fb;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
     }
 
-    .mega-title {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 16px;
-      color: #c56f43;
+    .panel {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: white;
+      border: 1px solid rgba(255,255,255,0.9);
+    }
+
+    .panel h3 {
+      font-size: 1.08rem;
       font-weight: 900;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
     }
 
-    .accent-title {
-      color: #c56f43;
-    }
-
-    .pager-ui {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .pager-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 0 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(124,146,184,0.28);
-      color: #453d7b;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
-    }
-
-    .pager-btn.muted {
-      color: #8e84b0;
-      border-color: rgba(142,132,176,0.28);
-    }
-
-    .pager-count {
-      color: var(--text);
-      min-width: 48px;
-      text-align: center;
-    }
-
+    .card-and-viewer,
     .showcase-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
       gap: 18px;
       align-items: start;
     }
 
-    .card-and-viewer {
+    .showcase-list,
+    .project-card-list {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .showcase-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .info-card,
-    .viewer-panel,
-    .project-board {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      box-shadow: var(--shadow-lg);
-      border-radius: 28px;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      gap: 12px;
     }
 
     .info-card {
-      padding: 18px;
-      transition: 0.2s ease;
+      padding: 17px;
+      border-radius: 22px;
       cursor: pointer;
+      transition: 0.22s ease;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.92);
     }
 
-    .info-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    .info-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 3px;
+      height: 34px;
+      border-radius: 0 999px 999px 0;
+      background: transparent;
+      transition: 0.22s ease;
     }
 
+    .info-card:hover,
     .info-card.active {
-      border-color: rgba(124,146,184,0.38);
-      box-shadow: 0 18px 34px rgba(124,146,184,0.12);
-      background: rgba(255,255,255,0.8);
+      transform: translateY(-3px);
+      border-color: rgba(99,91,255,0.22);
+      box-shadow: var(--shadow-md);
     }
 
-    .info-card h3 {
-      font-size: 1.05rem;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      margin-top: 10px;
-      color: #203040;
+    .info-card.active::after {
+      background: var(--gradient-main);
     }
 
-    .card-thumb {
-      width: 112px;
-      height: 112px;
-      border-radius: 20px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(238,243,251,0.95));
-      border: 1px solid rgba(148,163,184,0.16);
-      box-shadow: 0 10px 20px rgba(15,23,42,0.08);
-      font-size: 1.05rem;
-      font-weight: 900;
-      color: #4f6282;
-      flex-shrink: 0;
+    .card-badge {
+      width: fit-content;
+      min-height: 24px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 9px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: rgba(216,154,39,0.11);
+      color: #8a5a0a;
+      border: 1px solid rgba(216,154,39,0.16);
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+
+    .card-badge.blue {
+      background: rgba(91,112,246,0.09);
+      color: var(--primary-dark);
+      border-color: rgba(91,112,246,0.13);
     }
 
     .card-split {
       display: grid;
-      grid-template-columns: 112px 1fr;
-      gap: 16px;
+      grid-template-columns: 72px 1fr;
+      gap: 13px;
       align-items: center;
-      margin-top: 12px;
+    }
+
+    .card-thumb {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #eff6ff, #ffffff);
+      border: 1px solid var(--line);
+      color: var(--primary-dark);
+      font-size: 0.86rem;
+      font-weight: 900;
+    }
+
+    .info-card h3 {
+      font-size: 0.98rem;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .meta-line,
+    .card-description {
+      color: var(--muted);
+      font-size: 0.83rem;
     }
 
     .card-description {
-      margin-top: 10px;
-      color: #516274;
-      font-size: 0.9rem;
-      line-height: 1.55;
+      margin-top: 9px;
     }
 
-    .meta-line {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.92rem;
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 9px;
     }
 
-    .meta-note {
-      margin-top: 10px;
-      color: #4f5f74;
-      font-size: 0.9rem;
-      line-height: 1.55;
-    }
-
-    .card-badge {
+    .chip,
+    .tab-chip {
+      min-height: 27px;
       display: inline-flex;
       align-items: center;
-      min-height: 26px;
-      padding: 0 8px;
-      border-radius: 4px;
-      background: #ebd46d;
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: #293241;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(91,112,246,0.075);
+      color: var(--primary-dark);
+      border: 1px solid rgba(91,112,246,0.12);
+      font-size: 0.72rem;
+      font-weight: 850;
     }
 
-    .card-badge.lime {
-      background: #ebd46d;
-    }
-
-    .card-badge.green {
-      background: #d9ec64;
-    }
-
-    .edu-layout {
-      display: grid;
-      grid-template-columns: 126px 1fr;
-      gap: 16px;
-      align-items: center;
-      margin-top: 12px;
-    }
-
-    .logo-box {
-      height: 108px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
+    .viewer-panel,
+    .project-preview,
+    .document-shell {
+      padding: 16px;
+      border-radius: var(--radius-xl);
       background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148,163,184,0.16);
-      box-shadow: 0 8px 18px rgba(15,23,42,0.08);
-      font-weight: 900;
-      color: #2d4062;
-    }
-
-    .big-stat {
-      margin-top: 8px;
-      font-size: 2.25rem;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      color: #203040;
     }
 
     .viewer-panel {
-      padding: 18px;
+      position: sticky;
+      top: 92px;
     }
 
     .pdf-reader {
-      background: rgba(255,255,255,0.58);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 24px;
-      box-shadow: var(--shadow-lg);
       overflow: hidden;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
     .pdf-reader-toolbar {
-      height: 64px;
-      background: #3c3b3f;
+      min-height: 46px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
-      color: #fff;
+      gap: 14px;
+      padding: 0 15px;
+      background: linear-gradient(135deg, #1e1b4b, #312e81 50%, #2563eb);
+      color: white;
     }
 
     .pdf-reader-title {
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.88);
+      font-size: 0.82rem;
+      font-weight: 800;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .pdf-reader-actions {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 7px;
+      flex-shrink: 0;
     }
 
     .pdf-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.7);
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.64);
     }
 
     .pdf-frame-wrap {
-      background: #eef2f8;
-      padding: 10px;
+      padding: 9px;
+      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
     }
 
     .pdf-frame {
       width: 100%;
-      height: 530px;
+      height: 460px;
+      display: block;
       border: 0;
       border-radius: 14px;
-      background: #fff;
+      background: white;
     }
 
-    .viewer-panel.bordered,
-    .project-board {
-      border-color: rgba(193,154,39,0.7);
+    .award-block + .award-block {
+      margin-top: 54px;
     }
 
-    .viewer-toolbar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 12px;
+    .mega-title {
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      color: var(--primary-dark);
+      margin-bottom: 20px;
     }
-
-    .mock-pdf {
-      border-radius: 18px;
-      overflow: hidden;
-      background: #2f3136;
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
-    }
-
-    .mock-pdf.big {
-      min-height: 430px;
-    }
-
-    .mock-pdf-top {
-      height: 72px;
-      background: #3a3a3a;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .mock-page {
-      margin: 0 10px 10px;
-      min-height: 330px;
-      background: #f7f7f7;
-      border-radius: 0 0 12px 12px;
-      padding: 20px;
-      overflow: hidden;
-    }
-
-    .mock-page.center {
-      display: grid;
-      place-items: center;
-      align-content: center;
-      text-align: center;
-      gap: 12px;
-    }
-
-    .mock-page.left-doc {
-      padding: 28px 24px;
-    }
-
-    .mock-doc-title,
-    .cert-logo,
-    .letter-head,
-    .project-doc-title {
-      font-weight: 800;
-      color: #111827;
-      letter-spacing: -0.03em;
-    }
-
-    .cert-title {
-      font-size: 1.9rem;
-      font-style: italic;
-      color: #0f172a;
-    }
-
-    .cert-name {
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-    }
-
-    .mock-table {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .mock-table div,
-    .letter-lines span {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(100,116,139,0.24);
-    }
-
-    .letter-lines {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .letter-lines.short span:nth-child(odd) { width: 72%; }
-    .letter-lines.short span:nth-child(even) { width: 88%; }
-    .letter-lines.dense span:nth-child(3n) { width: 96%; }
-    .letter-lines.dense span:nth-child(3n+1) { width: 92%; }
-    .letter-lines.dense span:nth-child(3n+2) { width: 84%; }
 
     .activity-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
+    .activity-card {
+      min-height: 190px;
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(249,251,255,0.92)),
+        radial-gradient(circle at top right, rgba(53,184,208,0.12), transparent 44%);
+      border: 1px solid rgba(91,112,246,0.10);
+      box-shadow: var(--shadow-sm);
+      transition: 0.22s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(91,112,246,0.20);
+    }
+
+    .activity-card::after {
+      content: "";
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: var(--gradient-soft);
+      border: 1px solid rgba(91,112,246,0.10);
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+
+    .activity-card .card-badge,
+    .activity-card h3,
+    .activity-card .meta-line,
+    .activity-card p {
+      grid-column: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .activity-card h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .activity-card p:not(.meta-line) {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
     .activity-card ul {
-      margin: 12px 0 0 18px;
-      padding: 0;
-      color: #223140;
+      margin: 13px 0 0 20px;
+      color: #334155;
+      font-size: 0.88rem;
     }
 
     .activity-card li {
@@ -894,286 +880,729 @@
     .tab-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .tab-chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(148,163,184,0.4);
-      font-weight: 800;
-      color: #203040;
-    }
-
-    .tab-chip.active {
-      background: #e7d267;
-      border-color: #c2a73b;
-    }
-
-    .project-board {
-      padding: 16px;
-    }
-
-    .project-showcase {
-      gap: 14px;
-    }
-
-    .project-info h3 {
-      font-size: 1rem;
-    }
-
-    .project-pdf {
-      min-height: 500px;
-      background: rgba(255,255,255,0.84);
-      border: 1px solid rgba(148,163,184,0.18);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
-      padding: 8px;
-    }
-
-    .project-doc {
-      background: #ffffff;
-      min-height: 440px;
-      border-radius: 14px;
-      box-shadow: inset 0 0 0 1px rgba(148,163,184,0.16);
-    }
-
-    .project-doc-title {
-      font-size: 1.8rem;
-      line-height: 1.05;
+      gap: 9px;
       margin-bottom: 18px;
     }
 
-    .footer {
-      padding: 18px 0 44px;
-      text-align: center;
+    .tab-chip.active {
+      background: var(--gradient-main);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(99,91,255,0.18);
+    }
+
+    .project-board {
+      padding: 14px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.82);
+    }
+
+    .project-paper {
+      min-height: 410px;
+      padding: clamp(22px, 3vw, 34px);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.94)),
+        radial-gradient(circle at top right, rgba(99,91,255,0.14), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(59,130,246,0.10), transparent 42%);
+      border: 1px solid rgba(99,91,255,0.12);
+    }
+
+    .project-paper-title {
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .line-stack {
+      display: grid;
+      gap: 9px;
+      margin: 20px 0;
+    }
+
+    .line-stack span {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(99,91,255,0.16), rgba(59,130,246,0.10));
+    }
+
+    .line-stack span:nth-child(2n) { width: 86%; }
+    .line-stack span:nth-child(3n) { width: 64%; }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .about-feature {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+    }
+
+    .about-feature::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99,91,255,0.14), transparent 70%);
+    }
+
+    .feature-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--gradient-main);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(99,91,255,0.18);
+    }
+
+    .about-feature h3,
+    .timeline-card h3,
+    .award-card h3,
+    .project-card-modern h3,
+    .skills-card h3,
+    .contact-panel h3 {
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .about-feature p,
+    .timeline-card p,
+    .award-card p,
+    .project-card-modern p,
+    .skills-card p,
+    .contact-panel p {
       color: var(--muted);
       font-size: 0.9rem;
     }
 
-    @media (max-width: 1040px) {
-      .hero-wrap,
+    .timeline-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 22px;
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 4px;
+      height: 48px;
+      border-radius: 999px;
+      background: var(--gradient-main);
+    }
+
+    .timeline-year {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(99,91,255,0.09);
+      border: 1px solid rgba(99,91,255,0.14);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .timeline-content {
+      min-width: 0;
+    }
+
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .award-card {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,255,0.92)),
+        radial-gradient(circle at top right, rgba(91,112,246,0.10), transparent 44%);
+      border: 1px solid rgba(91,112,246,0.10);
+    }
+
+    .award-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 4px;
+      height: 42px;
+      border-radius: 0 999px 999px 0;
+      background: var(--gradient-main);
+    }
+
+    .award-card::after {
+      content: "";
+      position: absolute;
+      right: -54px;
+      top: -54px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(53,184,208,0.12), transparent 70%);
+    }
+
+    .project-grid-modern {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card-modern {
+      min-height: 250px;
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.22s ease;
+    }
+
+    .project-card-modern:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(99,91,255,0.22);
+    }
+
+    .project-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .project-code {
+      color: rgba(67,56,202,0.22);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.08em;
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .skills-card,
+    .contact-panel {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+    }
+
+    .skill-cloud,
+    .language-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .skill-cloud span,
+    .language-list span {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(99,91,255,0.08);
+      border: 1px solid rgba(99,91,255,0.12);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .strength-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .strength-list div {
+      padding: 13px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(99,91,255,0.12);
+    }
+
+    .strength-list strong {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .strength-list span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+    }
+
+    .document-grid {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 16px;
+      min-height: 560px;
+    }
+
+    .doc-category-tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .doc-filter {
+      min-height: 34px;
+      border: 1px solid rgba(104,91,255,0.14);
+      background: rgba(255,255,255,0.72);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 850;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .doc-filter:hover,
+    .doc-filter.active {
+      color: white;
+      background: var(--gradient-main);
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(99,91,255,0.16);
+    }
+
+    .doc-list {
+      max-height: 470px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .doc-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .doc-list::-webkit-scrollbar-thumb {
+      background: rgba(104,91,255,0.22);
+      border-radius: 999px;
+    }
+
+    .document-sidebar,
+    .document-viewer {
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(104,91,255,0.12);
+    }
+
+    .search-box {
+      width: 100%;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(104,91,255,0.14);
+      background: #f8f9ff;
+      padding: 0 13px;
+      color: var(--text);
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    .search-box:focus {
+      border-color: rgba(37,99,235,0.5);
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+    }
+
+    .doc-item {
+      width: 100%;
+      display: grid;
+      gap: 3px;
+      text-align: left;
+      padding: 11px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      color: var(--text);
+    }
+
+    .doc-item:hover,
+    .doc-item.active {
+      background: rgba(104,91,255,0.08);
+      border-color: rgba(104,91,255,0.22);
+    }
+
+    .doc-item strong {
+      font-size: 0.84rem;
+    }
+
+    .doc-item span,
+    .contact-link span,
+    .split-item span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .doc-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .doc-title {
+      font-weight: 900;
+      letter-spacing: -0.025em;
+    }
+
+    .doc-subtitle {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .viewer-box {
+      height: 455px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+      border: 1px solid rgba(99,91,255,0.12);
+    }
+
+    .viewer-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: white;
+    }
+
+    .label {
+      margin: 16px 0 8px;
+      font-weight: 900;
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+    }
+
+    .contact-link {
+      padding: 12px 13px;
+      border-radius: 16px;
+      transition: 0.2s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateX(4px);
+      background: rgba(91,112,246,0.08);
+      border-color: rgba(91,112,246,0.18);
+    }
+
+    .footer {
+      padding: 18px 0 38px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
       .grid-2,
-      .document-grid,
-      .project-grid,
+      .card-and-viewer,
       .showcase-grid,
-      .activity-grid {
+      .activity-grid,
+      .about-layout,
+      .award-grid,
+      .project-grid-modern,
+      .skills-layout,
+      .contact-layout,
+      .document-grid {
         grid-template-columns: 1fr;
       }
 
-      .nav {
-        width: min(calc(100% - 28px), 1000px);
-      }
+      .viewer-panel { position: static; }
+      .hero-main { min-height: auto; }
+      .timeline-card { grid-template-columns: 1fr; }
+      .award-card,
+      .project-card-modern,
+      .about-feature { min-height: auto; }
     }
 
-    @media (max-width: 760px) {
-      .nav {
-        width: min(calc(100% - 20px), 960px);
-        border-radius: 24px;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 12px;
+    @media (max-width: 820px) {
+      .topbar {
+        top: 0;
+        padding: 8px 0;
+      }
+
+      .nav { border-radius: 22px; }
+
+      .menu-btn {
+        display: grid;
+        width: 38px;
+        height: 38px;
       }
 
       .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        position: absolute;
+        top: 68px;
+        left: 14px;
+        right: 14px;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 10px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.94);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(18px);
       }
 
+      .menu-toggle:checked ~ .nav-links { display: grid; }
+
+      .nav-links a {
+        justify-content: flex-start;
+        min-height: 40px;
+        background: rgba(255,255,255,0.6);
+      }
+
+      .section { padding: 56px 0; }
+      .hero { padding: 24px 0 56px; }
+
       .hero-main,
+      .profile-card,
+      .highlight-card,
       .panel,
-      .quote-card,
-      .document-shell,
-      .project-card,
+      .info-card,
       .viewer-panel,
       .project-board,
-      .info-card {
-        padding: 18px;
-        border-radius: 24px;
+      .document-shell {
+        border-radius: 20px;
+        padding: 16px;
       }
 
-      .hero-metrics {
+      .hero-title { font-size: clamp(2.25rem, 10vw, 3.6rem); }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+
+      .section-head {
         grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
         align-items: flex-start;
       }
 
-      .viewer-box,
-      .mock-pdf.big,
-      .project-pdf {
-        height: auto;
-        min-height: 320px;
-      }
+      .card-split { grid-template-columns: 1fr; }
 
-      .edu-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .mega-title {
-        font-size: clamp(1.6rem, 7vw, 2.4rem);
-      }
-    }
-
-    @media (max-width: 1040px) {
-      .hero-wrap,
-      .grid-2,
-      .document-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        width: min(calc(100% - 28px), 1000px);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        width: min(calc(100% - 20px), 960px);
-        border-radius: 24px;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 12px;
-      }
-
-      .nav-links {
+      .card-thumb {
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        height: 70px;
       }
 
-      .hero-main,
-      .panel,
-      .quote-card,
-      .document-shell,
-      .project-card {
-        padding: 18px;
-        border-radius: 24px;
-      }
-
-      .hero-metrics {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
+      .mini-row,
+      .split-item,
+      .contact-link {
         align-items: flex-start;
+        flex-direction: column;
       }
 
-      .viewer-box {
-        height: 380px;
+      .pdf-frame,
+      .viewer-box { height: 380px; }
+      .project-paper { min-height: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+
+      .nav {
+        width: calc(100% - 24px);
+        padding: 10px;
       }
+
+      .brand span:last-child {
+        max-width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .hero-label { font-size: 0.66rem; }
+
+      .pdf-frame,
+      .viewer-box { height: 360px; }
     }
   </style>
 </head>
+
 <body>
   <header class="topbar">
     <div class="nav">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" aria-label="Go to home section">
         <span class="brand-mark">JY</span>
         <span>Ooi Jin Yon</span>
       </a>
-      <nav class="nav-links">
-        <div class="nav-chip"><a href="#home">Home</a></div>
-        <div class="nav-chip"><a href="#education">Education</a></div>
-        <div class="nav-chip"><a href="#awards">Honour & Award</a></div>
-        <div class="nav-chip"><a href="#extracurricular">Extracurricular</a></div>
-        <div class="nav-chip"><a href="#projects">Assignment & Project</a></div>
-        <div class="nav-chip"><a href="#contact">Contact</a></div>
+
+      <input type="checkbox" id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" />
+      <label for="menuToggle" class="menu-btn" aria-label="Open navigation menu">
+        <span></span>
+      </label>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#extracurricular">Activities</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume" class="nav-cta">Documents</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-wrap">
-        <article class="hero-main">
-          <div class="eyebrow">Personal Portfolio</div>
-          <h1 class="hero-title">Jin Yon builds <span class="underline">practical data-driven work</span></h1>
-          <p class="hero-text">
-            A final-year student in Information Systems (Hons) majoring in Data Analytics,
-            with experience across analytics, reporting, research, and digital solution design.
-          </p>
-          <div class="hero-actions">
-            <span class="btn-wrap"><a class="btn btn-primary" href="#resume">Open Documents</a></span>
-            <span class="btn-wrap"><a class="btn btn-secondary" href="#projects">See Projects</a></span>
+      <div class="container hero-grid">
+        <article class="hero-main glass">
+          <div class="hero-label">
+            <span class="hero-label-dot"></span>
+            Data Analytics Portfolio
           </div>
-          <div class="hero-metrics">
+
+          <h1 class="hero-title">
+            Turning data, systems and research into <span>clear digital outcomes.</span>
+          </h1>
+
+          <p class="hero-text">
+            I am Ooi Jin Yon, a final-year Bachelor of Information Systems (Hons) student majoring in Data Analytics at Sunway University. This portfolio highlights my education, achievements, activities, projects, skills and supporting documents.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#resume">Open Documents</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Portfolio highlights">
             <div class="metric">
               <strong>Sunway University</strong>
-              <span>Data Analytics pathway</span>
+              <span>Information Systems, Data Analytics</span>
             </div>
             <div class="metric">
               <strong>CGPA 3.66</strong>
-              <span>Bachelor degree</span>
+              <span>Bachelor degree progress</span>
             </div>
             <div class="metric">
-              <strong>2026</strong>
-              <span>Final-year portfolio</span>
+              <strong>Aug 2026</strong>
+              <span>Expected graduation</span>
             </div>
           </div>
         </article>
 
-        <div class="hero-side">
-          <article class="quote-card">
-            <div class="eyebrow">Profile Snapshot</div>
-            <h3>Ooi Jin Yon</h3>
+        <aside class="hero-side">
+          <article class="profile-card glass">
+            <div class="avatar">JY</div>
+            <h2>Ooi Jin Yon</h2>
             <p>
-              Final-year student focused on turning data and operational needs into clear,
-              useful systems, dashboards, and research outputs.
+              Data analytics student focused on reporting, research, business process improvement and practical digital solutions.
             </p>
-            <div class="hero-actions" style="margin-top:16px;">
-              <span class="btn-wrap"><a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></span>
+            <div class="hero-actions">
+              <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
             </div>
           </article>
 
-          <article class="panel">
-            <div class="eyebrow">Highlights</div>
+          <article class="highlight-card glass">
+            <div class="section-kicker">Current Highlights</div>
             <div class="mini-stack">
               <div class="mini-row">
-                <span>Current role</span>
+                <strong>Current role</strong>
                 <span class="badge">Development Plan Intern</span>
               </div>
               <div class="mini-row">
-                <span>Internship period</span>
+                <strong>Internship period</strong>
                 <span class="badge">Jan – Apr 2026</span>
               </div>
               <div class="mini-row">
-                <span>Expected graduation</span>
-                <span class="badge">Aug 2026</span>
+                <strong>Academic focus</strong>
+                <span class="badge">Data Analytics</span>
               </div>
             </div>
           </article>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section class="section" id="about">
       <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="grid-2">
-          <article class="panel">
-            <div class="eyebrow">Academic Background</div>
-            <p class="body-copy">
-              Jin Yon is pursuing a Bachelor of Information Systems (Hons) in Data Analytics at
-              Sunway University. His academic training combines statistics, database knowledge,
-              data mining, and analytical thinking.
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">Practical thinking across analytics, systems and documentation.</h2>
+          </div>
+          <p class="section-copy">
+            I enjoy translating complex information into organised insights, reports, dashboards and project documentation that are easy to understand and useful for decision-making.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <article class="about-feature glass">
+            <span class="feature-number">01</span>
+            <h3>Academic Foundation</h3>
+            <p>
+              My studies in Information Systems and Data Analytics strengthen my understanding of databases, analytics, statistics, visualisation and digital solution design.
             </p>
           </article>
 
-          <article class="panel">
-            <div class="eyebrow">Internship Experience</div>
-            <p class="body-copy">
-              He is currently attached to Sunway College (KL) Sdn Bhd as a Development Plan Intern,
-              supporting research, governance-related analysis, reporting tasks, and system improvement work.
+          <article class="about-feature glass">
+            <span class="feature-number">02</span>
+            <h3>Work Experience</h3>
+            <p>
+              As a Development Plan Intern, I support research, governance-related analysis, reporting, documentation and process improvement work.
+            </p>
+          </article>
+
+          <article class="about-feature glass">
+            <span class="feature-number">03</span>
+            <h3>Portfolio Direction</h3>
+            <p>
+              This website presents my academic growth, achievements, activities, coursework and selected documents in a clean GitHub Pages format.
             </p>
           </article>
         </div>
@@ -1183,61 +1612,55 @@
     <section class="section" id="education">
       <div class="container">
         <div class="section-head">
-          <h2 class="section-title">Education</h2>
-        </div>
-        <div class="card-and-viewer">
-          <div class="showcase-list" id="eduList">
-            <article class="info-card edu-card active" data-viewer="edu" data-title="Bachelor of Information Systems (Honours) (Data Analytics)" data-file="PDF/Transcript BSDA.pdf">
-              <div class="card-badge">Sunway University</div>
-              <div class="card-split">
-                <div class="card-thumb">SU</div>
-                <div>
-                  <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
-                  <p class="meta-line">Sep 2023 - Present</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA 3.66</span><span class="chip">Current Study</span></div>
-                  <p class="card-description">Focused on data analytics, information systems, and applied coursework involving analysis, databases, visualisation, and digital solution design.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card edu-card" data-viewer="edu" data-title="Foundation in Arts (FIA)" data-file="PDF/RESULT FIA.pdf">
-              <div class="card-badge">Sunway College</div>
-              <div class="card-split">
-                <div class="card-thumb">FIA</div>
-                <div>
-                  <h3>Foundation in Arts (FIA)</h3>
-                  <p class="meta-line">July 2022 - July 2023</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">CGPA 3.91</span><span class="chip">Pre-University</span></div>
-                  <p class="card-description">Built the academic foundation before degree studies and maintained excellent performance across the programme.</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card edu-card" data-viewer="edu" data-title="Sijil Pelajaran Malaysia (SPM)" data-file="PDF/RESULT SPM.pdf">
-              <div class="card-badge">SMK Bukit Mertajam</div>
-              <div class="card-split">
-                <div class="card-thumb">SPM</div>
-                <div>
-                  <h3>Sijil Pelajaran Malaysia (SPM)</h3>
-                  <p class="meta-line">Jan 2017 - Mac 2022</p>
-                  <div class="chips" style="margin-top:10px;"><span class="chip">7As</span><span class="chip">Secondary School</span></div>
-                  <p class="card-description">Completed secondary education with strong results that supported scholarship and further study opportunities.</p>
-                </div>
-              </div>
-            </article>
+          <div>
+            <div class="section-kicker">Education</div>
+            <h2 class="section-title">Academic pathway.</h2>
           </div>
+          <p class="section-copy">
+            Education details are shown as summary cards. Related transcripts and results are available only in the Documents section.
+          </p>
+        </div>
 
-          <div class="viewer-panel">
-            <div class="pdf-reader">
-              <div class="pdf-reader-toolbar">
-                <div class="pdf-reader-title" id="eduReaderTitle">Bachelor of Information Systems (Honours) (Data Analytics)</div>
-                <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
-              </div>
-              <div class="pdf-frame-wrap">
-                <iframe class="pdf-frame" id="eduReader" src="PDF/Transcript BSDA.pdf"></iframe>
+        <div class="timeline-list">
+          <article class="timeline-card glass">
+            <div class="timeline-year">2023 — Present</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">Sunway University</div>
+              <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
+              <p>Focused on information systems, data analytics, databases, visualisation, research and digital solution design.</p>
+              <div class="chips">
+                <span class="chip">CGPA 3.66</span>
+                <span class="chip">Data Analytics</span>
+                <span class="chip">Current Study</span>
               </div>
             </div>
-          </div>
+          </article>
+
+          <article class="timeline-card glass">
+            <div class="timeline-year">2022 — 2023</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">Sunway College</div>
+              <h3>Foundation in Arts (FIA)</h3>
+              <p>Completed pre-university studies with strong academic performance before entering degree studies.</p>
+              <div class="chips">
+                <span class="chip">CGPA 3.91</span>
+                <span class="chip">Pre-University</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-card glass">
+            <div class="timeline-year">2017 — 2022</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">SMK Bukit Mertajam</div>
+              <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+              <p>Completed secondary education and achieved results that supported scholarship and further study opportunities.</p>
+              <div class="chips">
+                <span class="chip">7As</span>
+                <span class="chip">Secondary School</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1245,196 +1668,96 @@
     <section class="section" id="awards">
       <div class="container">
         <div class="section-head">
-          <h2 class="section-title accent-title">Honour & Award</h2>
+          <div>
+            <div class="section-kicker">Honour & Award</div>
+            <h2 class="section-title">Recognition and scholarships.</h2>
+          </div>
+          <p class="section-copy">
+            Awards are displayed as clean achievement cards. Certificates and supporting PDFs can be accessed in Documents.
+          </p>
         </div>
 
-        <div class="award-block">
-          <h3 class="mega-title">Dean List Award</h3>
-          <div class="card-and-viewer">
-            <div class="showcase-list" id="deanList">
-              <article class="info-card active" data-viewer="award" data-title="Dean List Award — April 2025" data-file="PDF/Dean List Award April 2025.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">DLA</div>
-                  <div>
-                    <h3>Dean List Award</h3>
-                    <p class="meta-line">April 2025</p>
-                    <p class="card-description">Recognised for outstanding academic performance in the semester under the Bachelor of Information Systems (Hons) (Data Analytics) programme.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="info-card" data-viewer="award" data-title="Dean List Award — September 2024" data-file="PDF/Dean List Award September 2024.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">DLA</div>
-                  <div>
-                    <h3>Dean List Award</h3>
-                    <p class="meta-line">September 2024</p>
-                    <p class="card-description">Awarded based on strong semester results and consistent academic excellence.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="info-card" data-viewer="award" data-title="Dean List Award — April 2024" data-file="PDF/Dean List Award April 2024.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">DLA</div>
-                  <div>
-                    <h3>Dean List Award</h3>
-                    <p class="meta-line">April 2024</p>
-                    <p class="card-description">One of the early recognitions received during degree studies for high academic achievement.</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="viewer-panel">
-              <div class="pdf-reader">
-                <div class="pdf-reader-toolbar">
-                  <div class="pdf-reader-title" id="awardReaderTitle">Dean List Award — April 2025</div>
-                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
-                </div>
-                <div class="pdf-frame-wrap">
-                  <iframe class="pdf-frame" id="awardReader" src="PDF/Dean List Award April 2025.pdf"></iframe>
-                </div>
+        <div class="award-grid">
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Academic Achievement</div>
+              <h3>Dean List Award</h3>
+              <p>Recognised for outstanding semester performance across multiple academic periods.</p>
+              <div class="chips">
+                <span class="chip">April 2025</span>
+                <span class="chip">September 2024</span>
+                <span class="chip">April 2024</span>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="award-block">
-          <h3 class="mega-title">Jeffrey Cheah ACE Scholarship Award</h3>
-          <div class="card-and-viewer">
-            <div class="showcase-list">
-              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 1" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">ACE</div>
-                  <div>
-                    <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
-                    <p class="meta-line">Based on Foundation in Arts performance</p>
-                    <p class="card-description">Awarded after achieving CGPA 3.9 or above during Foundation in Arts, supporting the first year of degree studies.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 2" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 2.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">ACE</div>
-                  <div>
-                    <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
-                    <p class="meta-line">Maintained required CGPA during Year 1</p>
-                    <p class="card-description">Continued scholarship support by maintaining CGPA 3.65 or above in the first year of the programme.</p>
-                  </div>
-                </div>
-              </article>
-              <article class="info-card" data-viewer="award" data-title="ACE Scholarship — Year 3" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 3.pdf">
-                <div class="card-badge">Sunway University</div>
-                <div class="card-split">
-                  <div class="card-thumb">ACE</div>
-                  <div>
-                    <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
-                    <p class="meta-line">Scholarship continuation</p>
-                    <p class="card-description">Extended scholarship support into Year 3 as part of ongoing academic achievement.</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="viewer-panel">
-              <div class="pdf-reader">
-                <div class="pdf-reader-toolbar">
-                  <div class="pdf-reader-title" id="awardReaderTitle2">ACE Scholarship — Year 1</div>
-                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
-                </div>
-                <div class="pdf-frame-wrap">
-                  <iframe class="pdf-frame" id="awardReader2" src="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf"></iframe>
-                </div>
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Scholarship</div>
+              <h3>Jeffrey Cheah ACE Scholarship Award</h3>
+              <p>Received scholarship support across degree study years based on academic performance and continuation requirements.</p>
+              <div class="chips">
+                <span class="chip">Year 1</span>
+                <span class="chip">Year 2</span>
+                <span class="chip">Year 3</span>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="award-block">
-          <h3 class="mega-title">Jeffrey Cheah Entrance Scholarship Award</h3>
-          <div class="card-and-viewer">
-            <div class="showcase-list">
-              <article class="info-card" data-viewer="entrance" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf">
-                <div class="card-badge">Sunway College</div>
-                <div class="card-split">
-                  <div class="card-thumb">JCE</div>
-                  <div>
-                    <h3>RM6,000 Tuition Fee Deduction</h3>
-                    <p class="meta-line">Obtained 7As during SPM</p>
-                    <p class="card-description">Entrance scholarship awarded based on secondary school results before starting Foundation in Arts.</p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="viewer-panel">
-              <div class="pdf-reader">
-                <div class="pdf-reader-toolbar">
-                  <div class="pdf-reader-title" id="entranceReaderTitle">Jeffrey Cheah Entrance Scholarship Award</div>
-                  <div class="pdf-reader-actions"><span class="pdf-dot"></span><span class="pdf-dot"></span><span class="pdf-dot"></span></div>
-                </div>
-                <div class="pdf-frame-wrap">
-                  <iframe class="pdf-frame" id="entranceReader" src="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf"></iframe>
-                </div>
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Entrance Scholarship</div>
+              <h3>Jeffrey Cheah Entrance Scholarship Award</h3>
+              <p>Received tuition fee deduction after achieving strong SPM results before starting Foundation in Arts.</p>
+              <div class="chips">
+                <span class="chip">RM6,000 Deduction</span>
+                <span class="chip">SPM 7As</span>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="extracurricular">
       <div class="container">
-        <h2 class="mega-title">Extracurricular Activities</h2>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Activities</div>
+            <h2 class="section-title">Learning beyond coursework.</h2>
+          </div>
+          <p class="section-copy">
+            Activities that reflect collaboration, communication, technical learning and applied problem-solving.
+          </p>
+        </div>
+
         <div class="activity-grid">
-          <article class="info-card activity-card">
-            <div class="card-badge">Sunway University</div>
+          <article class="activity-card glass">
+            <div class="card-badge blue">Sunway University</div>
             <h3>BIS2102 Project Pitching Competition</h3>
             <p class="meta-line">August 2025</p>
-            <ul>
-              <li>Contributed to enhance an existing application.</li>
-              <li>Collaborated in a team to design and present an AI powered travel assistant prototype.</li>
-            </ul>
+            <p>Collaborated in a team to enhance an existing application and present an AI-powered travel assistant prototype.</p>
           </article>
 
-          <article class="info-card activity-card">
-            <div class="card-badge">Sunway University</div>
+          <article class="activity-card glass">
+            <div class="card-badge blue">Sunway University</div>
             <h3>Paradox of Theron</h3>
             <p class="meta-line">February 2025</p>
-            <ul>
-              <li>Emerged as the top team in Paradox of Theron.</li>
-              <li>Enhanced teamwork experience during the discussion and strategy planning.</li>
-            </ul>
+            <p>Emerged as the top team while improving teamwork, discussion and strategy planning experience.</p>
           </article>
 
-          <article class="info-card activity-card">
-            <div class="card-badge">Cisco Networking Academy (Online)</div>
+          <article class="activity-card glass">
+            <div class="card-badge blue">Cisco Networking Academy</div>
             <h3>CCNA: Introduction to Networks</h3>
             <p class="meta-line">December 2023</p>
-            <ul>
-              <li>Achieved student level credential for completing the course.</li>
-              <li>Configured a small network.</li>
-            </ul>
+            <p>Completed the course credential and practised configuring a small computer network.</p>
           </article>
 
-          <article class="info-card activity-card">
-            <div class="card-badge">ACCA & Multimedia University (Online)</div>
-            <h3>ACCA-MMU Inter-School Accounting Quiz (AMISAQ) 2021</h3>
+          <article class="activity-card glass">
+            <div class="card-badge blue">ACCA & Multimedia University</div>
+            <h3>ACCA-MMU Inter-School Accounting Quiz</h3>
             <p class="meta-line">August 2021</p>
-            <ul>
-              <li>Attended the quiz challenge with classmate and teacher.</li>
-            </ul>
-          </article>
-
-          <article class="info-card activity-card">
-            <div class="card-badge">University Sains Malaysia (Online)</div>
-            <h3>Accounting Professional Avenue 2021</h3>
-            <p class="meta-line">April 2021</p>
-            <ul>
-              <li>Participated different talks during the period.</li>
-              <li>Attended the quiz challenge with classmate and teacher.</li>
-            </ul>
+            <p>Participated in the quiz challenge with classmates and teacher.</p>
           </article>
         </div>
       </div>
@@ -1443,109 +1766,103 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head">
-          <h2 class="mega-title">Assignment & Project</h2>
-          <div class="tab-row">
-            <span class="tab-chip">Sunway University Year 3</span>
-            <span class="tab-chip active">Sunway University Year 2</span>
-            <span class="tab-chip">Sunway University Year 1</span>
-            <span class="tab-chip">Other</span>
+          <div>
+            <div class="section-kicker">Assignments</div>
+            <h2 class="section-title">Selected projects and coursework.</h2>
           </div>
+          <p class="section-copy">
+            Project cards focus on skills, context and outcomes. Detailed project PDFs should be placed in the Documents section only.
+          </p>
         </div>
 
-        <div class="project-board">
-          <div class="showcase-grid project-showcase">
-            <div class="showcase-list">
-              <article class="info-card project-info">
-                <div class="card-badge lime">Year 2 Semester 3</div>
-                <h3>Information Systems Analysis & Design</h3>
-                <p class="meta-line">Group Assignment & Individual Assignment (Page 1 - 5)</p>
-                <div class="chips"><span class="chip">Figma</span></div>
-              </article>
+        <div class="tab-row">
+          <span class="tab-chip">Sunway University Year 3</span>
+          <span class="tab-chip active">Sunway University Year 2</span>
+          <span class="tab-chip">Sunway University Year 1</span>
+          <span class="tab-chip">Other</span>
+        </div>
 
-              <article class="info-card project-info">
-                <div class="card-badge lime">Year 2 Semester 3</div>
-                <h3>IS Management and Strategy</h3>
-                <p class="meta-line">Group Assignment (Page 6 - 8)</p>
-                <div class="chips"><span class="chip">Figma</span></div>
-              </article>
-
-              <article class="info-card project-info">
-                <div class="card-badge green">Year 2 Semester 2</div>
-                <h3>Enterprise Architecture</h3>
-                <p class="meta-line">Group Assignment (Page 9)</p>
-                <div class="chips"><span class="chip">CSVLOD</span></div>
-              </article>
+        <div class="project-grid-modern">
+          <article class="project-card-modern glass">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 3</span>
+              <span class="project-code">01</span>
             </div>
-
-            <div class="viewer-panel bordered">
-              <div class="viewer-toolbar">
-                <div class="pager-ui"><span class="pager-btn muted">Prev</span><span class="pager-count">1 / 9</span><span class="pager-btn">Next</span></div>
-              </div>
-              <div class="mock-pdf project-pdf">
-                <div class="mock-page left-doc project-doc">
-                  <div class="project-doc-title">Enhancing Booking.com AI-Powered for a Seamless Travel Experience</div>
-                  <div class="letter-lines dense">
-                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
+            <h3>Information Systems Analysis & Design</h3>
+            <p>Designed and documented system improvements with user requirements, workflow thinking and interface prototyping.</p>
+            <div class="chips">
+              <span class="chip">Figma</span>
+              <span class="chip">System Design</span>
+              <span class="chip">Prototype</span>
             </div>
-          </div>
+          </article>
+
+          <article class="project-card-modern glass">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 3</span>
+              <span class="project-code">02</span>
+            </div>
+            <h3>IS Management and Strategy</h3>
+            <p>Analysed business and information system strategy through structured group work, reporting and presentation.</p>
+            <div class="chips">
+              <span class="chip">Strategy</span>
+              <span class="chip">Analysis</span>
+              <span class="chip">Report</span>
+            </div>
+          </article>
+
+          <article class="project-card-modern glass">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 2</span>
+              <span class="project-code">03</span>
+            </div>
+            <h3>Enterprise Architecture</h3>
+            <p>Explored enterprise-level architecture concepts and applied structured thinking to organisational technology design.</p>
+            <div class="chips">
+              <span class="chip">Architecture</span>
+              <span class="chip">CSVLOD</span>
+              <span class="chip">Group Work</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="skills">
       <div class="container">
-        <div class="grid-2">
-          <article class="panel">
-            <div class="eyebrow">Core Strengths</div>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Skills</div>
+            <h2 class="section-title">Tools, languages and strengths.</h2>
+          </div>
+          <p class="section-copy">
+            A practical skill set for analytics, reporting, design, documentation and teamwork.
+          </p>
+        </div>
 
-            <div class="label">Languages</div>
-            <div class="chips">
-              <span class="chip">Chinese (Mandarin)</span>
-              <span class="chip">English</span>
-              <span class="chip">Malay</span>
-            </div>
-
-            <div class="label">Work Style</div>
-            <div class="chips">
-              <span class="chip">Time Management</span>
-              <span class="chip">Problem Solving</span>
-              <span class="chip">Team Collaboration</span>
-            </div>
-
-            <div class="label">Tools & Platforms</div>
-            <div class="chips">
-              <span class="chip">Power BI</span>
-              <span class="chip">Tableau</span>
-              <span class="chip">Python</span>
-              <span class="chip">Oracle SQL</span>
-              <span class="chip">Excel</span>
-              <span class="chip">SAS Enterprise Miner</span>
-              <span class="chip">SAS Enterprise Guide</span>
-              <span class="chip">Power Apps</span>
-              <span class="chip">Power Automate</span>
-              <span class="chip">Figma</span>
-              <span class="chip">Canva</span>
+        <div class="skills-layout">
+          <article class="skills-card glass">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-cloud">
+              <span>Power BI</span><span>Tableau</span><span>Python</span><span>Oracle SQL</span><span>Excel</span><span>SAS Enterprise Miner</span><span>SAS Enterprise Guide</span><span>Power Apps</span><span>Power Automate</span><span>Figma</span><span>Canva</span>
             </div>
           </article>
 
-          <article class="panel">
-            <div class="eyebrow">Academic Results</div>
-            <div class="split-list">
-              <div class="split-item">
-                <strong>Bachelor of Information Systems (Hons) — Data Analytics</strong>
-                <span class="badge">CGPA 3.66</span>
-              </div>
-              <div class="split-item">
-                <strong>Foundation in Arts</strong>
-                <span class="badge">CGPA 3.91</span>
-              </div>
-              <div class="split-item">
-                <strong>Sijil Pelajaran Malaysia</strong>
-                <span class="badge">7As</span>
-              </div>
+          <article class="skills-card glass">
+            <h3>Core Strengths</h3>
+            <div class="strength-list">
+              <div><strong>Problem Solving</strong><span>Breaking down problems into clear, workable steps.</span></div>
+              <div><strong>Team Collaboration</strong><span>Working with others to organise ideas and deliver outputs.</span></div>
+              <div><strong>Time Management</strong><span>Managing tasks, deadlines and project priorities.</span></div>
+            </div>
+          </article>
+
+          <article class="skills-card glass">
+            <h3>Languages</h3>
+            <div class="language-list">
+              <span>Chinese Mandarin</span>
+              <span>English</span>
+              <span>Malay</span>
             </div>
           </article>
         </div>
@@ -1554,42 +1871,50 @@
 
     <section class="section" id="resume">
       <div class="container">
-        <h2 class="section-title">Resume & Documents</h2>
-        <div class="document-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Documents</div>
+            <h2 class="section-title">PDF documents and certificates.</h2>
+          </div>
+          <p class="section-copy">
+            This is the only section with PDF preview. Use the search box to find and open supporting documents.
+          </p>
+        </div>
+
+        <div class="document-shell glass">
           <div class="document-grid">
             <aside class="document-sidebar">
               <input id="searchInput" class="search-box" type="text" placeholder="Search PDFs..." />
-              <div class="doc-list" id="docList">
-                <button class="doc-item active" data-title="Resume / CV" data-file="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" data-date="Latest CV">
-                  <strong>Resume / CV</strong>
-                  <span>Latest CV</span>
-                </button>
-                <button class="doc-item" data-title="Bachelor Degree Transcript" data-file="PDF/Transcript BSDA.pdf" data-date="Academic Record">
-                  <strong>Bachelor Degree Transcript</strong>
-                  <span>Academic Record</span>
-                </button>
-                <button class="doc-item" data-title="Foundation in Arts Result" data-file="PDF/RESULT FIA.pdf" data-date="Completed">
-                  <strong>Foundation in Arts Result</strong>
-                  <span>Completed</span>
-                </button>
-                <button class="doc-item" data-title="SPM Result" data-file="PDF/RESULT SPM.pdf" data-date="Completed">
-                  <strong>SPM Result</strong>
-                  <span>Completed</span>
-                </button>
+
+              <div class="doc-category-tabs" aria-label="Document categories">
+                <button class="doc-filter active" type="button" data-category="all">All</button>
+                <button class="doc-filter" type="button" data-category="resume">Resume</button>
+                <button class="doc-filter" type="button" data-category="result">Result</button>
+                <button class="doc-filter" type="button" data-category="certificate">Certificate</button>
+                <button class="doc-filter" type="button" data-category="scholarship">Scholarship</button>
+              </div>
+
+              <div class="doc-list">
+                <button class="doc-item active" data-category="resume" data-title="Resume / CV" data-file="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" data-date="Latest CV"><strong>Resume / CV</strong><span>Latest CV</span></button>
+                <button class="doc-item" data-category="result" data-title="Bachelor Degree Transcript" data-file="PDF/Transcript BSDA.pdf" data-date="Academic Record"><strong>Bachelor Degree Transcript</strong><span>Academic Record</span></button>
+                <button class="doc-item" data-category="result" data-title="Foundation in Arts Result" data-file="PDF/RESULT FIA.pdf" data-date="Completed"><strong>Foundation in Arts Result</strong><span>Completed</span></button>
+                <button class="doc-item" data-category="result" data-title="SPM Result" data-file="PDF/RESULT SPM.pdf" data-date="Completed"><strong>SPM Result</strong><span>Completed</span></button>
+                <button class="doc-item" data-category="certificate" data-title="Dean List Award — April 2025" data-file="PDF/Dean List Award April 2025.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2025</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="certificate" data-title="Dean List Award — September 2024" data-file="PDF/Dean List Award September 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — September 2024</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="certificate" data-title="Dean List Award — April 2024" data-file="PDF/Dean List Award April 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2024</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="ACE Scholarship — Year 1" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf" data-date="Scholarship"><strong>ACE Scholarship — Year 1</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="ACE Scholarship — Year 2" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 2.pdf" data-date="Scholarship"><strong>ACE Scholarship — Year 2</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="ACE Scholarship — Year 3" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 3.pdf" data-date="Scholarship"><strong>ACE Scholarship — Year 3</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf" data-date="Entrance Scholarship"><strong>Jeffrey Cheah Entrance Scholarship</strong><span>Entrance Scholarship</span></button>
               </div>
             </aside>
 
             <div class="document-viewer">
               <div class="doc-top">
-                <div>
-                  <div class="doc-title" id="previewTitle">Resume / CV</div>
-                  <div class="doc-subtitle" id="previewDate">Latest CV</div>
-                </div>
-                <span class="btn-wrap"><a class="btn btn-secondary" id="openDocBtn" href="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank" rel="noreferrer">Open</a></span>
+                <div><div class="doc-title" id="previewTitle">Resume / CV</div><div class="doc-subtitle" id="previewDate">Latest CV</div></div>
+                <a class="btn btn-secondary" id="openDocBtn" href="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank">Open PDF</a>
               </div>
-              <div class="viewer-box">
-                <iframe id="pdfViewer" src="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf"></iframe>
-              </div>
+              <div class="viewer-box"><iframe id="pdfViewer" src="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" title="Resume and document PDF preview"></iframe></div>
             </div>
           </div>
         </div>
@@ -1598,31 +1923,26 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="grid-2">
-          <article class="panel">
-            <div class="eyebrow">Let’s Connect</div>
-            <p class="body-copy">
-              This site is designed to present academic background, work experience,
-              selected projects, and supporting documents in a simple GitHub-hosted format.
-            </p>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Let’s connect.</h2>
+          </div>
+          <p class="section-copy">Replace the placeholder links below with your real email, LinkedIn and GitHub links before publishing.</p>
+        </div>
+
+        <div class="contact-layout">
+          <article class="contact-panel glass">
+            <h3>Portfolio Purpose</h3>
+            <p>This site presents academic background, achievements, projects, activities and supporting documents in a modern GitHub Pages format.</p>
           </article>
 
-          <article class="panel">
-            <div class="eyebrow">Links</div>
+          <article class="contact-panel glass">
+            <h3>Links</h3>
             <div class="contact-links">
-              <a class="contact-link" href="mailto:your-email@example.com">
-                <strong>Email</strong>
-                <span>your-email@example.com</span>
-              </a>
-              <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                <strong>LinkedIn</strong>
-                <span>Professional profile</span>
-              </a>
-              <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer">
-                <strong>GitHub</strong>
-                <span>Projects and code</span>
-              </a>
+              <a class="contact-link" href="mailto:your-email@example.com"><strong>Email</strong><span>your-email@example.com</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><strong>LinkedIn</strong><span>Professional profile</span></a>
+              <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer"><strong>GitHub</strong><span>Projects and code</span></a>
             </div>
           </article>
         </div>
@@ -1631,20 +1951,22 @@
   </main>
 
   <footer class="footer">
-    <div class="container">© 2026 Ooi Jin Yon. Single-page light portfolio for GitHub Pages.</div>
+    <div class="container">© 2026 Ooi Jin Yon. Data Analytics Portfolio for GitHub Pages.</div>
   </footer>
 
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const docItems = Array.from(document.querySelectorAll('.doc-item'));
-    const previewTitle = document.getElementById('previewTitle');
-    const previewDate = document.getElementById('previewDate');
-    const pdfViewer = document.getElementById('pdfViewer');
-    const openDocBtn = document.getElementById('openDocBtn');
+    const searchInput = document.getElementById("searchInput");
+    const docItems = Array.from(document.querySelectorAll(".doc-item"));
+    const docFilters = Array.from(document.querySelectorAll(".doc-filter"));
+    let activeCategory = "all";
+    const previewTitle = document.getElementById("previewTitle");
+    const previewDate = document.getElementById("previewDate");
+    const pdfViewer = document.getElementById("pdfViewer");
+    const openDocBtn = document.getElementById("openDocBtn");
 
     function setActiveDoc(item) {
-      docItems.forEach(btn => btn.classList.remove('active'));
-      item.classList.add('active');
+      docItems.forEach(btn => btn.classList.remove("active"));
+      item.classList.add("active");
       previewTitle.textContent = item.dataset.title;
       previewDate.textContent = item.dataset.date;
       pdfViewer.src = item.dataset.file;
@@ -1652,52 +1974,40 @@
     }
 
     docItems.forEach(item => {
-      item.addEventListener('click', () => setActiveDoc(item));
+      item.addEventListener("click", () => setActiveDoc(item));
     });
 
-    searchInput.addEventListener('input', (e) => {
-      const keyword = e.target.value.trim().toLowerCase();
+    function filterDocuments() {
+      const keyword = searchInput ? searchInput.value.trim().toLowerCase() : "";
+
       docItems.forEach(item => {
         const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(keyword) ? '' : 'none';
+        const category = item.dataset.category || "all";
+        const matchesCategory = activeCategory === "all" || category === activeCategory;
+        const matchesSearch = text.includes(keyword);
+        item.style.display = matchesCategory && matchesSearch ? "" : "none";
+      });
+    }
+
+    docFilters.forEach(filter => {
+      filter.addEventListener("click", () => {
+        docFilters.forEach(btn => btn.classList.remove("active"));
+        filter.classList.add("active");
+        activeCategory = filter.dataset.category;
+        filterDocuments();
       });
     });
 
-    function setupPdfGroup(groupName, frameId, titleId, countId, prevId, nextId) {
-      const items = Array.from(document.querySelectorAll(`[data-viewer="${groupName}"]`));
-      const frame = document.getElementById(frameId);
-      const title = document.getElementById(titleId);
-      const count = document.getElementById(countId);
-      const prev = prevId ? document.getElementById(prevId) : null;
-      const next = nextId ? document.getElementById(nextId) : null;
-      if (!items.length || !frame || !title) return;
-
-      let index = Math.max(0, items.findIndex(item => item.classList.contains('active')));
-      if (index === -1) index = 0;
-
-      function render(i) {
-        index = i;
-        items.forEach((item, idx) => item.classList.toggle('active', idx === index));
-        const active = items[index];
-        frame.src = active.dataset.file;
-        title.textContent = active.dataset.title;
-        if (count) count.textContent = `${index + 1} / ${items.length}`;
-      }
-
-      items.forEach((item, idx) => {
-        item.addEventListener('click', () => render(idx));
-      });
-
-      if (prev) prev.addEventListener('click', () => render((index - 1 + items.length) % items.length));
-      if (next) next.addEventListener('click', () => render((index + 1) % items.length));
-
-      render(index);
+    if (searchInput) {
+      searchInput.addEventListener("input", filterDocuments);
     }
 
-    setupPdfGroup('edu', 'eduReader', 'eduReaderTitle', 'eduCount', 'eduPrev', 'eduNext');
-    setupPdfGroup('award', 'awardReader', 'awardReaderTitle');
-    setupPdfGroup('award', 'awardReader2', 'awardReaderTitle2');
-    setupPdfGroup('entrance', 'entranceReader', 'entranceReaderTitle');
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        const toggle = document.getElementById("menuToggle");
+        if (toggle) toggle.checked = false;
+      });
+    });
   </script>
 </body>
 </html>
