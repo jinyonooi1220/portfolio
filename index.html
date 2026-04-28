@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Ooi Jin Yon portfolio website showcasing education, awards, extracurricular activities, projects, resume, and supporting PDF documents." />
 
-  <title>Ooi Jin Yon | Portfolio</title>
+  <title>Ooi Jin Yon | Data Analytics Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1776,14 +1776,14 @@
         </div>
 
         <div class="tab-row">
-          <span class="tab-chip">Sunway University Year 3</span>
-          <span class="tab-chip active">Sunway University Year 2</span>
-          <span class="tab-chip">Sunway University Year 1</span>
-          <span class="tab-chip">Other</span>
+          <button class="tab-chip" data-tab="year3">Sunway University Year 3</button>
+          <button class="tab-chip active" data-tab="year2">Sunway University Year 2</button>
+          <button class="tab-chip" data-tab="year1">Sunway University Year 1</button>
+          <button class="tab-chip" data-tab="other">Other</button>
         </div>
 
-        <div class="project-grid-modern">
-          <article class="project-card-modern glass">
+        <div class="project-grid-modern" id="projectGrid">
+          <article class="project-card-modern glass" data-tab="year2">
             <div class="project-topline">
               <span class="card-badge">Year 2 Semester 3</span>
               <span class="project-code">01</span>
@@ -1797,7 +1797,7 @@
             </div>
           </article>
 
-          <article class="project-card-modern glass">
+          <article class="project-card-modern glass" data-tab="year2">
             <div class="project-topline">
               <span class="card-badge">Year 2 Semester 3</span>
               <span class="project-code">02</span>
@@ -1811,7 +1811,7 @@
             </div>
           </article>
 
-          <article class="project-card-modern glass">
+          <article class="project-card-modern glass" data-tab="year2">
             <div class="project-topline">
               <span class="card-badge">Year 2 Semester 2</span>
               <span class="project-code">03</span>
@@ -2008,6 +2008,26 @@
         if (toggle) toggle.checked = false;
       });
     });
-  </script>
+  
+
+    // PROJECT TAB FILTER
+    const tabChips = Array.from(document.querySelectorAll(".tab-chip"));
+    const projectCards = Array.from(document.querySelectorAll(".project-card-modern"));
+
+    tabChips.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabChips.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const selected = tab.dataset.tab;
+
+        projectCards.forEach(card => {
+          const match = card.dataset.tab === selected;
+          card.style.display = match ? "" : "none";
+        });
+      });
+    });
+
+</script>
 </body>
 </html>
