@@ -3,24 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ooi Jin Yon portfolio website showcasing education, awards, extracurricular activities, projects, resume, and supporting PDF documents." />
 
   <title>Ooi Jin Yon | Portfolio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #f5f7fb;
-      --bg2: #eef3f9;
-      --card: rgba(255, 255, 255, 0.76);
-      --card2: rgba(255, 255, 255, 0.92);
-      --text: #172033;
-      --muted: #64748b;
-      --line: rgba(148, 163, 184, 0.28);
-      --accent: #647da8;
-      --accent2: #9b8cff;
-      --gold: #d6a83f;
-      --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-      --radius: 28px;
-      --max: 1180px;
+      --bg: #f8f9ff;
+      --bg-soft: #f1f5ff;
+      --surface: #ffffff;
+      --surface-soft: rgba(255, 255, 255, 0.84);
+      --surface-tint: #f7f9ff;
+      --text: #1f2440;
+      --muted: #667085;
+      --muted-2: #98a2b3;
+      --line: rgba(91, 112, 246, 0.12);
+      --line-strong: rgba(91, 112, 246, 0.22);
+      --primary: #5b70f6;
+      --primary-dark: #3843a8;
+      --primary-soft: rgba(91, 112, 246, 0.09);
+      --blue: #4f8df7;
+      --cyan: #35b8d0;
+      --violet: #8a7cf7;
+      --pink: #b98cff;
+      --amber: #d89a27;
+      --green: #10b981;
+      --gradient-main: linear-gradient(135deg, #5b70f6 0%, #6f8cff 48%, #35b8d0 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(91,112,246,0.12), rgba(111,140,255,0.10), rgba(53,184,208,0.08));
+      --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.92));
+      --shadow-lg: 0 24px 70px rgba(65, 83, 180, 0.11);
+      --shadow-md: 0 14px 38px rgba(65, 83, 180, 0.085);
+      --shadow-sm: 0 8px 20px rgba(65, 83, 180, 0.06);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1140px;
     }
 
     * {
@@ -29,145 +51,220 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       line-height: 1.6;
       background:
-        radial-gradient(circle at 10% 0%, rgba(124, 146, 184, 0.22), transparent 28%),
-        radial-gradient(circle at 90% 0%, rgba(155, 140, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, #fbfdff 0%, var(--bg2) 100%);
+        radial-gradient(circle at 8% -4%, rgba(91,112,246,0.16), transparent 34%),
+        radial-gradient(circle at 92% 0%, rgba(53,184,208,0.14), transparent 36%),
+        radial-gradient(circle at 50% 42%, rgba(138,124,247,0.07), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #fbfcff 42%, #f2f6ff 100%);
+      background-attachment: fixed;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(91,112,246,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(53,184,208,0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, black, transparent 76%);
+      z-index: -1;
     }
 
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto -12% -30% -12%;
+      height: 420px;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(91,112,246,0.10), transparent 62%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
     .container {
-      width: min(calc(100% - 32px), var(--max));
+      width: min(calc(100% - 48px), var(--max));
       margin: 0 auto;
     }
 
-    section {
-      padding: 82px 0;
-      scroll-margin-top: 120px;
+    .section {
+      padding: 72px 0;
+      scroll-margin-top: 96px;
     }
 
     .glass {
-      background: var(--card);
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      box-shadow: var(--shadow);
+      background: var(--gradient-card);
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-md);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-radius: var(--radius);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.74rem;
-      font-weight: 900;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 5px;
-      height: 18px;
-      border-radius: 99px;
-      background: linear-gradient(180deg, var(--accent), var(--accent2));
-    }
-
-    .section-title {
-      font-size: clamp(1.65rem, 3vw, 2.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin-bottom: 22px;
-    }
-
-    .mega-title {
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-      color: #bf6f40;
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
+      gap: 28px;
+      align-items: end;
       margin-bottom: 28px;
     }
 
-    .body-copy {
-      color: var(--muted);
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 9px;
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
+    .section-kicker::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--gradient-main);
+    }
+
+    .section-title,
+    .hero-title,
+    .mega-title {
+      font-family: "Noto Sans", system-ui, sans-serif;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+      font-weight: 900;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 2.8vw, 2.65rem);
+      max-width: 720px;
+    }
+
+    .section-copy {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* Navbar kept from current design */
     .topbar {
       position: sticky;
-      top: 14px;
-      z-index: 100;
-      padding: 14px 0;
+      top: 10px;
+      z-index: 999;
+      padding: 10px 0;
     }
 
     .nav {
-      width: min(calc(100% - 28px), 1080px);
+      width: min(calc(100% - 36px), 1040px);
       margin: 0 auto;
-      min-height: 70px;
-      padding: 12px;
+      min-height: 58px;
+      padding: 8px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.78);
-      box-shadow: var(--shadow);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
       backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
+      gap: 9px;
+      padding: 5px 10px 5px 5px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.72);
+      background: rgba(255, 255, 255, 0.74);
       border: 1px solid var(--line);
-      font-weight: 900;
-      letter-spacing: -0.03em;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       white-space: nowrap;
+      box-shadow: var(--shadow-sm);
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 32px;
+      height: 32px;
       display: grid;
       place-items: center;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #ffffff, #e7edf8);
-      color: var(--accent);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-      font-size: 0.82rem;
+      border-radius: 12px;
+      background: var(--gradient-main);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.20);
     }
 
-    .menu-toggle {
-      display: none;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
+
+    .nav-links a {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #58667a;
+      font-size: 0.72rem;
+      font-weight: 750;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      min-height: 32px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #635bff, #4f46e5);
+      color: white !important;
+      box-shadow: 0 8px 18px rgba(47, 75, 117, 0.18);
+    }
+
+    .menu-toggle { display: none; }
 
     .menu-btn {
       display: none;
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.78);
       place-items: center;
       cursor: pointer;
+      box-shadow: var(--shadow-sm);
     }
 
     .menu-btn span,
@@ -176,8 +273,8 @@
       display: block;
       width: 18px;
       height: 2px;
-      background: var(--text);
       border-radius: 99px;
+      background: var(--text);
       position: relative;
     }
 
@@ -188,684 +285,363 @@
       left: 0;
     }
 
-    .menu-btn span::before {
-      top: -6px;
-    }
-
-    .menu-btn span::after {
-      top: 6px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      color: #56667c;
-      font-size: 0.78rem;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      transform: translateY(-2px);
-      background: #ffffff;
-      color: var(--accent);
-      box-shadow: 0 12px 24px rgba(100, 125, 168, 0.16);
-    }
+    .menu-btn span::before { top: -6px; }
+    .menu-btn span::after { top: 6px; }
 
     .hero {
-      padding-top: 42px;
+      padding: 42px 0 64px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.16fr 0.84fr;
-      gap: 22px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 20px;
       align-items: stretch;
     }
 
-    .hero-main,
-    .hero-side-card,
-    .panel,
-    .info-card,
-    .viewer-panel,
-    .project-board,
-    .document-shell {
-      padding: 28px;
-    }
-
     .hero-main {
+      min-height: 430px;
+      padding: clamp(28px, 4vw, 46px);
+      border-radius: 34px;
       position: relative;
       overflow: hidden;
-      min-height: 420px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(246,247,255,0.90)),
+        radial-gradient(circle at top right, rgba(139,92,246,0.20), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(59,130,246,0.14), transparent 42%);
+      border: 1px solid rgba(255,255,255,0.94);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      right: 28px;
+      top: 28px;
+      width: 92px;
+      height: 92px;
+      border-radius: 28px;
+      background: var(--gradient-soft);
+      border: 1px solid rgba(99,91,255,0.12);
+      transform: rotate(10deg);
     }
 
     .hero-main::after {
       content: "";
       position: absolute;
-      right: -60px;
-      top: -60px;
-      width: 240px;
-      height: 240px;
+      right: -90px;
+      bottom: -90px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(100, 125, 168, 0.22), transparent 70%);
-      pointer-events: none;
+      background: radial-gradient(circle, rgba(99,91,255,0.18), transparent 68%);
+    }
+
+    .hero-label {
+      position: relative;
+      z-index: 1;
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(99,91,255,0.10);
+      border: 1px solid rgba(99,91,255,0.14);
+      color: var(--primary-dark);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero-label-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(5, 150, 105, 0.12);
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 6vw, 5.2rem);
-      line-height: 0.94;
-      letter-spacing: -0.08em;
-      max-width: 720px;
-      margin-bottom: 18px;
       position: relative;
       z-index: 1;
+      max-width: 720px;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      margin-bottom: 16px;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #536f9c, #9b8cff, #bf6f40);
+      background: var(--gradient-main);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .hero-text {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 1rem;
       position: relative;
       z-index: 1;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
     }
 
     .hero-actions {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
       position: relative;
       z-index: 1;
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .btn {
-      min-height: 46px;
-      padding: 0 18px;
+      min-height: 40px;
+      padding: 0 15px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 16px;
+      gap: 8px;
       border: 1px solid transparent;
-      font-weight: 900;
+      font-size: 0.86rem;
+      font-weight: 800;
       transition: 0.2s ease;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-primary {
       color: white;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 14px 28px rgba(100, 125, 168, 0.22);
+      background: var(--gradient-main);
+      box-shadow: 0 14px 28px rgba(99, 91, 255, 0.22);
     }
 
     .btn-secondary {
-      color: #536f9c;
-      background: rgba(255,255,255,0.8);
+      color: var(--primary-dark);
+      background: white;
       border-color: var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+      box-shadow: var(--shadow-md);
     }
 
     .hero-metrics {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
       position: relative;
       z-index: 1;
-    }
-
-    .metric,
-    .mini-row,
-    .split-item,
-    .contact-link,
-    .doc-item,
-    .chip,
-    .tab-chip {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
 
     .metric {
-      padding: 16px;
+      padding: 15px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(99,91,255,0.12);
+      box-shadow: 0 8px 22px rgba(99,91,255,0.07);
     }
 
     .metric strong {
       display: block;
-      letter-spacing: -0.03em;
-      margin-bottom: 2px;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 4px;
+      font-weight: 900;
     }
 
-    .metric span,
-    .mini-row span:last-child,
-    .split-item span,
-    .contact-link span,
-    .doc-item span {
+    .metric span {
       color: var(--muted);
-      font-size: 0.88rem;
+      font-size: 0.8rem;
+      font-weight: 600;
     }
 
     .hero-side {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
 
-    .mini-stack,
-    .split-list,
-    .contact-links,
-    .doc-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
+    .profile-card,
+    .highlight-card {
+      border-radius: 28px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.92);
+      box-shadow: var(--shadow-md);
     }
 
-    .mini-row,
-    .split-item,
-    .contact-link {
-      padding: 15px;
-      border-radius: 18px;
+    .profile-card {
+      padding: 24px;
+      min-height: 245px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      min-height: 30px;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: white;
-      border: 1px solid var(--line);
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 900;
-      white-space: nowrap;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,255,0.88)),
+        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 40%);
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+    .profile-card::before {
+      display: none;
     }
 
-    .showcase-grid,
-    .card-and-viewer {
-      display: grid;
-      grid-template-columns: 0.94fr 1.06fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .showcase-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .info-card {
-      cursor: pointer;
-      transition: 0.22s ease;
-      border-radius: var(--radius);
-    }
-
-    .info-card:hover,
-    .info-card.active {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.9);
-      border-color: rgba(100,125,168,0.34);
-    }
-
-    .card-badge {
-      display: inline-flex;
-      min-height: 28px;
-      align-items: center;
-      padding: 0 10px;
-      border-radius: 8px;
-      background: #ead774;
-      color: #293241;
-      font-size: 0.8rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    .card-split {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .card-thumb {
-      width: 110px;
-      height: 110px;
-      border-radius: 22px;
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
       display: grid;
       place-items: center;
-      background: linear-gradient(180deg, #ffffff, #e9eef7);
-      border: 1px solid var(--line);
-      color: var(--accent);
-      font-weight: 900;
-      font-size: 1.05rem;
-      box-shadow: 0 10px 22px rgba(15,23,42,0.06);
-    }
-
-    .info-card h3 {
-      font-size: 1.06rem;
-      line-height: 1.25;
-      letter-spacing: -0.035em;
-      margin-bottom: 5px;
-    }
-
-    .meta-line,
-    .card-description {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .card-description {
-      margin-top: 10px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .chip {
-      display: inline-flex;
-      min-height: 32px;
-      align-items: center;
-      padding: 0 12px;
-      border-radius: 999px;
-      color: #53667e;
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .viewer-panel {
-      border-radius: var(--radius);
-    }
-
-    .pdf-reader {
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.7);
-      box-shadow: var(--shadow);
-    }
-
-    .pdf-reader-toolbar {
-      height: 62px;
-      background: #3c3b3f;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 0 16px;
-    }
-
-    .pdf-reader-title {
-      font-size: 0.86rem;
-      font-weight: 800;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .pdf-reader-actions {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .pdf-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.75);
-    }
-
-    .pdf-frame-wrap {
-      padding: 10px;
-      background: #eef2f8;
-    }
-
-    .pdf-frame {
-      width: 100%;
-      height: 560px;
-      border: 0;
-      border-radius: 14px;
-      background: white;
-      display: block;
-    }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .activity-card ul {
-      margin: 12px 0 0 20px;
-      color: #334155;
-    }
-
-    .tab-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .tab-chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border-radius: 999px;
-      font-weight: 900;
-      color: #475569;
-    }
-
-    .tab-chip.active {
-      background: #ead774;
-      color: #293241;
-      border-color: rgba(193,154,39,0.62);
-    }
-
-    .project-board {
-      border-radius: var(--radius);
-      border: 1px solid rgba(193,154,39,0.6);
-    }
-
-    .project-card-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .project-pdf {
-      min-height: 520px;
-      padding: 10px;
-      border-radius: 22px;
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .project-doc {
-      min-height: 500px;
-      padding: 28px;
-      border-radius: 16px;
-      background: white;
-      box-shadow: inset 0 0 0 1px rgba(148,163,184,0.16);
-    }
-
-    .project-doc-title {
-      font-size: clamp(1.6rem, 3vw, 2.35rem);
-      line-height: 1.05;
-      letter-spacing: -0.06em;
-      margin-bottom: 20px;
-      font-weight: 900;
-    }
-
-    .line-stack {
-      display: grid;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .line-stack span {
-      display: block;
-      height: 11px;
-      border-radius: 999px;
-      background: rgba(100,116,139,0.18);
-    }
-
-    .line-stack span:nth-child(2n) {
-      width: 86%;
-    }
-
-    .line-stack span:nth-child(3n) {
-      width: 70%;
-    }
-
-    .document-shell {
-      border-radius: var(--radius);
-    }
-
-    .document-grid {
-      display: grid;
-      grid-template-columns: 310px 1fr;
-      gap: 16px;
-      min-height: 620px;
-    }
-
-    .document-sidebar,
-    .document-viewer {
-      padding: 16px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid var(--line);
-    }
-
-    .search-box {
-      width: 100%;
-      height: 46px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.92);
-      padding: 0 14px;
-      font: inherit;
-      outline: none;
-      margin-bottom: 12px;
-    }
-
-    .doc-item {
-      width: 100%;
-      text-align: left;
-      border-radius: 16px;
-      padding: 14px;
-      color: var(--text);
-      cursor: pointer;
-      transition: 0.18s ease;
-      display: grid;
-      gap: 4px;
-      font: inherit;
-    }
-
-    .doc-item:hover,
-    .doc-item.active {
-      background: white;
-      border-color: rgba(100,125,168,0.36);
-      box-shadow: 0 14px 26px rgba(15,23,42,0.07);
-    }
-
-    .doc-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      flex-wrap: wrap;
       margin-bottom: 14px;
-    }
-
-    .doc-title {
+      background: var(--gradient-main);
+      color: white;
+      font-size: 1.35rem;
       font-weight: 900;
-      letter-spacing: -0.02em;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.20);
     }
 
-    .doc-subtitle {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .viewer-box {
-      height: 530px;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: #edf3fb;
-    }
-
-    .viewer-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      background: white;
-    }
-
-    .label {
-      margin-top: 16px;
+    .profile-card h2 {
+      font-size: 1.38rem;
+      line-height: 1.1;
       margin-bottom: 8px;
-      font-weight: 900;
+      letter-spacing: -0.035em;
     }
 
-    .contact-link {
-      border-radius: 18px;
-      transition: 0.2s ease;
-    }
-
-    .contact-link:hover {
-      transform: translateX(4px);
-      background: white;
-    }
-
-    .footer {
-      padding: 24px 0 48px;
-      text-align: center;
+    .profile-card p,
+    .panel p,
+    .project-paper p {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.91rem;
     }
 
-    @media (max-width: 1040px) {
+
+    .linkedin-embed-card {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.82), rgba(247,248,255,0.76)),
+        radial-gradient(circle at top right, rgba(10,102,194,0.12), transparent 44%);
+      border: 1px solid rgba(10,102,194,0.14);
+      box-shadow: 0 14px 32px rgba(10,102,194,0.08);
+      overflow: hidden;
+    }
+
+    .linkedin-embed-card .badge-base {
+      width: 100%;
+    }
+
+    .linkedin-embed-card iframe {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    .linkedin-embed-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
       .hero-grid,
       .grid-2,
       .card-and-viewer,
       .showcase-grid,
       .activity-grid,
+      .about-layout,
+      .award-grid,
+      .project-grid-modern,
+      .skills-layout,
+      .contact-layout,
       .document-grid {
         grid-template-columns: 1fr;
       }
 
-      .pdf-frame {
-        height: 520px;
-      }
+      .viewer-panel { position: static; }
+      .hero-main { min-height: auto; }
+      .timeline-card { grid-template-columns: 1fr; }
+      .award-card,
+      .project-card-modern,
+      .about-feature { min-height: auto; }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       .topbar {
         top: 0;
-        padding: 10px 0;
+        padding: 8px 0;
       }
 
-      .nav {
-        border-radius: 26px;
-        align-items: center;
-      }
+      .nav { border-radius: 22px; }
 
       .menu-btn {
         display: grid;
+        width: 38px;
+        height: 38px;
       }
 
       .nav-links {
         position: absolute;
-        top: 82px;
+        top: 68px;
         left: 14px;
         right: 14px;
         display: none;
-        padding: 12px;
-        border-radius: 24px;
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 10px;
+        border-radius: 20px;
         background: rgba(255,255,255,0.94);
         border: 1px solid var(--line);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(18px);
       }
 
-      .menu-toggle:checked ~ .nav-links {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
+      .menu-toggle:checked ~ .nav-links { display: grid; }
 
       .nav-links a {
-        width: 100%;
         justify-content: flex-start;
-        min-height: 44px;
+        min-height: 40px;
+        background: rgba(255,255,255,0.6);
       }
 
-      section {
-        padding: 62px 0;
-      }
-
-      .hero {
-        padding-top: 24px;
-      }
+      .section { padding: 56px 0; }
+      .hero { padding: 24px 0 56px; }
 
       .hero-main,
-      .hero-side-card,
+      .profile-card,
+      .highlight-card,
       .panel,
       .info-card,
       .viewer-panel,
       .project-board,
       .document-shell {
-        padding: 18px;
-        border-radius: 24px;
+        border-radius: 20px;
+        padding: 16px;
       }
 
-      .hero-title {
-        font-size: 2.7rem;
-      }
+      .hero-title { font-size: clamp(2.25rem, 10vw, 3.6rem); }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
 
-      .hero-metrics {
+      .section-head {
         grid-template-columns: 1fr;
+        align-items: flex-start;
       }
 
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .card-split {
-        grid-template-columns: 1fr;
-      }
+      .card-split { grid-template-columns: 1fr; }
 
       .card-thumb {
         width: 100%;
-        height: 90px;
+        height: 70px;
       }
 
       .mini-row,
@@ -875,18 +651,30 @@
         flex-direction: column;
       }
 
-      .pdf-frame {
-        height: 430px;
+      .pdf-frame,
+      .viewer-box { height: 380px; }
+      .project-paper { min-height: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+
+      .nav {
+        width: calc(100% - 24px);
+        padding: 10px;
       }
 
-      .viewer-box {
-        height: 430px;
+      .brand span:last-child {
+        max-width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
-      .project-pdf,
-      .project-doc {
-        min-height: 360px;
-      }
+      .hero-label { font-size: 0.66rem; }
+
+      .pdf-frame,
+      .viewer-box { height: 360px; }
     }
   </style>
 </head>
@@ -894,24 +682,24 @@
 <body>
   <header class="topbar">
     <div class="nav">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" aria-label="Go to home section">
         <span class="brand-mark">JY</span>
         <span>Ooi Jin Yon</span>
       </a>
 
-      <input type="checkbox" id="menuToggle" class="menu-toggle">
-      <label for="menuToggle" class="menu-btn">
+      <input type="checkbox" id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" />
+      <label for="menuToggle" class="menu-btn" aria-label="Open navigation menu">
         <span></span>
       </label>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="#education">Education</a>
-        <a href="#awards">Honour & Award</a>
-        <a href="#extracurricular">Extracurricular</a>
-        <a href="#projects">Assignment & Project</a>
-        <a href="#resume">Documents</a>
-        <a href="#contact">Contact</a>
+        <a href="#awards">Awards</a>
+        <a href="#extracurricular">Activities</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume" class="nav-cta">Documents</a>
       </nav>
     </div>
   </header>
@@ -920,71 +708,172 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <article class="hero-main glass">
-          <div class="eyebrow">Personal Portfolio</div>
+          <div class="hero-label">
+            <span class="hero-label-dot"></span>
+            Data Analytics Portfolio
+          </div>
 
           <h1 class="hero-title">
-            Jin Yon builds <span>practical data-driven work.</span>
+            Ooi Jin Yon <span>Portfolio Website</span>
           </h1>
 
           <p class="hero-text">
-            A final-year student in Information Systems (Hons) majoring in Data Analytics,
-            with experience across analytics, reporting, research, and digital solution design.
+            I am Ooi Jin Yon, a final-year Bachelor of Information Systems (Hons) student majoring in Data Analytics at Sunway University. This portfolio highlights my education, achievements, activities, projects, skills and supporting documents.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#resume">Open Documents</a>
-            <a class="btn btn-secondary" href="#projects">See Projects</a>
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#resume">Open Documents</a>
           </div>
 
-          <div class="hero-metrics">
+          <div class="hero-metrics" aria-label="Portfolio highlights">
             <div class="metric">
               <strong>Sunway University</strong>
-              <span>Data Analytics pathway</span>
+              <span>Information Systems, Data Analytics</span>
             </div>
             <div class="metric">
-              <strong>CGPA 3.66</strong>
-              <span>Bachelor degree</span>
+              <strong>Current CGPA 3.66</strong>
+              <span>Bachelor Degree</span>
             </div>
             <div class="metric">
-              <strong>2026</strong>
-              <span>Final-year portfolio</span>
+              <strong>Aug 2026</strong>
+              <span>Expected graduation</span>
             </div>
           </div>
         </article>
 
-        <div class="hero-side">
-          <article class="hero-side-card glass">
-            <div class="eyebrow">Profile Snapshot</div>
+        <aside class="hero-side">
+          <article class="profile-card glass">
+            <div class="avatar">JY</div>
             <h2>Ooi Jin Yon</h2>
-            <p class="body-copy">
-              Final-year student focused on turning data and operational needs into clear,
-              useful systems, dashboards, and research outputs.
+            <p>
+              Data analytics student focused on reporting, research, business process improvement and practical digital solutions.
             </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
+            <div class="linkedin-embed-card">
+              <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+              <div
+                class="badge-base LI-profile-badge"
+                data-locale="en_US"
+                data-size="medium"
+                data-theme="light"
+                data-type="VERTICAL"
+                data-vanity="jin-yon-ooi-b42852261"
+                data-version="v1">
+                <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/jin-yon-ooi-b42852261/">Ooi Jin Yon</a>
+              </div>
+              <p class="linkedin-embed-note">LinkedIn badge may only appear after publishing online.</p>
             </div>
           </article>
 
-          <article class="hero-side-card glass">
-            <div class="eyebrow">Highlights</div>
-
+          <article class="highlight-card glass">
+            <div class="section-kicker">Current Highlights</div>
             <div class="mini-stack">
               <div class="mini-row">
                 <strong>Current role</strong>
                 <span class="badge">Development Plan Intern</span>
               </div>
-
               <div class="mini-row">
                 <strong>Internship period</strong>
                 <span class="badge">Jan – Apr 2026</span>
               </div>
-
               <div class="mini-row">
-                <strong>Expected graduation</strong>
-                <span class="badge">Aug 2026</span>
+                <strong>Academic focus</strong>
+                <span class="badge">Data Analytics</span>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">Short description about me</h2>
+          </div>
+          <p class="section-copy">
+            -
+        </div>
+
+        <div class="about-layout">
+          <article class="about-feature glass">
+            <span class="feature-number">01</span>
+            <h3>Academic Foundation</h3>
+            <p>
+              My studies in Information Systems and Data Analytics strengthen my understanding of databases, analytics, statistics, visualisation and digital solution design.
+            </p>
+          </article>
+
+          <article class="about-feature glass">
+            <span class="feature-number">02</span>
+            <h3>Work Experience</h3>
+            <p>
+              As a Development Plan Intern in Sunway College (KL) Sdn Bhd, I support research, data analysis, application design and more.
+            </p>
+          </article>
+
+          <article class="about-feature glass">
+            <span class="feature-number">03</span>
+            <h3>Portfolio Direction</h3>
+            <p>
+              This website presents my academic growth, achievements, activities, coursework and selected documents in one page.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Education</div>
+            <h2 class="section-title">Academic pathway.</h2>
+          </div>
+          <p class="section-copy">
+
+          </p>
+        </div>
+
+        <div class="timeline-list">
+          <article class="timeline-card glass">
+            <div class="timeline-year">2023 — Present</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">Sunway University</div>
+              <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
+              <p>Focused on information systems, data analytics, databases, visualisation, research and digital solution design.</p>
+              <div class="chips">
+                <span class="chip">CGPA 3.66</span>
+                <span class="chip">Data Analytics</span>
+                <span class="chip">Current Study</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-card glass">
+            <div class="timeline-year">2022 — 2023</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">Sunway College</div>
+              <h3>Foundation in Arts (FIA)</h3>
+              <p>Completed pre-university studies with strong academic performance before entering degree studies.</p>
+              <div class="chips">
+                <span class="chip">CGPA 3.91</span>
+                <span class="chip">Pre-University</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-card glass">
+            <div class="timeline-year">2017 — 2022</div>
+            <div class="timeline-content">
+              <div class="card-badge blue">SMK Bukit Mertajam</div>
+              <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+              <p>Completed secondary education and achieved results that supported scholarship and further study opportunities.</p>
+              <div class="chips">
+                <span class="chip">7As</span>
+                <span class="chip">Secondary School</span>
               </div>
             </div>
           </article>
@@ -992,601 +881,305 @@
       </div>
     </section>
 
-    <section id="about">
+    <section class="section" id="awards">
       <div class="container">
-        <h2 class="section-title">About</h2>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Honour & Award</div>
+            <h2 class="section-title">Recognition and scholarships.</h2>
+          </div>
+          <p class="section-copy">
+            Awards are displayed as clean achievement cards. Certificates and supporting PDFs can be accessed in Documents.
+          </p>
+        </div>
 
-        <div class="grid-2">
-          <article class="panel glass">
-            <div class="eyebrow">Academic Background</div>
-            <p class="body-copy">
-              Jin Yon is pursuing a Bachelor of Information Systems (Hons) in Data Analytics at
-              Sunway University. His academic training combines statistics, database knowledge,
-              data mining, and analytical thinking.
-            </p>
+        <div class="award-grid">
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Academic Achievement</div>
+              <h3>Dean List Award</h3>
+              <p>Recognised for outstanding semester performance across multiple academic periods.</p>
+              <div class="chips">
+                <span class="chip">April 2025</span>
+                <span class="chip">September 2024</span>
+                <span class="chip">April 2024</span>
+              </div>
+            </div>
           </article>
 
-          <article class="panel glass">
-            <div class="eyebrow">Internship Experience</div>
-            <p class="body-copy">
-              He is currently attached to Sunway College (KL) Sdn Bhd as a Development Plan Intern,
-              supporting research, governance-related analysis, reporting tasks, and system improvement work.
-            </p>
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Scholarship</div>
+              <h3>Jeffrey Cheah ACE Scholarship Award</h3>
+              <p>Received scholarship support across degree study years based on academic performance and continuation requirements.</p>
+              <div class="chips">
+                <span class="chip">Year 1</span>
+                <span class="chip">Year 2</span>
+                <span class="chip">Year 3</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="award-card glass">
+            <div>
+              <div class="card-badge">Entrance Scholarship</div>
+              <h3>Jeffrey Cheah Entrance Scholarship Award</h3>
+              <p>Received tuition fee deduction after achieving strong SPM results before starting Foundation in Arts.</p>
+              <div class="chips">
+                <span class="chip">RM6,000 Deduction</span>
+                <span class="chip">SPM 7As</span>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="education">
+    <section class="section" id="extracurricular">
       <div class="container">
-        <h2 class="section-title">Education</h2>
-
-        <div class="card-and-viewer">
-          <div class="showcase-list">
-            <article class="info-card glass active" data-viewer="edu" data-title="Bachelor of Information Systems (Honours) (Data Analytics)" data-file="PDF/Transcript BSDA.pdf">
-              <div class="card-badge">Sunway University</div>
-
-              <div class="card-split">
-                <div class="card-thumb">SU</div>
-                <div>
-                  <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
-                  <p class="meta-line">Sep 2023 - Present</p>
-
-                  <div class="chips">
-                    <span class="chip">CGPA 3.66</span>
-                    <span class="chip">Current Study</span>
-                  </div>
-
-                  <p class="card-description">
-                    Focused on data analytics, information systems, and applied coursework involving analysis,
-                    databases, visualisation, and digital solution design.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card glass" data-viewer="edu" data-title="Foundation in Arts (FIA)" data-file="PDF/RESULT FIA.pdf">
-              <div class="card-badge">Sunway College</div>
-
-              <div class="card-split">
-                <div class="card-thumb">FIA</div>
-                <div>
-                  <h3>Foundation in Arts (FIA)</h3>
-                  <p class="meta-line">July 2022 - July 2023</p>
-
-                  <div class="chips">
-                    <span class="chip">CGPA 3.91</span>
-                    <span class="chip">Pre-University</span>
-                  </div>
-
-                  <p class="card-description">
-                    Built the academic foundation before degree studies and maintained excellent performance.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card glass" data-viewer="edu" data-title="Sijil Pelajaran Malaysia (SPM)" data-file="PDF/RESULT SPM.pdf">
-              <div class="card-badge">SMK Bukit Mertajam</div>
-
-              <div class="card-split">
-                <div class="card-thumb">SPM</div>
-                <div>
-                  <h3>Sijil Pelajaran Malaysia (SPM)</h3>
-                  <p class="meta-line">Jan 2017 - Mac 2022</p>
-
-                  <div class="chips">
-                    <span class="chip">7As</span>
-                    <span class="chip">Secondary School</span>
-                  </div>
-
-                  <p class="card-description">
-                    Completed secondary education with strong results that supported scholarship and further study.
-                  </p>
-                </div>
-              </div>
-            </article>
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Activities</div>
+            <h2 class="section-title">Learning beyond coursework.</h2>
           </div>
+          <p class="section-copy">
+            Activities that reflect collaboration, communication, technical learning and applied problem-solving.
+          </p>
+        </div>
 
-          <div class="viewer-panel glass">
-            <div class="pdf-reader">
-              <div class="pdf-reader-toolbar">
-                <div class="pdf-reader-title" id="eduReaderTitle">
-                  Bachelor of Information Systems (Honours) (Data Analytics)
-                </div>
+        <div class="activity-grid">
+          <article class="activity-card glass">
+            <div class="card-badge blue">Sunway University</div>
+            <h3>BIS2102 Project Pitching Competition</h3>
+            <p class="meta-line">August 2025</p>
+            <p>Collaborated in a team to enhance an existing application and present an AI-powered travel assistant prototype.</p>
+          </article>
 
-                <div class="pdf-reader-actions">
-                  <span class="pdf-dot"></span>
-                  <span class="pdf-dot"></span>
-                  <span class="pdf-dot"></span>
-                </div>
+          <article class="activity-card glass">
+            <div class="card-badge blue">Sunway University</div>
+            <h3>Paradox of Theron</h3>
+            <p class="meta-line">February 2025</p>
+            <p>Emerged as the top team while improving teamwork, discussion and strategy planning experience.</p>
+          </article>
+
+          <article class="activity-card glass">
+            <div class="card-badge blue">Cisco Networking Academy</div>
+            <h3>CCNA: Introduction to Networks</h3>
+            <p class="meta-line">December 2023</p>
+            <p>Completed the course credential and practised configuring a small computer network.</p>
+          </article>
+
+          <article class="activity-card glass">
+            <div class="card-badge blue">ACCA & Multimedia University</div>
+            <h3>ACCA-MMU Inter-School Accounting Quiz</h3>
+            <p class="meta-line">August 2021</p>
+            <p>Participated in the quiz challenge with classmates and teacher.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Assignments</div>
+            <h2 class="section-title">Selected projects and coursework.</h2>
+          </div>
+          <p class="section-copy">
+            Project cards focus on skills, context and outcomes. Detailed project PDFs should be placed in the Documents section only.
+          </p>
+        </div>
+
+        <div class="tab-row">
+          <button class="tab-chip" data-tab="year3">Sunway University Year 3</button>
+          <button class="tab-chip active" data-tab="year2">Sunway University Year 2</button>
+          <button class="tab-chip" data-tab="year1">Sunway University Year 1</button>
+          <button class="tab-chip" data-tab="other">Other</button>
+        </div>
+
+        <div class="project-grid-modern" id="projectGrid">
+          <article class="project-card-modern glass" data-tab="year2">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 3</span>
+              <span class="project-code">01</span>
+            </div>
+            <h3>Information Systems Analysis & Design</h3>
+            <p>Designed and documented system improvements with user requirements, workflow thinking and interface prototyping.</p>
+            <div class="chips">
+              <span class="chip">Figma</span>
+              <span class="chip">System Design</span>
+              <span class="chip">Prototype</span>
+            </div>
+          </article>
+
+          <article class="project-card-modern glass" data-tab="year2">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 3</span>
+              <span class="project-code">02</span>
+            </div>
+            <h3>IS Management and Strategy</h3>
+            <p>Analysed business and information system strategy through structured group work, reporting and presentation.</p>
+            <div class="chips">
+              <span class="chip">Strategy</span>
+              <span class="chip">Analysis</span>
+              <span class="chip">Report</span>
+            </div>
+          </article>
+
+          <article class="project-card-modern glass" data-tab="year2">
+            <div class="project-topline">
+              <span class="card-badge">Year 2 Semester 2</span>
+              <span class="project-code">03</span>
+            </div>
+            <h3>Enterprise Architecture</h3>
+            <p>Explored enterprise-level architecture concepts and applied structured thinking to organisational technology design.</p>
+            <div class="chips">
+              <span class="chip">Architecture</span>
+              <span class="chip">CSVLOD</span>
+              <span class="chip">Group Work</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Skills</div>
+            <h2 class="section-title">Tools, languages and strengths.</h2>
+          </div>
+          <p class="section-copy">
+            A practical skill set for analytics, reporting, design, documentation and teamwork.
+          </p>
+        </div>
+
+        <div class="skills-layout">
+          <article class="skills-card glass">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-cloud">
+              <span>Power BI</span><span>Tableau</span><span>Python</span><span>Oracle SQL</span><span>Excel</span><span>SAS Enterprise Miner</span><span>SAS Enterprise Guide</span><span>Power Apps</span><span>Power Automate</span><span>Figma</span><span>Canva</span>
+            </div>
+          </article>
+
+          <article class="skills-card glass">
+            <h3>Core Strengths</h3>
+            <div class="strength-list">
+              <div><strong>Problem Solving</strong><span>Breaking down problems into clear, workable steps.</span></div>
+              <div><strong>Team Collaboration</strong><span>Working with others to organise ideas and deliver outputs.</span></div>
+              <div><strong>Time Management</strong><span>Managing tasks, deadlines and project priorities.</span></div>
+            </div>
+          </article>
+
+          <article class="skills-card glass">
+            <h3>Languages</h3>
+            <div class="language-list">
+              <span>Chinese Mandarin</span>
+              <span>English</span>
+              <span>Malay</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Documents</div>
+            <h2 class="section-title">PDF documents and certificates.</h2>
+          </div>
+          <p class="section-copy">
+            This is the only section with PDF preview. Use the search box to find and open supporting documents.
+          </p>
+        </div>
+
+        <div class="document-shell glass">
+          <div class="document-grid">
+            <aside class="document-sidebar">
+              <input id="searchInput" class="search-box" type="text" placeholder="Search PDFs..." />
+
+              <div class="doc-category-tabs" aria-label="Document categories">
+                <button class="doc-filter active" type="button" data-category="all">All</button>
+                <button class="doc-filter" type="button" data-category="resume">Resume</button>
+                <button class="doc-filter" type="button" data-category="result">Result</button>
+                <button class="doc-filter" type="button" data-category="certificate">Certificate</button>
+                <button class="doc-filter" type="button" data-category="honour">Honour and Award</button>
+                <button class="doc-filter" type="button" data-category="scholarship">Scholarship</button>
               </div>
 
-              <div class="pdf-frame-wrap">
-                <iframe class="pdf-frame" id="eduReader" src="PDF/Transcript BSDA.pdf"></iframe>
+              <div class="doc-list">
+                <button class="doc-item active" data-category="resume" data-title="Resume / CV" data-file="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" data-date="Latest CV"><strong>Resume / CV</strong><span>Latest CV</span></button>
+                <button class="doc-item" data-category="result" data-title="Bachelor Degree Transcript" data-file="PDF/Transcript BSDA.pdf" data-date="Academic Record"><strong>Bachelor Degree Transcript</strong><span>Academic Record</span></button>
+                <button class="doc-item" data-category="result" data-title="Foundation in Arts Result" data-file="PDF/RESULT FIA.pdf" data-date="Completed"><strong>Foundation in Arts Result</strong><span>Completed</span></button>
+                <button class="doc-item" data-category="result" data-title="SPM Result" data-file="PDF/RESULT SPM.pdf" data-date="Completed"><strong>SPM Result</strong><span>Completed</span></button>
+                <button class="doc-item" data-category="honour" data-title="Dean List Award — September 2025" data-file="PDF/Dean List September 2025.pdf" data-date="Award Certificate"><strong>Dean List Award — September 2025</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="honour" data-title="Dean List Award — April 2025" data-file="PDF/Dean List April 2025.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2025</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="honour" data-title="Dean List Award — September 2024" data-file="PDF/Dean List September 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — September 2024</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="honour" data-title="Dean List Award — April 2024" data-file="PDF/Dean List April 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2024</strong><span>Award Certificate</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 1)" data-file="PDF/Scholarship Year 1.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 1)</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 2)" data-file="PDF/Scholarship Year 2.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 2)</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 3)" data-file="PDF/Scholarship Year 3.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 3)</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah Entrance Scholarship" data-file="PDF/Scholarship FIA.pdf" data-date="Entrance Scholarship"><strong>Jeffrey Cheah Entrance Scholarship</strong><span>Scholarship</span></button>
+                <button class="doc-item" data-category="certificate" data-title="ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021" data-file="PDF/ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021.pdf" data-date="14 Aug 2021"><strong>ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021</strong><span>Certificate</span></button>
+                <button class="doc-item" data-category="certificate" data-title="Accounting Professional Avenue 2021 (2)" data-file="PDF/Accounting Professional Avenue 2021 2.pdf" data-date="24 Apr 2021"><strong>Accounting Professional Avenue 2021 2</strong><span>Certificate</span></button>
+
               </div>
+            </aside>
+
+            <div class="document-viewer">
+              <div class="doc-top">
+                <div><div class="doc-title" id="previewTitle">Resume / CV</div><div class="doc-subtitle" id="previewDate">Latest CV</div></div>
+                <a class="btn btn-secondary" id="openDocBtn" href="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank">Open PDF</a>
+              </div>
+              <div class="viewer-box"><iframe id="pdfViewer" src="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" title="Resume and document PDF preview"></iframe></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2 class="section-title">Let’s connect.</h2>
+          </div>
+          <p class="section-copy">Replace the placeholder links below with your real email, LinkedIn and GitHub links before publishing.</p>
+        </div>
+
+        <div class="contact-layout">
+          <article class="contact-panel glass">
+            <h3>Portfolio Purpose</h3>
+            <p>This site presents academic background, achievements, projects, activities and supporting documents in a modern GitHub Pages format.</p>
+          </article>
+
+          <article class="contact-panel glass">
+            <h3>Links</h3>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:your-email@example.com"><strong>Email</strong><span>your-email@example.com</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><strong>LinkedIn</strong><span>Professional profile</span></a>
+              <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer"><strong>GitHub</strong><span>Projects and code</span></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <section id="awards">
-    <div class="container">
-      <h2 class="mega-title">Honour & Award</h2>
-
-      <h3 class="section-title">Dean List Award</h3>
-
-      <div class="card-and-viewer">
-        <div class="showcase-list">
-          <article class="info-card glass active" data-viewer="dean" data-title="Dean List Award — April 2025" data-file="PDF/Dean List Award April 2025.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">DLA</div>
-              <div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">April 2025</p>
-                <p class="card-description">
-                  Recognised for outstanding academic performance in the semester.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card glass" data-viewer="dean" data-title="Dean List Award — September 2024" data-file="PDF/Dean List Award September 2024.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">DLA</div>
-              <div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">September 2024</p>
-                <p class="card-description">
-                  Awarded based on strong semester results and consistent academic excellence.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card glass" data-viewer="dean" data-title="Dean List Award — April 2024" data-file="PDF/Dean List Award April 2024.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">DLA</div>
-              <div>
-                <h3>Dean List Award</h3>
-                <p class="meta-line">April 2024</p>
-                <p class="card-description">
-                  One of the early academic recognitions received during degree studies.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="viewer-panel glass">
-          <div class="pdf-reader">
-            <div class="pdf-reader-toolbar">
-              <div class="pdf-reader-title" id="deanReaderTitle">Dean List Award — April 2025</div>
-
-              <div class="pdf-reader-actions">
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-              </div>
-            </div>
-
-            <div class="pdf-frame-wrap">
-              <iframe class="pdf-frame" id="deanReader" src="PDF/Dean List Award April 2025.pdf"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br><br>
-
-      <h3 class="section-title">Jeffrey Cheah ACE Scholarship Award</h3>
-
-      <div class="card-and-viewer">
-        <div class="showcase-list">
-          <article class="info-card glass active" data-viewer="ace" data-title="ACE Scholarship — Year 1" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">ACE</div>
-              <div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 1</h3>
-                <p class="meta-line">Based on Foundation in Arts performance</p>
-                <p class="card-description">
-                  Awarded after achieving CGPA 3.9 or above during Foundation in Arts.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card glass" data-viewer="ace" data-title="ACE Scholarship — Year 2" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 2.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">ACE</div>
-              <div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 2</h3>
-                <p class="meta-line">Maintained required CGPA during Year 1</p>
-                <p class="card-description">
-                  Continued scholarship support by maintaining CGPA 3.65 or above.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card glass" data-viewer="ace" data-title="ACE Scholarship — Year 3" data-file="PDF/Jeffrey Cheah ACE Scholarship Year 3.pdf">
-            <div class="card-badge">Sunway University</div>
-
-            <div class="card-split">
-              <div class="card-thumb">ACE</div>
-              <div>
-                <h3>RM13,000 Tuition Fee Deduction for Year 3</h3>
-                <p class="meta-line">Scholarship continuation</p>
-                <p class="card-description">
-                  Extended scholarship support into Year 3 as part of ongoing academic achievement.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="viewer-panel glass">
-          <div class="pdf-reader">
-            <div class="pdf-reader-toolbar">
-              <div class="pdf-reader-title" id="aceReaderTitle">ACE Scholarship — Year 1</div>
-
-              <div class="pdf-reader-actions">
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-              </div>
-            </div>
-
-            <div class="pdf-frame-wrap">
-              <iframe class="pdf-frame" id="aceReader" src="PDF/Jeffrey Cheah ACE Scholarship Year 1.pdf"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br><br>
-
-      <h3 class="section-title">Jeffrey Cheah Entrance Scholarship Award</h3>
-
-      <div class="card-and-viewer">
-        <div class="showcase-list">
-          <article class="info-card glass active" data-viewer="entrance" data-title="Jeffrey Cheah Entrance Scholarship Award" data-file="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf">
-            <div class="card-badge">Sunway College</div>
-
-            <div class="card-split">
-              <div class="card-thumb">JCE</div>
-              <div>
-                <h3>RM6,000 Tuition Fee Deduction</h3>
-                <p class="meta-line">Obtained 7As during SPM</p>
-                <p class="card-description">
-                  Entrance scholarship awarded based on secondary school results before starting Foundation in Arts.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="viewer-panel glass">
-          <div class="pdf-reader">
-            <div class="pdf-reader-toolbar">
-              <div class="pdf-reader-title" id="entranceReaderTitle">
-                Jeffrey Cheah Entrance Scholarship Award
-              </div>
-
-              <div class="pdf-reader-actions">
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-                <span class="pdf-dot"></span>
-              </div>
-            </div>
-
-            <div class="pdf-frame-wrap">
-              <iframe class="pdf-frame" id="entranceReader" src="PDF/Jeffrey Cheah Entrance Scholarship Award.pdf"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="extracurricular">
-    <div class="container">
-      <h2 class="mega-title">Extracurricular Activities</h2>
-
-      <div class="activity-grid">
-        <article class="info-card glass activity-card">
-          <div class="card-badge">Sunway University</div>
-          <h3>BIS2102 Project Pitching Competition</h3>
-          <p class="meta-line">August 2025</p>
-          <ul>
-            <li>Contributed to enhance an existing application.</li>
-            <li>Collaborated in a team to design and present an AI-powered travel assistant prototype.</li>
-          </ul>
-        </article>
-
-        <article class="info-card glass activity-card">
-          <div class="card-badge">Sunway University</div>
-          <h3>Paradox of Theron</h3>
-          <p class="meta-line">February 2025</p>
-          <ul>
-            <li>Emerged as the top team in Paradox of Theron.</li>
-            <li>Enhanced teamwork experience during discussion and strategy planning.</li>
-          </ul>
-        </article>
-
-        <article class="info-card glass activity-card">
-          <div class="card-badge">Cisco Networking Academy</div>
-          <h3>CCNA: Introduction to Networks</h3>
-          <p class="meta-line">December 2023</p>
-          <ul>
-            <li>Achieved student-level credential for completing the course.</li>
-            <li>Configured a small network.</li>
-          </ul>
-        </article>
-
-        <article class="info-card glass activity-card">
-          <div class="card-badge">ACCA & Multimedia University</div>
-          <h3>ACCA-MMU Inter-School Accounting Quiz</h3>
-          <p class="meta-line">August 2021</p>
-          <ul>
-            <li>Attended the quiz challenge with classmates and teacher.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2 class="mega-title">Assignment & Project</h2>
-
-      <div class="tab-row">
-        <span class="tab-chip">Sunway University Year 3</span>
-        <span class="tab-chip active">Sunway University Year 2</span>
-        <span class="tab-chip">Sunway University Year 1</span>
-        <span class="tab-chip">Other</span>
-      </div>
-
-      <div class="project-board glass">
-        <div class="showcase-grid">
-          <div class="project-card-list">
-            <article class="info-card glass">
-              <div class="card-badge">Year 2 Semester 3</div>
-              <h3>Information Systems Analysis & Design</h3>
-              <p class="meta-line">Group Assignment & Individual Assignment</p>
-              <div class="chips">
-                <span class="chip">Figma</span>
-                <span class="chip">System Design</span>
-              </div>
-            </article>
-
-            <article class="info-card glass">
-              <div class="card-badge">Year 2 Semester 3</div>
-              <h3>IS Management and Strategy</h3>
-              <p class="meta-line">Group Assignment</p>
-              <div class="chips">
-                <span class="chip">Strategy</span>
-                <span class="chip">Report</span>
-              </div>
-            </article>
-
-            <article class="info-card glass">
-              <div class="card-badge">Year 2 Semester 2</div>
-              <h3>Enterprise Architecture</h3>
-              <p class="meta-line">Group Assignment</p>
-              <div class="chips">
-                <span class="chip">CSVLOD</span>
-                <span class="chip">Architecture</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="viewer-panel glass">
-            <div class="project-pdf">
-              <div class="project-doc">
-                <div class="project-doc-title">
-                  Enhancing Booking.com AI-Powered for a Seamless Travel Experience
-                </div>
-
-                <p class="body-copy">
-                  This area can be replaced with an embedded project PDF, screenshots,
-                  or a short project summary.
-                </p>
-
-                <div class="line-stack">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-
-                <div class="hero-actions">
-                  <a class="btn btn-secondary" href="PDF/Assignment Project.pdf" target="_blank">
-                    Open Project PDF
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <div class="grid-2">
-        <article class="panel glass">
-          <div class="eyebrow">Core Strengths</div>
-
-          <div class="label">Languages</div>
-          <div class="chips">
-            <span class="chip">Chinese Mandarin</span>
-            <span class="chip">English</span>
-            <span class="chip">Malay</span>
-          </div>
-
-          <div class="label">Work Style</div>
-          <div class="chips">
-            <span class="chip">Time Management</span>
-            <span class="chip">Problem Solving</span>
-            <span class="chip">Team Collaboration</span>
-          </div>
-
-          <div class="label">Tools & Platforms</div>
-          <div class="chips">
-            <span class="chip">Power BI</span>
-            <span class="chip">Tableau</span>
-            <span class="chip">Python</span>
-            <span class="chip">Oracle SQL</span>
-            <span class="chip">Excel</span>
-            <span class="chip">SAS Enterprise Miner</span>
-            <span class="chip">SAS Enterprise Guide</span>
-            <span class="chip">Power Apps</span>
-            <span class="chip">Power Automate</span>
-            <span class="chip">Figma</span>
-            <span class="chip">Canva</span>
-          </div>
-        </article>
-
-        <article class="panel glass">
-          <div class="eyebrow">Academic Results</div>
-
-          <div class="split-list">
-            <div class="split-item">
-              <strong>Bachelor of Information Systems Honours — Data Analytics</strong>
-              <span class="badge">CGPA 3.66</span>
-            </div>
-
-            <div class="split-item">
-              <strong>Foundation in Arts</strong>
-              <span class="badge">CGPA 3.91</span>
-            </div>
-
-            <div class="split-item">
-              <strong>Sijil Pelajaran Malaysia</strong>
-              <span class="badge">7As</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="resume">
-    <div class="container">
-      <h2 class="section-title">Resume & Documents</h2>
-
-      <div class="document-shell glass">
-        <div class="document-grid">
-          <aside class="document-sidebar">
-            <input id="searchInput" class="search-box" type="text" placeholder="Search PDFs..." />
-
-            <div class="doc-list">
-              <button class="doc-item active" data-title="Resume / CV" data-file="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" data-date="Latest CV">
-                <strong>Resume / CV</strong>
-                <span>Latest CV</span>
-              </button>
-
-              <button class="doc-item" data-title="Bachelor Degree Transcript" data-file="PDF/Transcript BSDA.pdf" data-date="Academic Record">
-                <strong>Bachelor Degree Transcript</strong>
-                <span>Academic Record</span>
-              </button>
-
-              <button class="doc-item" data-title="Foundation in Arts Result" data-file="PDF/RESULT FIA.pdf" data-date="Completed">
-                <strong>Foundation in Arts Result</strong>
-                <span>Completed</span>
-              </button>
-
-              <button class="doc-item" data-title="SPM Result" data-file="PDF/RESULT SPM.pdf" data-date="Completed">
-                <strong>SPM Result</strong>
-                <span>Completed</span>
-              </button>
-            </div>
-          </aside>
-
-          <div class="document-viewer">
-            <div class="doc-top">
-              <div>
-                <div class="doc-title" id="previewTitle">Resume / CV</div>
-                <div class="doc-subtitle" id="previewDate">Latest CV</div>
-              </div>
-
-              <a class="btn btn-secondary" id="openDocBtn" href="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank">
-                Open
-              </a>
-            </div>
-
-            <div class="viewer-box">
-              <iframe id="pdfViewer" src="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-
-      <div class="grid-2">
-        <article class="panel glass">
-          <div class="eyebrow">Let’s Connect</div>
-          <p class="body-copy">
-            This site is designed to present academic background, work experience,
-            selected projects, and supporting documents in a simple GitHub-hosted format.
-          </p>
-        </article>
-
-        <article class="panel glass">
-          <div class="eyebrow">Links</div>
-
-          <div class="contact-links">
-            <a class="contact-link" href="mailto:your-email@example.com">
-              <strong>Email</strong>
-              <span>your-email@example.com</span>
-            </a>
-
-            <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-              <strong>LinkedIn</strong>
-              <span>Professional profile</span>
-            </a>
-
-            <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer">
-              <strong>GitHub</strong>
-              <span>Projects and code</span>
-            </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <footer class="footer">
-    <div class="container">
-      © 2026 Ooi Jin Yon. Single-page portfolio for GitHub Pages.
-    </div>
+    <div class="container">© 2026 Ooi Jin Yon. Data Analytics Portfolio for GitHub Pages.</div>
   </footer>
 
   <script>
     const searchInput = document.getElementById("searchInput");
     const docItems = Array.from(document.querySelectorAll(".doc-item"));
+    const docFilters = Array.from(document.querySelectorAll(".doc-filter"));
+    let activeCategory = "all";
     const previewTitle = document.getElementById("previewTitle");
     const previewDate = document.getElementById("previewDate");
     const pdfViewer = document.getElementById("pdfViewer");
@@ -1595,7 +1188,6 @@
     function setActiveDoc(item) {
       docItems.forEach(btn => btn.classList.remove("active"));
       item.classList.add("active");
-
       previewTitle.textContent = item.dataset.title;
       previewDate.textContent = item.dataset.date;
       pdfViewer.src = item.dataset.file;
@@ -1606,48 +1198,57 @@
       item.addEventListener("click", () => setActiveDoc(item));
     });
 
-    searchInput.addEventListener("input", e => {
-      const keyword = e.target.value.trim().toLowerCase();
+    function filterDocuments() {
+      const keyword = searchInput ? searchInput.value.trim().toLowerCase() : "";
 
       docItems.forEach(item => {
         const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(keyword) ? "" : "none";
+        const category = item.dataset.category || "all";
+        const matchesCategory = activeCategory === "all" || category === activeCategory;
+        const matchesSearch = text.includes(keyword);
+        item.style.display = matchesCategory && matchesSearch ? "" : "none";
+      });
+    }
+
+    docFilters.forEach(filter => {
+      filter.addEventListener("click", () => {
+        docFilters.forEach(btn => btn.classList.remove("active"));
+        filter.classList.add("active");
+        activeCategory = filter.dataset.category;
+        filterDocuments();
       });
     });
 
-    function setupPdfGroup(groupName, frameId, titleId) {
-      const items = Array.from(document.querySelectorAll(`[data-viewer="${groupName}"]`));
-      const frame = document.getElementById(frameId);
-      const title = document.getElementById(titleId);
-
-      if (!items.length || !frame || !title) return;
-
-      function render(activeItem) {
-        items.forEach(item => item.classList.remove("active"));
-        activeItem.classList.add("active");
-
-        frame.src = activeItem.dataset.file;
-        title.textContent = activeItem.dataset.title;
-      }
-
-      items.forEach(item => {
-        item.addEventListener("click", () => render(item));
-      });
-
-      const firstActive = items.find(item => item.classList.contains("active")) || items[0];
-      render(firstActive);
+    if (searchInput) {
+      searchInput.addEventListener("input", filterDocuments);
     }
-
-    setupPdfGroup("edu", "eduReader", "eduReaderTitle");
-    setupPdfGroup("dean", "deanReader", "deanReaderTitle");
-    setupPdfGroup("ace", "aceReader", "aceReaderTitle");
-    setupPdfGroup("entrance", "entranceReader", "entranceReaderTitle");
 
     document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
-        document.getElementById("menuToggle").checked = false;
+        const toggle = document.getElementById("menuToggle");
+        if (toggle) toggle.checked = false;
       });
     });
-  </script>
+  
+
+    // PROJECT TAB FILTER
+    const tabChips = Array.from(document.querySelectorAll(".tab-chip"));
+    const projectCards = Array.from(document.querySelectorAll(".project-card-modern"));
+
+    tabChips.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabChips.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const selected = tab.dataset.tab;
+
+        projectCards.forEach(card => {
+          const match = card.dataset.tab === selected;
+          card.style.display = match ? "" : "none";
+        });
+      });
+    });
+
+</script>
 </body>
 </html>
