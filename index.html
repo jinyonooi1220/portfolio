@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ooi Jin Yon portfolio website showcasing education, awards, extracurricular activities, projects, resume, and supporting PDF documents." />
-
-  <title>Ooi Jin Yon | Portfolio</title>
+  <meta name="description" content="Ooi Jin Yon — Information Systems and Data Analytics portfolio featuring projects, experience, achievements and supporting documents." />
+  <title>Ooi Jin Yon | Data Analytics Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,1022 +12,830 @@
 
   <style>
     :root {
-      --bg: #f8f9ff;
-      --bg-soft: #f1f5ff;
+      --bg: #f6f8fa;
       --surface: #ffffff;
-      --surface-soft: rgba(255, 255, 255, 0.84);
-      --surface-tint: #f7f9ff;
-      --text: #1f2440;
-      --muted: #667085;
-      --muted-2: #98a2b3;
-      --line: rgba(91, 112, 246, 0.12);
-      --line-strong: rgba(91, 112, 246, 0.22);
-      --primary: #5b70f6;
-      --primary-dark: #3843a8;
-      --primary-soft: rgba(91, 112, 246, 0.09);
-      --blue: #4f8df7;
-      --cyan: #35b8d0;
-      --violet: #8a7cf7;
-      --pink: #b98cff;
-      --amber: #d89a27;
-      --green: #10b981;
-      --gradient-main: linear-gradient(135deg, #5b70f6 0%, #6f8cff 48%, #35b8d0 100%);
-      --gradient-soft: linear-gradient(135deg, rgba(91,112,246,0.12), rgba(111,140,255,0.10), rgba(53,184,208,0.08));
-      --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.92));
-      --shadow-lg: 0 24px 70px rgba(65, 83, 180, 0.11);
-      --shadow-md: 0 14px 38px rgba(65, 83, 180, 0.085);
-      --shadow-sm: 0 8px 20px rgba(65, 83, 180, 0.06);
-      --radius-xl: 26px;
-      --radius-lg: 20px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max: 1140px;
+      --surface-muted: #f6f8fa;
+      --text: #1f2328;
+      --muted: #656d76;
+      --border: #d0d7de;
+      --border-muted: #d8dee4;
+      --blue: #0969da;
+      --blue-hover: #0550ae;
+      --blue-soft: #ddf4ff;
+      --green: #1a7f37;
+      --green-soft: #dafbe1;
+      --purple: #8250df;
+      --orange: #bc4c00;
+      --shadow: 0 1px 2px rgba(31, 35, 40, 0.06);
+      --radius: 8px;
+      --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
-      min-height: 100vh;
+      margin: 0;
       font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      line-height: 1.6;
-      background:
-        radial-gradient(circle at 8% -4%, rgba(91,112,246,0.16), transparent 34%),
-        radial-gradient(circle at 92% 0%, rgba(53,184,208,0.14), transparent 36%),
-        radial-gradient(circle at 50% 42%, rgba(138,124,247,0.07), transparent 32%),
-        linear-gradient(180deg, #ffffff 0%, #fbfcff 42%, #f2f6ff 100%);
-      background-attachment: fixed;
-      overflow-x: hidden;
+      background: var(--bg);
+      line-height: 1.55;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.28;
-      background-image:
-        linear-gradient(rgba(91,112,246,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(53,184,208,0.045) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, black, transparent 76%);
-      z-index: -1;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: auto -12% -30% -12%;
-      height: 420px;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(91,112,246,0.10), transparent 62%);
-      z-index: -1;
-    }
-
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
+    button { color: inherit; }
 
     .container {
-      width: min(calc(100% - 48px), var(--max));
+      width: min(calc(100% - 32px), var(--max));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 72px 0;
-      scroll-margin-top: 96px;
-    }
-
-    .glass {
-      background: var(--gradient-card);
-      border: 1px solid rgba(255, 255, 255, 0.86);
-      box-shadow: var(--shadow-md);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 28px;
-    }
-
-    .section-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 9px;
-      color: var(--primary);
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .section-kicker::before {
-      content: "";
-      width: 24px;
-      height: 2px;
-      border-radius: 999px;
-      background: var(--gradient-main);
-    }
-
-    .section-title,
-    .hero-title,
-    .mega-title {
-      font-family: "Noto Sans", system-ui, sans-serif;
-      letter-spacing: -0.045em;
-      line-height: 1.04;
-      font-weight: 900;
-    }
-
-    .section-title {
-      font-size: clamp(1.65rem, 2.8vw, 2.65rem);
-      max-width: 720px;
-    }
-
-    .section-copy {
-      max-width: 460px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    /* Navbar kept from current design */
     .topbar {
       position: sticky;
-      top: 10px;
-      z-index: 999;
-      padding: 10px 0;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
-
     .nav {
-      width: min(calc(100% - 36px), 1040px);
-      margin: 0 auto;
-      min-height: 58px;
-      padding: 8px 10px;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.82);
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      gap: 18px;
     }
-
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 9px;
-      padding: 5px 10px 5px 5px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid var(--line);
-      font-size: 0.88rem;
-      font-weight: 800;
+      gap: 10px;
+      font-weight: 700;
       letter-spacing: -0.02em;
       white-space: nowrap;
-      box-shadow: var(--shadow-sm);
     }
-
     .brand-mark {
       width: 32px;
       height: 32px;
       display: grid;
       place-items: center;
-      border-radius: 12px;
-      background: var(--gradient-main);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 900;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.20);
+      border-radius: 6px;
+      background: #24292f;
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 800;
     }
+    .brand-path { color: var(--muted); font-weight: 500; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 4px;
     }
-
     .nav-links a {
-      min-height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px;
-      border-radius: 999px;
-      color: #58667a;
-      font-size: 0.72rem;
-      font-weight: 750;
-      transition: 0.2s ease;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: #24292f;
+      font-size: .86rem;
+      font-weight: 600;
     }
-
-    .nav-links a:hover {
-      color: var(--primary-dark);
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: var(--shadow-sm);
-      transform: translateY(-1px);
+    .nav-links a:hover { background: var(--surface-muted); }
+    .nav-links .nav-cta {
+      margin-left: 4px;
+      color: #fff;
+      background: #24292f;
+      border: 1px solid #24292f;
     }
+    .nav-links .nav-cta:hover { background: #3b4045; }
 
-    .nav-cta {
-      min-height: 32px;
-      padding: 0 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #635bff, #4f46e5);
-      color: white !important;
-      box-shadow: 0 8px 18px rgba(47, 75, 117, 0.18);
-    }
-
-    .menu-toggle { display: none; }
-
-    .menu-btn {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.78);
-      place-items: center;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .menu-btn span,
-    .menu-btn span::before,
-    .menu-btn span::after {
-      display: block;
-      width: 18px;
-      height: 2px;
-      border-radius: 99px;
-      background: var(--text);
-      position: relative;
-    }
-
-    .menu-btn span::before,
-    .menu-btn span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
-    .menu-btn span::before { top: -6px; }
-    .menu-btn span::after { top: 6px; }
+    .menu-toggle, .menu-btn { display: none; }
 
     .hero {
-      padding: 42px 0 64px;
+      padding: 46px 0 34px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
     }
-
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
-      gap: 20px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.45fr) minmax(320px, .75fr);
+      gap: 28px;
+      align-items: start;
     }
-
-    .hero-main {
-      min-height: 430px;
-      padding: clamp(28px, 4vw, 46px);
-      border-radius: 34px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(246,247,255,0.90)),
-        radial-gradient(circle at top right, rgba(139,92,246,0.20), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(59,130,246,0.14), transparent 42%);
-      border: 1px solid rgba(255,255,255,0.94);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hero-main::before {
-      content: "";
-      position: absolute;
-      right: 28px;
-      top: 28px;
-      width: 92px;
-      height: 92px;
-      border-radius: 28px;
-      background: var(--gradient-soft);
-      border: 1px solid rgba(99,91,255,0.12);
-      transform: rotate(10deg);
-    }
-
-    .hero-main::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      bottom: -90px;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99,91,255,0.18), transparent 68%);
-    }
-
-    .hero-label {
-      position: relative;
-      z-index: 1;
-      width: fit-content;
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(99,91,255,0.10);
-      border: 1px solid rgba(99,91,255,0.14);
-      color: var(--primary-dark);
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 600;
     }
-
-    .hero-label-dot {
-      width: 7px;
-      height: 7px;
+    .status-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 0 5px rgba(5, 150, 105, 0.12);
+      box-shadow: 0 0 0 3px var(--green-soft);
     }
-
-    .hero-title {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      font-size: clamp(2.35rem, 5vw, 4.4rem);
-      margin-bottom: 16px;
+    .hero h1 {
+      margin: 0 0 6px;
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
     }
-
-    .hero-title span {
-      background: var(--gradient-main);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero-role {
+      margin: 0 0 18px;
+      color: var(--blue);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 700;
     }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      max-width: 640px;
+    .hero-copy {
+      max-width: 760px;
+      margin: 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.75;
     }
-
     .hero-actions {
-      position: relative;
-      z-index: 1;
-      margin-top: 22px;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 9px;
+      margin-top: 24px;
     }
-
     .btn {
-      min-height: 40px;
-      padding: 0 15px;
-      border-radius: 999px;
+      min-height: 38px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      border: 1px solid transparent;
-      font-size: 0.86rem;
-      font-weight: 800;
-      transition: 0.2s ease;
+      gap: 7px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface-muted);
+      color: #24292f;
+      font-size: .84rem;
+      font-weight: 600;
       cursor: pointer;
-      white-space: nowrap;
+      transition: .15s ease;
     }
+    .btn:hover { background: #eef1f4; border-color: #afb8c1; }
+    .btn-primary { color: #fff; background: var(--blue); border-color: var(--blue); }
+    .btn-primary:hover { background: var(--blue-hover); border-color: var(--blue-hover); }
 
-    .btn-primary {
-      color: white;
-      background: var(--gradient-main);
-      box-shadow: 0 14px 28px rgba(99, 91, 255, 0.22);
+    .profile-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-
-    .btn-secondary {
-      color: var(--primary-dark);
-      background: white;
-      border-color: var(--line);
-      box-shadow: var(--shadow-sm);
+    .profile-head {
+      padding: 12px 16px;
+      background: var(--surface-muted);
+      border-bottom: 1px solid var(--border);
+      font-size: .78rem;
+      font-weight: 700;
+      color: #24292f;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero-metrics {
-      position: relative;
-      z-index: 1;
-      margin-top: 24px;
+    .profile-list { padding: 6px 16px; }
+    .profile-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      grid-template-columns: 106px minmax(0, 1fr);
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eaeef2;
+      font-size: .85rem;
     }
+    .profile-row:last-child { border-bottom: 0; }
+    .profile-row span:first-child { color: var(--muted); }
+    .profile-row strong { font-weight: 600; }
 
-    .metric {
-      padding: 15px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.74);
-      border: 1px solid rgba(99,91,255,0.12);
-      box-shadow: 0 8px 22px rgba(99,91,255,0.07);
+    main > section:not(.hero) { scroll-margin-top: 74px; }
+    .section { padding: 54px 0; }
+    .section + .section { border-top: 1px solid var(--border-muted); }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-end;
+      margin-bottom: 22px;
     }
-
-    .metric strong {
-      display: block;
-      letter-spacing: -0.025em;
-      line-height: 1.15;
-      margin-bottom: 4px;
-      font-weight: 900;
+    .section-heading h2 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -0.035em;
     }
-
-    .metric span {
+    .section-heading p {
+      max-width: 560px;
+      margin: 0;
       color: var(--muted);
-      font-size: 0.8rem;
+      font-size: .88rem;
+    }
+    .section-label {
+      margin-bottom: 5px;
+      color: var(--blue);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .readme {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .readme-head {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-muted);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .readme-body { padding: 24px; }
+    .readme-body h3 { margin: 0 0 12px; font-size: 1.15rem; }
+    .readme-body p { margin: 0 0 14px; color: #424a53; }
+    .readme-body ul { margin: 12px 0 0 20px; padding: 0; color: #424a53; }
+    .readme-body li { margin-bottom: 7px; }
+
+    .timeline {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 20px;
+      padding: 20px;
+      border-bottom: 1px solid var(--border-muted);
+    }
+    .timeline-item:last-child { border-bottom: 0; }
+    .timeline-period { color: var(--muted); font-size: .82rem; font-weight: 600; }
+    .timeline-content h3 { margin: 0 0 4px; font-size: 1rem; }
+    .timeline-content .org { color: var(--blue); font-size: .85rem; font-weight: 600; }
+    .timeline-content p { margin: 8px 0 0; color: var(--muted); font-size: .88rem; }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .repo-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .repo-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .repo-icon { color: var(--muted); font-size: 1.05rem; }
+    .repo-name { color: var(--blue); font-size: 1rem; font-weight: 700; }
+    .repo-visibility {
+      padding: 2px 7px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 600;
+    }
+    .repo-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+    .repo-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: .74rem;
+    }
+    .tag-dot {
+      width: 9px;
+      height: 9px;
+      display: inline-block;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .tag-dot.purple { background: var(--purple); }
+    .tag-dot.orange { background: var(--orange); }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-button {
+      padding: 9px 12px;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-button:hover { color: var(--text); }
+    .tab-button.active { color: var(--text); border-bottom-color: #fd8c73; }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .achievement-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .achievement-card .type { color: var(--muted); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    .achievement-card h3 { margin: 8px 0 7px; font-size: .98rem; }
+    .achievement-card p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .mini-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .mini-tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #0550ae;
+      font-size: .7rem;
       font-weight: 600;
     }
 
-    .hero-side {
+    .skill-grid {
       display: grid;
-      gap: 16px;
-    }
-
-    .profile-card,
-    .highlight-card {
-      border-radius: 28px;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(255,255,255,0.92);
-      box-shadow: var(--shadow-md);
-    }
-
-    .profile-card {
-      padding: 24px;
-      min-height: 245px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,255,0.88)),
-        radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 40%);
-    }
-
-    .profile-card::before {
-      display: none;
-    }
-
-    .avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 24px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 14px;
-      background: var(--gradient-main);
-      color: white;
-      font-size: 1.35rem;
-      font-weight: 900;
-      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.20);
-    }
-
-    .profile-card h2 {
-      font-size: 1.38rem;
-      line-height: 1.1;
-      margin-bottom: 8px;
-      letter-spacing: -0.035em;
-    }
-
-    .profile-card p,
-    .panel p,
-    .project-paper p {
-      color: var(--muted);
-      font-size: 0.91rem;
-    }
-
-    .highlight-card {
-      padding: 20px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,255,0.88)),
-        radial-gradient(circle at bottom left, rgba(139,92,246,0.10), transparent 42%);
-    }
-
-    .mini-stack,
-    .doc-list,
-    .contact-links,
-    .split-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .mini-row,
-    .split-item,
-    .contact-link,
-    .doc-item {
-      background: var(--surface-tint);
-      border: 1px solid var(--line);
-      box-shadow: none;
-    }
-
-    .mini-row,
-    .split-item,
-    .contact-link {
-      padding: 12px 13px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      grid-template-columns: 1.25fr 1fr 1fr;
       gap: 14px;
     }
-
-    .mini-row strong,
-    .split-item strong,
-    .contact-link strong {
-      font-size: 0.85rem;
-      font-weight: 800;
+    .skill-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .skill-card h3 { margin: 0 0 12px; font-size: .95rem; }
+    .token-list { display: flex; flex-wrap: wrap; gap: 7px; }
+    .token {
+      padding: 5px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface-muted);
+      color: #424a53;
+      font-size: .76rem;
+      font-weight: 500;
     }
 
-    .badge {
-      min-height: 26px;
-      display: inline-flex;
+    .docs-shell {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .docs-toolbar {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 0 10px;
+      gap: 14px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-muted);
+    }
+    .docs-path { min-width: 0; color: var(--muted); font-size: .8rem; }
+    .docs-path strong { color: var(--text); }
+    .file-count {
+      padding: 3px 8px;
+      border: 1px solid var(--border);
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 0.72rem;
-      font-weight: 800;
+      color: var(--muted);
+      background: var(--surface);
+      font-size: .72rem;
       white-space: nowrap;
-      border: 1px solid rgba(37, 99, 235, 0.12);
     }
-
-    .grid-2 {
+    .docs-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 610px;
     }
-
-    .panel {
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      background: white;
-      border: 1px solid rgba(255,255,255,0.9);
+    .docs-sidebar {
+      padding: 14px;
+      border-right: 1px solid var(--border);
+      background: #fbfcfd;
     }
-
-    .panel h3 {
-      font-size: 1.08rem;
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      margin-bottom: 8px;
+    .search {
+      width: 100%;
+      height: 38px;
+      padding: 0 11px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
     }
-
-    .card-and-viewer,
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
-      gap: 18px;
-      align-items: start;
-    }
-
-    .showcase-list,
-    .project-card-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .info-card {
-      padding: 17px;
-      border-radius: 22px;
-      cursor: pointer;
-      transition: 0.22s ease;
-      position: relative;
-      overflow: hidden;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(255,255,255,0.92);
-    }
-
-    .info-card::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 16px;
-      width: 3px;
-      height: 34px;
-      border-radius: 0 999px 999px 0;
-      background: transparent;
-      transition: 0.22s ease;
-    }
-
-    .info-card:hover,
-    .info-card.active {
-      transform: translateY(-3px);
-      border-color: rgba(99,91,255,0.22);
-      box-shadow: var(--shadow-md);
-    }
-
-    .info-card.active::after {
-      background: var(--gradient-main);
-    }
-
-    .card-badge {
-      width: fit-content;
-      min-height: 24px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 9px;
-      margin-bottom: 10px;
-      border-radius: 999px;
-      background: rgba(216,154,39,0.11);
-      color: #8a5a0a;
-      border: 1px solid rgba(216,154,39,0.16);
-      font-size: 0.68rem;
-      font-weight: 800;
-    }
-
-    .card-badge.blue {
-      background: rgba(91,112,246,0.09);
-      color: var(--primary-dark);
-      border-color: rgba(91,112,246,0.13);
-    }
-
-    .card-split {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 13px;
-      align-items: center;
-    }
-
-    .card-thumb {
-      width: 72px;
-      height: 72px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: linear-gradient(180deg, #eff6ff, #ffffff);
-      border: 1px solid var(--line);
-      color: var(--primary-dark);
-      font-size: 0.86rem;
-      font-weight: 900;
-    }
-
-    .info-card h3 {
-      font-size: 0.98rem;
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-bottom: 4px;
-    }
-
-    .meta-line,
-    .card-description {
-      color: var(--muted);
-      font-size: 0.83rem;
-    }
-
-    .card-description {
-      margin-top: 9px;
-    }
-
-    .chips {
+    .search:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(9,105,218,.12); }
+    .category-list { display: grid; gap: 4px; margin-top: 12px; }
+    .category-button {
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 9px;
-    }
-
-    .chip,
-    .tab-chip {
-      min-height: 27px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 10px;
-      border-radius: 999px;
-      background: rgba(91,112,246,0.075);
-      color: var(--primary-dark);
-      border: 1px solid rgba(91,112,246,0.12);
-      font-size: 0.72rem;
-      font-weight: 850;
-    }
-
-    .viewer-panel,
-    .project-preview,
-    .document-shell {
-      padding: 16px;
-      border-radius: var(--radius-xl);
-      background: rgba(255,255,255,0.82);
-    }
-
-    .viewer-panel {
-      position: sticky;
-      top: 92px;
-    }
-
-    .pdf-reader {
-      overflow: hidden;
-      border-radius: 20px;
-      background: white;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .pdf-reader-toolbar {
-      min-height: 46px;
-      display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      padding: 0 15px;
-      background: linear-gradient(135deg, #1e1b4b, #312e81 50%, #2563eb);
-      color: white;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      text-align: left;
+      font-size: .8rem;
+      cursor: pointer;
     }
+    .category-button:hover { background: #eef1f4; }
+    .category-button.active { background: var(--blue-soft); color: #0550ae; font-weight: 600; }
+    .category-count { color: var(--muted); font-size: .7rem; }
 
-    .pdf-reader-title {
-      font-size: 0.82rem;
-      font-weight: 800;
+    .docs-content { min-width: 0; display: grid; grid-template-rows: auto 1fr; }
+    .file-browser {
+      max-height: 315px;
+      overflow: auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .folder-group + .folder-group { border-top: 1px solid var(--border-muted); }
+    .folder-title {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 8px 14px;
+      background: #fbfcfd;
+      border-bottom: 1px solid #eef1f4;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .file-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr) auto;
+      gap: 9px;
+      align-items: center;
+      padding: 10px 14px;
+      border: 0;
+      border-bottom: 1px solid #eef1f4;
+      background: var(--surface);
+      text-align: left;
+      cursor: pointer;
+    }
+    .file-row:hover { background: #f6f8fa; }
+    .file-row.active { background: #eef6ff; }
+    .file-icon { color: #57606a; }
+    .file-main { min-width: 0; }
+    .file-name {
+      display: block;
       overflow: hidden;
+      color: #24292f;
+      font-size: .8rem;
+      font-weight: 600;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+    .file-sub { display: block; color: var(--muted); font-size: .69rem; }
+    .file-kind { color: var(--muted); font-size: .68rem; white-space: nowrap; }
 
-    .pdf-reader-actions {
+    .doc-preview { padding: 16px; min-height: 0; }
+    .preview-head {
       display: flex;
-      gap: 7px;
-      flex-shrink: 0;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
     }
-
-    .pdf-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.64);
-    }
-
-    .pdf-frame-wrap {
-      padding: 9px;
-      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
-    }
-
+    .preview-head h3 { margin: 0 0 4px; font-size: .98rem; }
+    .preview-meta { color: var(--muted); font-size: .75rem; }
     .pdf-frame {
       width: 100%;
-      height: 460px;
+      height: 370px;
       display: block;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #f6f8fa;
+    }
+    .empty-state { padding: 38px 16px; color: var(--muted); text-align: center; font-size: .85rem; }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .contact-block { padding: 20px; }
+    .contact-block + .contact-block { border-left: 1px solid var(--border); }
+    .contact-block h3 { margin: 0 0 8px; font-size: .95rem; }
+    .contact-block p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .contact-links { display: grid; gap: 8px; margin-top: 12px; }
+    .contact-links a { color: var(--blue); font-size: .84rem; font-weight: 600; }
+
+    footer {
+      padding: 26px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .docs-grid,
+      .skill-grid,
+      .contact-box { grid-template-columns: 1fr; }
+      .repo-grid, .achievement-grid { grid-template-columns: 1fr; }
+      .docs-sidebar { border-right: 0; border-bottom: 1px solid var(--border); }
+      .contact-block + .contact-block { border-left: 0; border-top: 1px solid var(--border); }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 22px), var(--max)); }
+      .nav { min-height: 58px; }
+      .menu-btn {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        cursor: pointer;
+      }
+      .menu-btn::before { content: "☰"; font-size: 1rem; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 58px;
+        left: 11px;
+        right: 11px;
+        padding: 8px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 8px 24px rgba(31,35,40,.12);
+      }
+      .menu-toggle:checked ~ .nav-links { display: grid; }
+      .nav-links .nav-cta { margin-left: 0; }
+      .brand-path { display: none; }
+      .hero { padding: 34px 0 28px; }
+      .section { padding: 42px 0; }
+      .timeline-item { grid-template-columns: 1fr; gap: 7px; }
+      .docs-toolbar { align-items: flex-start; flex-direction: column; }
+      .preview-head { flex-direction: column; }
+      .preview-head .btn { width: 100%; }
+      .pdf-frame { height: 330px; }
+    }
+
+
+    /* Hybrid professional theme: keeps the original portfolio softness without looking overly casual */
+    :root {
+      --bg: #f7f9ff;
+      --surface: #ffffff;
+      --surface-muted: #f5f7ff;
+      --text: #20243b;
+      --muted: #697386;
+      --border: rgba(82, 96, 150, .15);
+      --border-muted: rgba(82, 96, 150, .10);
+      --blue: #5b70f6;
+      --blue-hover: #4659d9;
+      --blue-soft: rgba(91,112,246,.09);
+      --green: #10a36f;
+      --green-soft: rgba(16,163,111,.10);
+      --purple: #7c6cf2;
+      --orange: #c9852c;
+      --shadow: 0 10px 28px rgba(48, 64, 125, .07);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 8% -5%, rgba(91,112,246,.10), transparent 29%),
+        radial-gradient(circle at 94% 1%, rgba(53,184,208,.08), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfcff 46%, #f5f7ff 100%);
+      background-attachment: fixed;
+    }
+
+    .topbar {
+      top: 10px;
+      width: min(calc(100% - 28px), 1080px);
+      margin: 0 auto;
+      border: 1px solid rgba(82,96,150,.13);
+      border-radius: 18px;
+      background: rgba(255,255,255,.84);
+      box-shadow: 0 10px 30px rgba(48,64,125,.08);
+      backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 58px; padding: 0 10px; }
+    .brand-mark {
+      border-radius: 11px;
+      background: linear-gradient(135deg,#5b70f6,#6f8cff 56%,#35b8d0);
+      box-shadow: 0 8px 18px rgba(91,112,246,.18);
+    }
+    .brand-path { color: #768198; font-size: .78rem; }
+    .nav-links a { border-radius: 10px; color: #536077; }
+    .nav-links a:hover { background: rgba(91,112,246,.07); color: #3843a8; }
+    .nav-links .nav-cta {
       border: 0;
-      border-radius: 14px;
-      background: white;
+      border-radius: 10px;
+      background: linear-gradient(135deg,#5b70f6,#6f8cff);
+      box-shadow: 0 8px 18px rgba(91,112,246,.17);
     }
 
-    .award-block + .award-block {
-      margin-top: 54px;
+    .hero {
+      margin-top: 14px;
+      padding: 58px 0 50px;
+      border-bottom: 0;
+      background: transparent;
     }
-
-    .mega-title {
-      font-size: clamp(2rem, 4.2vw, 3.6rem);
-      color: var(--primary-dark);
-      margin-bottom: 20px;
-    }
-
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .activity-card {
-      min-height: 190px;
-      padding: 22px;
-      border-radius: var(--radius-xl);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      align-items: start;
-      position: relative;
-      overflow: hidden;
+    .hero-grid { align-items: stretch; gap: 20px; }
+    .hero-grid > div:first-child {
+      padding: clamp(28px,4vw,44px);
+      border: 1px solid rgba(82,96,150,.11);
+      border-radius: 26px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(249,251,255,0.92)),
-        radial-gradient(circle at top right, rgba(53,184,208,0.12), transparent 44%);
-      border: 1px solid rgba(91,112,246,0.10);
-      box-shadow: var(--shadow-sm);
-      transition: 0.22s ease;
+        radial-gradient(circle at 90% 12%, rgba(91,112,246,.10), transparent 31%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,255,.92));
+      box-shadow: 0 18px 46px rgba(48,64,125,.08);
     }
-
-    .activity-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(91,112,246,0.20);
-    }
-
-    .activity-card::after {
-      content: "";
-      width: 42px;
-      height: 42px;
-      border-radius: 16px;
-      background: var(--gradient-soft);
-      border: 1px solid rgba(91,112,246,0.10);
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-
-    .activity-card .card-badge,
-    .activity-card h3,
-    .activity-card .meta-line,
-    .activity-card p {
-      grid-column: 1;
-      position: relative;
-      z-index: 1;
-    }
-
-    .activity-card h3 {
-      font-size: 1rem;
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-bottom: 2px;
-    }
-
-    .activity-card p:not(.meta-line) {
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.65;
-    }
-
-    .activity-card ul {
-      margin: 13px 0 0 20px;
-      color: #334155;
-      font-size: 0.88rem;
-    }
-
-    .activity-card li {
-      margin-bottom: 6px;
-    }
-
-    .tab-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 18px;
-    }
-
-    .tab-chip.active {
-      background: var(--gradient-main);
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 8px 18px rgba(99,91,255,0.18);
-    }
-
-    .project-board {
-      padding: 14px;
-      border-radius: var(--radius-xl);
-      background: rgba(255,255,255,0.82);
-    }
-
-    .project-paper {
-      min-height: 410px;
-      padding: clamp(22px, 3vw, 34px);
-      border-radius: 22px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,255,0.94)),
-        radial-gradient(circle at top right, rgba(99,91,255,0.14), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(59,130,246,0.10), transparent 42%);
-      border: 1px solid rgba(99,91,255,0.12);
-    }
-
-    .project-paper-title {
-      font-size: clamp(1.35rem, 2.4vw, 2rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1.08;
-      margin-bottom: 14px;
-    }
-
-    .line-stack {
-      display: grid;
-      gap: 9px;
-      margin: 20px 0;
-    }
-
-    .line-stack span {
-      height: 10px;
+    .eyebrow {
+      width: fit-content;
+      padding: 7px 11px;
+      border: 1px solid rgba(91,112,246,.12);
       border-radius: 999px;
-      background: linear-gradient(90deg, rgba(99,91,255,0.16), rgba(59,130,246,0.10));
+      background: rgba(91,112,246,.06);
+      color: #596783;
+    }
+    .hero h1 { color: #20243b; }
+    .hero-role {
+      width: fit-content;
+      color: transparent;
+      background: linear-gradient(135deg,#5367ec,#3ca7bd);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .btn { border-radius: 10px; background: #fff; }
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(135deg,#5b70f6,#6f8cff 55%,#35b8d0);
+      box-shadow: 0 10px 22px rgba(91,112,246,.18);
     }
 
-    .line-stack span:nth-child(2n) { width: 86%; }
-    .line-stack span:nth-child(3n) { width: 64%; }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .profile-box,
+    .readme,
+    .timeline-card,
+    .repo-card,
+    .achievement-card,
+    .skills-card,
+    .document-shell,
+    .document-sidebar,
+    .document-viewer {
+      border-color: rgba(82,96,150,.12) !important;
+      box-shadow: var(--shadow);
+    }
+    .profile-box {
+      border-radius: 22px;
+      background: rgba(255,255,255,.90);
+    }
+    .profile-head,
+    .readme-head {
+      background: linear-gradient(180deg,#f7f9ff,#f2f5ff);
+      color: #46516a;
     }
 
-    .about-feature {
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      position: relative;
-      overflow: hidden;
-      min-height: 230px;
-    }
+    .section { padding: 62px 0; }
+    .section + .section { border-top: 0; }
+    .section-label { color: #5b70f6; letter-spacing: .10em; }
+    .section-heading h2 { font-size: clamp(1.7rem,2.8vw,2.35rem); color: #20243b; }
+    .section-heading { margin-bottom: 26px; }
 
-    .about-feature::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99,91,255,0.14), transparent 70%);
-    }
-
-    .feature-number {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--gradient-main);
-      color: white;
-      font-size: 0.78rem;
-      font-weight: 900;
-      margin-bottom: 18px;
-      box-shadow: 0 10px 24px rgba(99,91,255,0.18);
-    }
-
-    .about-feature h3,
-    .timeline-card h3,
-    .award-card h3,
-    .project-card-modern h3,
-    .skills-card h3,
-    .contact-panel h3 {
-      font-size: 1.08rem;
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-
-    .about-feature p,
-    .timeline-card p,
-    .award-card p,
-    .project-card-modern p,
-    .skills-card p,
-    .contact-panel p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .timeline-list {
-      display: grid;
-      gap: 16px;
-    }
+    .readme { border-radius: 20px; }
+    .readme-body { padding: 28px; }
 
     .timeline-card {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 22px;
-      padding: 20px;
-      border-radius: var(--radius-xl);
-      align-items: start;
-      position: relative;
-      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255,255,255,.92);
+      transition: .2s ease;
+    }
+    .timeline-card:hover,
+    .repo-card:hover,
+    .achievement-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(48,64,125,.10);
+      border-color: rgba(91,112,246,.20) !important;
     }
 
-    .timeline-card::before {
+    .repo-grid { gap: 16px; }
+    .repo-card {
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(91,112,246,.06), transparent 34%),
+        #fff;
+      padding: 22px;
+    }
+    .repo-name { color: #29324b; font-size: 1.03rem; }
+    .repo-icon { color: #7683a0; }
+    .repo-visibility {
+      background: rgba(91,112,246,.07);
+      border-color: rgba(91,112,246,.12);
+      color: #5261a9;
+      border-radius: 999px;
+    }
+    .repo-meta span { color: #68748b; }
+
+    .achievement-card,
+    .skills-card {
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .filter-row button,
+    .doc-category,
+    .project-filter {
+      border-radius: 999px !important;
+    }
+
+    .document-shell { border-radius: 22px; background: rgba(255,255,255,.78); }
+    .document-sidebar,
+    .document-viewer { border-radius: 16px; background: rgba(255,255,255,.94); }
+    .doc-item { border-radius: 12px; }
+    .doc-item:hover,
+    .doc-item.active { background: rgba(91,112,246,.07); border-color: rgba(91,112,246,.18); }
+    .viewer-box { border-radius: 14px; background: linear-gradient(135deg,#f1f4ff,#edf9fb); }
+
+    footer { color: #7c879b; }
+
+
+    /* Original-inspired education / experience cards */
+    .timeline {
+      display: grid;
+      gap: 16px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 22px;
+      padding: 22px 22px 22px 22px;
+      border: 1px solid rgba(82,96,150,.11);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,255,.92));
+      box-shadow: 0 10px 28px rgba(48,64,125,.065);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .timeline-item::before {
       content: "";
       position: absolute;
       left: 0;
       top: 20px;
       width: 4px;
       height: 48px;
-      border-radius: 999px;
-      background: var(--gradient-main);
+      border-radius: 0 999px 999px 0;
+      background: linear-gradient(180deg, #6f78f5 0%, #42b9d4 100%);
     }
 
-    .timeline-year {
+    .timeline-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(91,112,246,.18);
+      box-shadow: 0 16px 34px rgba(48,64,125,.09);
+    }
+
+    .timeline-period {
       width: fit-content;
-      padding: 8px 12px;
+      height: fit-content;
+      padding: 7px 12px;
+      border: 1px solid rgba(111,120,245,.16);
       border-radius: 999px;
-      background: rgba(99,91,255,0.09);
-      border: 1px solid rgba(99,91,255,0.14);
-      color: var(--primary-dark);
-      font-size: 0.78rem;
-      font-weight: 900;
+      background: linear-gradient(180deg, #f1f0ff, #ecefff);
+      color: #4e58b8;
+      font-size: .78rem;
+      font-weight: 800;
       white-space: nowrap;
     }
 
@@ -1036,464 +843,505 @@
       min-width: 0;
     }
 
-    .award-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .timeline-content h3 {
+      margin: 6px 0 6px;
+      color: #252a43;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
     }
 
-    .award-card {
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      min-height: 240px;
+    .timeline-content .org {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 25px;
+      padding: 3px 10px;
+      border: 1px solid rgba(70,155,190,.16);
+      border-radius: 999px;
+      background: rgba(76,181,206,.085);
+      color: #367b96;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .timeline-content p {
+      margin: 7px 0 0;
+      color: #6c7890;
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+
+    .timeline-tags {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,250,255,0.92)),
-        radial-gradient(circle at top right, rgba(91,112,246,0.10), transparent 44%);
-      border: 1px solid rgba(91,112,246,0.10);
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
     }
 
-    .award-card::before {
+    .timeline-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 10px;
+      border: 1px solid rgba(91,112,246,.13);
+      border-radius: 999px;
+      background: rgba(91,112,246,.07);
+      color: #5361ae;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .timeline-tag.result {
+      border-color: rgba(89,135,219,.14);
+      background: rgba(89,135,219,.075);
+      color: #456eaf;
+    }
+
+    .timeline-tag.status {
+      border-color: rgba(68,169,145,.15);
+      background: rgba(68,169,145,.075);
+      color: #347e6d;
+    }
+
+
+    /* Cohesive original-inspired card language across the site */
+    .section-shell,
+    .about-card,
+    .award-card,
+    .project-card,
+    .skill-card,
+    .contact-card,
+    .document-sidebar,
+    .document-viewer {
+      position: relative;
+      border: 1px solid rgba(82,96,150,.11);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,250,255,.93));
+      box-shadow: 0 10px 28px rgba(48,64,125,.065);
+      overflow: hidden;
+    }
+
+    .about-card::before,
+    .award-card::before,
+    .project-card::before,
+    .skill-card::before,
+    .contact-card::before,
+    .document-sidebar::before,
+    .document-viewer::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 24px;
+      top: 20px;
       width: 4px;
       height: 42px;
       border-radius: 0 999px 999px 0;
-      background: var(--gradient-main);
+      background: linear-gradient(180deg, #6f78f5 0%, #42b9d4 100%);
     }
 
-    .award-card::after {
-      content: "";
-      position: absolute;
-      right: -54px;
-      top: -54px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(53,184,208,0.12), transparent 70%);
+    .about-card,
+    .award-card,
+    .project-card,
+    .skill-card,
+    .contact-card {
+      padding: 22px 22px 22px 24px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
 
-    .project-grid-modern {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+    .about-card:hover,
+    .award-card:hover,
+    .project-card:hover,
+    .skill-card:hover,
+    .contact-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(91,112,246,.18);
+      box-shadow: 0 16px 34px rgba(48,64,125,.09);
     }
 
-    .project-card-modern {
-      min-height: 250px;
-      padding: 22px;
-      border-radius: var(--radius-xl);
+    .eyebrow-pill,
+    .award-type,
+    .project-type,
+    .skill-label,
+    .doc-category-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 25px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .eyebrow-pill {
+      background: rgba(76,181,206,.085);
+      border: 1px solid rgba(70,155,190,.16);
+      color: #367b96;
+    }
+
+    .award-type {
+      background: rgba(215,166,70,.09);
+      border: 1px solid rgba(215,166,70,.16);
+      color: #8a641a;
+    }
+
+    .project-type {
+      background: rgba(91,112,246,.075);
+      border: 1px solid rgba(91,112,246,.13);
+      color: #5361ae;
+    }
+
+    .skill-label {
+      background: rgba(68,169,145,.075);
+      border: 1px solid rgba(68,169,145,.15);
+      color: #347e6d;
+    }
+
+    .info-pills,
+    .project-tags,
+    .award-tags,
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 11px;
+    }
+
+    .info-pill,
+    .project-tags span,
+    .award-tags span,
+    .skill-pills span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+      border: 1px solid rgba(91,112,246,.13);
+      background: rgba(91,112,246,.07);
+      color: #5361ae;
+    }
+
+    .about-grid,
+    .award-grid,
+    .project-grid,
+    .skills-grid {
+      gap: 16px;
+    }
+
+    .about-card h3,
+    .award-card h3,
+    .project-card h3,
+    .skill-card h3,
+    .contact-card h3 {
+      color: #252a43;
+      letter-spacing: -.02em;
+    }
+
+    .about-card p,
+    .award-card p,
+    .project-card p,
+    .skill-card p,
+    .contact-card p {
+      color: #6c7890;
+    }
+
+    /* Projects: more like portfolio cards, less like repository cards */
+    .project-card {
+      min-height: 235px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: 0.22s ease;
     }
 
-    .project-card-modern:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(99,91,255,0.22);
+    .project-card .project-actions {
+      margin-top: auto;
+      padding-top: 16px;
     }
 
-    .project-topline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
+    .project-card .project-number,
+    .project-card .repo-icon,
+    .project-card .repo-status {
+      opacity: .45;
     }
 
-    .project-code {
-      color: rgba(67,56,202,0.22);
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -0.08em;
+    /* Achievements */
+    .award-card {
+      min-height: 215px;
     }
 
-    .skills-layout {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr 0.8fr;
-      gap: 18px;
-      align-items: stretch;
+    /* Skills */
+    .skill-card {
+      min-height: 180px;
     }
 
-    .skills-card,
-    .contact-panel {
-      padding: 24px;
-      border-radius: var(--radius-xl);
-    }
-
-    .skill-cloud,
-    .language-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 16px;
-    }
-
-    .skill-cloud span,
-    .language-list span {
-      display: inline-flex;
-      min-height: 32px;
-      align-items: center;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: rgba(99,91,255,0.08);
-      border: 1px solid rgba(99,91,255,0.12);
-      color: var(--primary-dark);
-      font-size: 0.78rem;
-      font-weight: 850;
-    }
-
-    .strength-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .strength-list div {
-      padding: 13px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(99,91,255,0.12);
-    }
-
-    .strength-list strong {
-      display: block;
-      font-size: 0.86rem;
-      margin-bottom: 3px;
-    }
-
-    .strength-list span {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
-    }
-
-    .document-grid {
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 16px;
-      min-height: 560px;
-    }
-
-    .doc-category-tabs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .doc-filter {
-      min-height: 34px;
-      border: 1px solid rgba(104,91,255,0.14);
-      background: rgba(255,255,255,0.72);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      font-size: 0.76rem;
-      font-weight: 850;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    .doc-filter:hover,
-    .doc-filter.active {
-      color: white;
-      background: var(--gradient-main);
-      border-color: transparent;
-      box-shadow: 0 8px 18px rgba(99,91,255,0.16);
-    }
-
-    .doc-list {
-      max-height: 470px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    .doc-list::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .doc-list::-webkit-scrollbar-thumb {
-      background: rgba(104,91,255,0.22);
-      border-radius: 999px;
-    }
-
+    /* Documents: preserve file-browser function but soften the visual */
     .document-sidebar,
     .document-viewer {
-      padding: 14px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.86);
-      border: 1px solid rgba(104,91,255,0.12);
+      padding: 16px;
     }
 
-    .search-box {
-      width: 100%;
-      height: 42px;
-      border-radius: 14px;
-      border: 1px solid rgba(104,91,255,0.14);
-      background: #f8f9ff;
-      padding: 0 13px;
-      color: var(--text);
-      outline: none;
-      margin-bottom: 12px;
+    .document-sidebar::before,
+    .document-viewer::before {
+      top: 18px;
+      height: 38px;
     }
 
-    .search-box:focus {
-      border-color: rgba(37,99,235,0.5);
-      box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+    .doc-category,
+    .doc-item,
+    .doc-filter {
+      border-radius: 12px !important;
     }
 
-    .doc-item {
-      width: 100%;
-      display: grid;
-      gap: 3px;
-      text-align: left;
-      padding: 11px;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      color: var(--text);
+    .doc-category.active,
+    .doc-filter.active {
+      background: rgba(91,112,246,.08) !important;
+      color: #4f5caf !important;
+      border-color: rgba(91,112,246,.15) !important;
+      box-shadow: none !important;
     }
 
-    .doc-item:hover,
     .doc-item.active {
-      background: rgba(104,91,255,0.08);
-      border-color: rgba(104,91,255,0.22);
-    }
-
-    .doc-item strong {
-      font-size: 0.84rem;
-    }
-
-    .doc-item span,
-    .contact-link span,
-    .split-item span {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .doc-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .doc-title {
-      font-weight: 900;
-      letter-spacing: -0.025em;
-    }
-
-    .doc-subtitle {
-      color: var(--muted);
-      font-size: 0.88rem;
+      background: rgba(76,181,206,.07) !important;
+      border-color: rgba(70,155,190,.14) !important;
     }
 
     .viewer-box {
-      height: 455px;
+      border-radius: 16px;
+      border: 1px solid rgba(82,96,150,.10);
+      background: #fff;
+    }
+
+    /* Buttons: slightly softer, closer to the original */
+    .btn-primary {
+      background: linear-gradient(135deg, #6574ef, #4e91dd);
+      box-shadow: 0 8px 18px rgba(78,110,190,.16);
+    }
+
+    .btn-secondary {
+      border-color: rgba(91,112,246,.14);
+      background: rgba(255,255,255,.92);
+      color: #505ca8;
+    }
+
+    /* Documents layout: all navigation + PDF files on the LEFT */
+    .docs-grid {
+      grid-template-columns: 330px minmax(0, 1fr) !important;
+      align-items: stretch;
+    }
+
+    .docs-sidebar {
+      display: flex;
+      flex-direction: column;
+      min-height: 720px;
+      max-height: 820px;
       overflow: hidden;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #eef2ff, #e0f2fe);
-      border: 1px solid rgba(99,91,255,0.12);
+      border-right: 1px solid rgba(82,96,150,.10);
     }
 
-    .viewer-box iframe {
-      width: 100%;
-      height: 100%;
+    .category-list {
+      flex: 0 0 auto;
+    }
+
+    .sidebar-file-section {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(82,96,150,.10);
+      min-height: 0;
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+    }
+
+    .sidebar-file-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 5px 8px;
+      color: #6d7890;
+      font-size: .70rem;
+      font-weight: 850;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-file-count {
+      min-width: 24px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 7px;
+      border-radius: 999px;
+      background: rgba(91,112,246,.07);
+      border: 1px solid rgba(91,112,246,.11);
+      color: #5966ad;
+      font-size: .68rem;
+      letter-spacing: 0;
+    }
+
+    .sidebar-file-browser {
+      min-height: 0;
+      max-height: none !important;
+      flex: 1 1 auto;
+      overflow-y: auto;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+    }
+
+    .sidebar-file-browser::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .sidebar-file-browser::-webkit-scrollbar-thumb {
+      background: rgba(91,112,246,.18);
+      border-radius: 999px;
+    }
+
+    .sidebar-file-browser .folder-group {
       border: 0;
-      background: white;
+      border-top: 1px solid rgba(82,96,150,.07);
+      background: transparent;
     }
 
-    .label {
-      margin: 16px 0 8px;
-      font-weight: 900;
-      color: var(--primary-dark);
-      font-size: 0.9rem;
+    .sidebar-file-browser .folder-group:first-child {
+      border-top: 0;
     }
 
-    .contact-link {
-      padding: 12px 13px;
-      border-radius: 16px;
-      transition: 0.2s ease;
+    .sidebar-file-browser .folder-title {
+      padding: 9px 7px 7px;
+      background: transparent;
+      color: #77839a;
+      font-size: .66rem;
+      font-weight: 850;
+      letter-spacing: .045em;
     }
 
-    .contact-link:hover {
-      transform: translateX(4px);
-      background: rgba(91,112,246,0.08);
-      border-color: rgba(91,112,246,0.18);
+    .sidebar-file-browser .file-row {
+      grid-template-columns: 18px minmax(0,1fr);
+      gap: 8px;
+      padding: 9px 7px 9px 10px;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
     }
 
-    .footer {
-      padding: 18px 0 38px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.88rem;
+    .sidebar-file-browser .file-row:hover {
+      background: rgba(91,112,246,.045);
     }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .grid-2,
-      .card-and-viewer,
-      .showcase-grid,
-      .activity-grid,
-      .about-layout,
-      .award-grid,
-      .project-grid-modern,
-      .skills-layout,
-      .contact-layout,
-      .document-grid {
-        grid-template-columns: 1fr;
+    .sidebar-file-browser .file-row.active {
+      background: rgba(76,181,206,.075);
+      box-shadow: inset 3px 0 0 #65afe0;
+    }
+
+    .sidebar-file-browser .file-kind {
+      display: none;
+    }
+
+    .sidebar-file-browser .file-name {
+      font-size: .76rem;
+      line-height: 1.28;
+    }
+
+    .sidebar-file-browser .file-sub {
+      font-size: .66rem;
+      margin-top: 2px;
+    }
+
+    .docs-content {
+      min-width: 0;
+    }
+
+    .doc-preview {
+      height: 100%;
+      min-height: 720px;
+    }
+
+    .pdf-frame {
+      height: 650px !important;
+    }
+
+    /* The top toolbar still shows the active path, but the right panel now starts directly with the preview. */
+    .preview-head {
+      padding-top: 2px;
+    }
+
+    @media (max-width: 980px) {
+      .docs-grid {
+        grid-template-columns: 285px minmax(0, 1fr) !important;
       }
-
-      .viewer-panel { position: static; }
-      .hero-main { min-height: auto; }
-      .timeline-card { grid-template-columns: 1fr; }
-      .award-card,
-      .project-card-modern,
-      .about-feature { min-height: auto; }
     }
 
     @media (max-width: 820px) {
-      .topbar {
-        top: 0;
-        padding: 8px 0;
+      .docs-grid {
+        grid-template-columns: 1fr !important;
       }
 
-      .nav { border-radius: 22px; }
-
-      .menu-btn {
-        display: grid;
-        width: 38px;
-        height: 38px;
+      .docs-sidebar {
+        min-height: auto;
+        max-height: none;
       }
 
-      .nav-links {
-        position: absolute;
-        top: 68px;
-        left: 14px;
-        right: 14px;
-        display: none;
-        grid-template-columns: 1fr;
-        gap: 7px;
-        padding: 10px;
-        border-radius: 20px;
-        background: rgba(255,255,255,0.94);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow-lg);
-        backdrop-filter: blur(18px);
+      .sidebar-file-browser {
+        max-height: 340px !important;
       }
 
-      .menu-toggle:checked ~ .nav-links { display: grid; }
-
-      .nav-links a {
-        justify-content: flex-start;
-        min-height: 40px;
-        background: rgba(255,255,255,0.6);
+      .doc-preview {
+        min-height: auto;
       }
 
-      .section { padding: 56px 0; }
-      .hero { padding: 24px 0 56px; }
-
-      .hero-main,
-      .profile-card,
-      .highlight-card,
-      .panel,
-      .info-card,
-      .viewer-panel,
-      .project-board,
-      .document-shell {
-        border-radius: 20px;
-        padding: 16px;
+      .pdf-frame {
+        height: 500px !important;
       }
-
-      .hero-title { font-size: clamp(2.25rem, 10vw, 3.6rem); }
-      .hero-metrics { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-
-      .section-head {
-        grid-template-columns: 1fr;
-        align-items: flex-start;
-      }
-
-      .card-split { grid-template-columns: 1fr; }
-
-      .card-thumb {
-        width: 100%;
-        height: 70px;
-      }
-
-      .mini-row,
-      .split-item,
-      .contact-link {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .pdf-frame,
-      .viewer-box { height: 380px; }
-      .project-paper { min-height: auto; }
     }
 
-    @media (max-width: 480px) {
-      .container { width: min(calc(100% - 24px), var(--max)); }
-
-      .nav {
-        width: calc(100% - 24px);
-        padding: 10px;
+    @media (max-width: 760px) {
+      .topbar { top: 6px; width: calc(100% - 16px); }
+      .hero { padding-top: 34px; }
+      .hero-grid > div:first-child { border-radius: 20px; padding: 24px; }
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 20px;
       }
-
-      .brand span:last-child {
-        max-width: 150px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+      .timeline-content h3 { margin-top: 4px; }
+      .about-card,
+      .award-card,
+      .project-card,
+      .skill-card,
+      .contact-card,
+      .document-sidebar,
+      .document-viewer {
+        border-radius: 20px;
       }
-
-      .hero-label { font-size: 0.66rem; }
-
-      .pdf-frame,
-      .viewer-box { height: 360px; }
     }
+
   </style>
 </head>
 
 <body>
   <header class="topbar">
-    <div class="nav">
-      <a class="brand" href="#home" aria-label="Go to home section">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Go to top">
         <span class="brand-mark">JY</span>
         <span>Ooi Jin Yon</span>
+        <span class="brand-path">Data Analytics Portfolio</span>
       </a>
 
-      <input type="checkbox" id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" />
-      <label for="menuToggle" class="menu-btn" aria-label="Open navigation menu">
-        <span></span>
-      </label>
+      <input id="menuToggle" class="menu-toggle" type="checkbox" aria-label="Toggle navigation" />
+      <label class="menu-btn" for="menuToggle" aria-label="Open menu"></label>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#awards">Awards</a>
-        <a href="#extracurricular">Activities</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#resume" class="nav-cta">Documents</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#documents">Documents</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
@@ -1501,262 +1349,121 @@
   <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
-        <article class="hero-main glass">
-          <div class="hero-label">
-            <span class="hero-label-dot"></span>
-            Data Analytics Portfolio
-          </div>
-
-          <h1 class="hero-title">
-            Ooi Jin Yon <span>Portfolio Website</span>
-          </h1>
-
-          <p class="hero-text">
-            I am Ooi Jin Yon, a final-year Bachelor of Information Systems (Hons) student majoring in Data Analytics at Sunway University. This portfolio highlights my education, achievements, activities, projects, skills and supporting documents.
+        <div>
+          <div class="eyebrow"><span class="status-dot"></span> Information Systems · Data Analytics</div>
+          <h1>Ooi Jin Yon</h1>
+          <p class="hero-role">Data Analytics Portfolio</p>
+          <p class="hero-copy">
+            Final-year Bachelor of Information Systems (Honours) student majoring in Data Analytics at Sunway University, with experience in research, data analysis, reporting, application design and business process improvement.
           </p>
-
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="#resume">Open Documents</a>
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn" href="#documents">Open documents</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
+        </div>
 
-          <div class="hero-metrics" aria-label="Portfolio highlights">
-            <div class="metric">
-              <strong>Sunway University</strong>
-              <span>Information Systems, Data Analytics</span>
-            </div>
-            <div class="metric">
-              <strong>Current CGPA 3.66</strong>
-              <span>Bachelor Degree</span>
-            </div>
-            <div class="metric">
-              <strong>Aug 2026</strong>
-              <span>Expected graduation</span>
-            </div>
+        <aside class="profile-box" aria-label="Profile summary">
+          <div class="profile-head">Profile</div>
+          <div class="profile-list">
+            <div class="profile-row"><span>University</span><strong>Sunway University</strong></div>
+            <div class="profile-row"><span>Programme</span><strong>Information Systems</strong></div>
+            <div class="profile-row"><span>Major</span><strong>Data Analytics</strong></div>
+            <div class="profile-row"><span>CGPA</span><strong>3.66</strong></div>
+            <div class="profile-row"><span>Graduation</span><strong>Aug 2026</strong></div>
+            <div class="profile-row"><span>Experience</span><strong>Development Plan Intern · Jan–Apr 2026</strong></div>
           </div>
-        </article>
-
-        <aside class="hero-side">
-          <article class="profile-card glass">
-            <div class="avatar">JY</div>
-            <h2>Ooi Jin Yon</h2>
-            <p>
-              Data analytics student focused on reporting, research, business process improvement and practical digital solutions.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
-            </div>
-          </article>
-
-          <article class="highlight-card glass">
-            <div class="section-kicker">Current Highlights</div>
-            <div class="mini-stack">
-              <div class="mini-row">
-                <strong>Current role</strong>
-                <span class="badge">Development Plan Intern</span>
-              </div>
-              <div class="mini-row">
-                <strong>Internship period</strong>
-                <span class="badge">Jan – Apr 2026</span>
-              </div>
-              <div class="mini-row">
-                <strong>Academic focus</strong>
-                <span class="badge">Data Analytics</span>
-              </div>
-            </div>
-          </article>
         </aside>
       </div>
     </section>
 
     <section class="section" id="about">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">About</div>
-            <h2 class="section-title">Short description about me</h2>
+        <div class="section-heading">
+          <div><div class="section-label">Overview</div><h2>About me</h2></div>
+          <p>A concise professional introduction instead of a highly decorative profile section.</p>
+        </div>
+
+        <article class="readme">
+          <div class="readme-head">Profile Overview</div>
+          <div class="readme-body">
+            <h3>Profile</h3>
+            <p>
+              I am a final-year Information Systems student specialising in Data Analytics. My academic work and internship experience have developed my capabilities in analytics, research, reporting, system thinking and practical digital solution development.
+            </p>
+            <p>I am particularly interested in:</p>
+            <ul>
+              <li>Data analytics, visualisation and business intelligence</li>
+              <li>Cloud and big data analytics</li>
+              <li>Information systems and process improvement</li>
+              <li>Research, reporting and evidence-based decision making</li>
+            </ul>
           </div>
-          <p class="section-copy">
-            -
-        </div>
-
-        <div class="about-layout">
-          <article class="about-feature glass">
-            <span class="feature-number">01</span>
-            <h3>Academic Foundation</h3>
-            <p>
-              My studies in Information Systems and Data Analytics strengthen my understanding of databases, analytics, statistics, visualisation and digital solution design.
-            </p>
-          </article>
-
-          <article class="about-feature glass">
-            <span class="feature-number">02</span>
-            <h3>Work Experience</h3>
-            <p>
-              As a Development Plan Intern in Sunway College (KL) Sdn Bhd, I support research, data analysis, application design and more.
-            </p>
-          </article>
-
-          <article class="about-feature glass">
-            <span class="feature-number">03</span>
-            <h3>Portfolio Direction</h3>
-            <p>
-              This website presents my academic growth, achievements, activities, coursework and selected documents in one page.
-            </p>
-          </article>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="education">
+    <section class="section" id="experience">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Education</div>
-            <h2 class="section-title">Academic pathway.</h2>
-          </div>
-          <p class="section-copy">
-
-          </p>
+        <div class="section-heading">
+          <div><div class="section-label">Background</div><h2>Experience & education</h2></div>
+          <p>Academic and work history presented in a compact timeline.</p>
         </div>
 
-        <div class="timeline-list">
-          <article class="timeline-card glass">
-            <div class="timeline-year">2023 — Present</div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-period">Jan – Apr 2026</div>
             <div class="timeline-content">
-              <div class="card-badge blue">Sunway University</div>
+              <div class="org">Sunway College (KL) Sdn Bhd</div>
+              <h3>Development Plan Intern</h3>
+              <p>Supported research, data analysis, application design and related development planning activities.</p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Research</span>
+                <span class="timeline-tag">Data Analysis</span>
+                <span class="timeline-tag status">Internship</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-period">2023 – Present</div>
+            <div class="timeline-content">
+              <div class="org">Sunway University</div>
               <h3>Bachelor of Information Systems (Honours) (Data Analytics)</h3>
               <p>Focused on information systems, data analytics, databases, visualisation, research and digital solution design.</p>
-              <div class="chips">
-                <span class="chip">CGPA 3.66</span>
-                <span class="chip">Data Analytics</span>
-                <span class="chip">Current Study</span>
+              <div class="timeline-tags">
+                <span class="timeline-tag result">CGPA 3.66</span>
+                <span class="timeline-tag">Data Analytics</span>
+                <span class="timeline-tag status">Current Study</span>
               </div>
             </div>
           </article>
 
-          <article class="timeline-card glass">
-            <div class="timeline-year">2022 — 2023</div>
+          <article class="timeline-item">
+            <div class="timeline-period">2022 – 2023</div>
             <div class="timeline-content">
-              <div class="card-badge blue">Sunway College</div>
+              <div class="org">Sunway College</div>
               <h3>Foundation in Arts (FIA)</h3>
               <p>Completed pre-university studies with strong academic performance before entering degree studies.</p>
-              <div class="chips">
-                <span class="chip">CGPA 3.91</span>
-                <span class="chip">Pre-University</span>
+              <div class="timeline-tags">
+                <span class="timeline-tag result">CGPA 3.91</span>
+                <span class="timeline-tag">Pre-University</span>
               </div>
             </div>
           </article>
 
-          <article class="timeline-card glass">
-            <div class="timeline-year">2017 — 2022</div>
+          <article class="timeline-item">
+            <div class="timeline-period">2017 – 2022</div>
             <div class="timeline-content">
-              <div class="card-badge blue">SMK Bukit Mertajam</div>
+              <div class="org">SMK Bukit Mertajam</div>
               <h3>Sijil Pelajaran Malaysia (SPM)</h3>
               <p>Completed secondary education and achieved results that supported scholarship and further study opportunities.</p>
-              <div class="chips">
-                <span class="chip">7As</span>
-                <span class="chip">Secondary School</span>
+              <div class="timeline-tags">
+                <span class="timeline-tag result">7As</span>
+                <span class="timeline-tag">Secondary School</span>
               </div>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="awards">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Honour & Award</div>
-            <h2 class="section-title">Recognition and scholarships.</h2>
-          </div>
-          <p class="section-copy">
-            Awards are displayed as clean achievement cards. Certificates and supporting PDFs can be accessed in Documents.
-          </p>
-        </div>
-
-        <div class="award-grid">
-          <article class="award-card glass">
-            <div>
-              <div class="card-badge">Academic Achievement</div>
-              <h3>Dean List Award</h3>
-              <p>Recognised for outstanding semester performance across multiple academic periods.</p>
-              <div class="chips">
-                <span class="chip">April 2025</span>
-                <span class="chip">September 2024</span>
-                <span class="chip">April 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="award-card glass">
-            <div>
-              <div class="card-badge">Scholarship</div>
-              <h3>Jeffrey Cheah ACE Scholarship Award</h3>
-              <p>Received scholarship support across degree study years based on academic performance and continuation requirements.</p>
-              <div class="chips">
-                <span class="chip">Year 1</span>
-                <span class="chip">Year 2</span>
-                <span class="chip">Year 3</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="award-card glass">
-            <div>
-              <div class="card-badge">Entrance Scholarship</div>
-              <h3>Jeffrey Cheah Entrance Scholarship Award</h3>
-              <p>Received tuition fee deduction after achieving strong SPM results before starting Foundation in Arts.</p>
-              <div class="chips">
-                <span class="chip">RM6,000 Deduction</span>
-                <span class="chip">SPM 7As</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="extracurricular">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Activities</div>
-            <h2 class="section-title">Learning beyond coursework.</h2>
-          </div>
-          <p class="section-copy">
-            Activities that reflect collaboration, communication, technical learning and applied problem-solving.
-          </p>
-        </div>
-
-        <div class="activity-grid">
-          <article class="activity-card glass">
-            <div class="card-badge blue">Sunway University</div>
-            <h3>BIS2102 Project Pitching Competition</h3>
-            <p class="meta-line">August 2025</p>
-            <p>Collaborated in a team to enhance an existing application and present an AI-powered travel assistant prototype.</p>
-          </article>
-
-          <article class="activity-card glass">
-            <div class="card-badge blue">Sunway University</div>
-            <h3>Paradox of Theron</h3>
-            <p class="meta-line">February 2025</p>
-            <p>Emerged as the top team while improving teamwork, discussion and strategy planning experience.</p>
-          </article>
-
-          <article class="activity-card glass">
-            <div class="card-badge blue">Cisco Networking Academy</div>
-            <h3>CCNA: Introduction to Networks</h3>
-            <p class="meta-line">December 2023</p>
-            <p>Completed the course credential and practised configuring a small computer network.</p>
-          </article>
-
-          <article class="activity-card glass">
-            <div class="card-badge blue">ACCA & Multimedia University</div>
-            <h3>ACCA-MMU Inter-School Accounting Quiz</h3>
-            <p class="meta-line">August 2021</p>
-            <p>Participated in the quiz challenge with classmates and teacher.</p>
           </article>
         </div>
       </div>
@@ -1764,64 +1471,88 @@
 
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Assignments</div>
-            <h2 class="section-title">Selected projects and coursework.</h2>
-          </div>
-          <p class="section-copy">
-            Project cards focus on skills, context and outcomes. Detailed project PDFs should be placed in the Documents section only.
-          </p>
+        <div class="section-heading">
+          <div><div class="section-label">Work</div><h2>Selected projects & coursework</h2></div>
+          <p>Repository-style cards keep the focus on what was done, the tools used and the practical outcome.</p>
         </div>
 
-        <div class="tab-row">
-          <button class="tab-chip" data-tab="year3">Sunway University Year 3</button>
-          <button class="tab-chip active" data-tab="year2">Sunway University Year 2</button>
-          <button class="tab-chip" data-tab="year1">Sunway University Year 1</button>
-          <button class="tab-chip" data-tab="other">Other</button>
+        <div class="tabs" aria-label="Project filters">
+          <button class="tab-button active" data-project-filter="all">All</button>
+          <button class="tab-button" data-project-filter="year2">Year 2</button>
+          <button class="tab-button" data-project-filter="other">Other</button>
         </div>
 
-        <div class="project-grid-modern" id="projectGrid">
-          <article class="project-card-modern glass" data-tab="year2">
-            <div class="project-topline">
-              <span class="card-badge">Year 2 Semester 3</span>
-              <span class="project-code">01</span>
-            </div>
-            <h3>Information Systems Analysis & Design</h3>
-            <p>Designed and documented system improvements with user requirements, workflow thinking and interface prototyping.</p>
-            <div class="chips">
-              <span class="chip">Figma</span>
-              <span class="chip">System Design</span>
-              <span class="chip">Prototype</span>
-            </div>
+        <div class="repo-grid" id="projectGrid">
+          <article class="repo-card" data-project-group="year2">
+            <div class="repo-top"><span class="repo-icon">▱</span><span class="repo-name">Information Systems Analysis & Design</span><span class="repo-visibility">Coursework</span></div>
+            <p>Designed and documented system improvements using user requirements, workflow analysis and interface prototyping.</p>
+            <div class="repo-meta"><span><span class="tag-dot"></span>Figma</span><span>System Design</span><span>Prototype</span><span>Year 2 · Semester 3</span></div>
           </article>
 
-          <article class="project-card-modern glass" data-tab="year2">
-            <div class="project-topline">
-              <span class="card-badge">Year 2 Semester 3</span>
-              <span class="project-code">02</span>
-            </div>
-            <h3>IS Management and Strategy</h3>
-            <p>Analysed business and information system strategy through structured group work, reporting and presentation.</p>
-            <div class="chips">
-              <span class="chip">Strategy</span>
-              <span class="chip">Analysis</span>
-              <span class="chip">Report</span>
-            </div>
+          <article class="repo-card" data-project-group="year2">
+            <div class="repo-top"><span class="repo-icon">▱</span><span class="repo-name">IS Management & Strategy</span><span class="repo-visibility">Coursework</span></div>
+            <p>Analysed business and information systems strategy through structured group work, reporting and presentation.</p>
+            <div class="repo-meta"><span><span class="tag-dot purple"></span>Strategy</span><span>Analysis</span><span>Report</span><span>Year 2 · Semester 3</span></div>
           </article>
 
-          <article class="project-card-modern glass" data-tab="year2">
-            <div class="project-topline">
-              <span class="card-badge">Year 2 Semester 2</span>
-              <span class="project-code">03</span>
-            </div>
-            <h3>Enterprise Architecture</h3>
+          <article class="repo-card" data-project-group="year2">
+            <div class="repo-top"><span class="repo-icon">▱</span><span class="repo-name">Enterprise Architecture</span><span class="repo-visibility">Coursework</span></div>
             <p>Explored enterprise-level architecture concepts and applied structured thinking to organisational technology design.</p>
-            <div class="chips">
-              <span class="chip">Architecture</span>
-              <span class="chip">CSVLOD</span>
-              <span class="chip">Group Work</span>
-            </div>
+            <div class="repo-meta"><span><span class="tag-dot orange"></span>Architecture</span><span>CSVLOD</span><span>Group Work</span><span>Year 2 · Semester 2</span></div>
+          </article>
+
+          <article class="repo-card" data-project-group="other">
+            <div class="repo-top"><span class="repo-icon">▱</span><span class="repo-name">AI Travel Assistant Pitch</span><span class="repo-visibility">Competition</span></div>
+            <p>Collaborated in a team to enhance an existing application and present an AI-powered travel assistant prototype.</p>
+            <div class="repo-meta"><span><span class="tag-dot"></span>AI Concept</span><span>Pitching</span><span>Teamwork</span><span>Aug 2025</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="section-label">Recognition</div><h2>Achievements & activities</h2></div>
+          <p>Important recognition stays visible here; the complete evidence archive is kept under Documents.</p>
+        </div>
+
+        <div class="achievement-grid">
+          <article class="achievement-card award-card">
+            <div class="type">Academic Achievement</div>
+            <h3>Dean's List Award</h3>
+            <p>Recognised for strong semester academic performance across multiple study periods.</p>
+            <div class="mini-tags"><span class="mini-tag">Apr 2024</span><span class="mini-tag">Sep 2024</span><span class="mini-tag">Apr 2025</span><span class="mini-tag">Sep 2025</span></div>
+          </article>
+          <article class="achievement-card award-card">
+            <div class="type">Scholarship</div>
+            <h3>Jeffrey Cheah ACE Scholarship</h3>
+            <p>Received scholarship support across degree study years based on academic performance and continuation requirements.</p>
+            <div class="mini-tags"><span class="mini-tag">Year 1</span><span class="mini-tag">Year 2</span><span class="mini-tag">Year 3</span></div>
+          </article>
+          <article class="achievement-card award-card">
+            <div class="type">Entrance Scholarship</div>
+            <h3>Jeffrey Cheah Entrance Scholarship</h3>
+            <p>Received RM6,000 tuition fee deduction after achieving strong SPM results before Foundation in Arts.</p>
+            <div class="mini-tags"><span class="mini-tag">RM6,000</span><span class="mini-tag">SPM 7As</span></div>
+          </article>
+          <article class="achievement-card award-card">
+            <div class="type">Competition</div>
+            <h3>BIS2102 Project Pitching Competition</h3>
+            <p>Worked with a team to present an AI-powered travel assistant prototype.</p>
+            <div class="mini-tags"><span class="mini-tag">Aug 2025</span><span class="mini-tag">Team Project</span></div>
+          </article>
+          <article class="achievement-card award-card">
+            <div class="type">Activity</div>
+            <h3>Paradox of Theron</h3>
+            <p>Emerged as the top team while strengthening discussion, teamwork and strategy planning.</p>
+            <div class="mini-tags"><span class="mini-tag">Feb 2025</span></div>
+          </article>
+          <article class="achievement-card award-card">
+            <div class="type">Certification</div>
+            <h3>CCNA: Introduction to Networks</h3>
+            <p>Completed Cisco Networking Academy coursework and practised configuring a small computer network.</p>
+            <div class="mini-tags"><span class="mini-tag">Dec 2023</span><span class="mini-tag">Cisco</span></div>
           </article>
         </div>
       </div>
@@ -1829,96 +1560,67 @@
 
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Skills</div>
-            <h2 class="section-title">Tools, languages and strengths.</h2>
-          </div>
-          <p class="section-copy">
-            A practical skill set for analytics, reporting, design, documentation and teamwork.
-          </p>
+        <div class="section-heading">
+          <div><div class="section-label">Capabilities</div><h2>Skills</h2></div>
+          <p>Grouped by practical use rather than self-rated progress bars.</p>
         </div>
 
-        <div class="skills-layout">
-          <article class="skills-card glass">
-            <h3>Tools & Platforms</h3>
-            <div class="skill-cloud">
-              <span>Power BI</span><span>Tableau</span><span>Python</span><span>Oracle SQL</span><span>Excel</span><span>SAS Enterprise Miner</span><span>SAS Enterprise Guide</span><span>Power Apps</span><span>Power Automate</span><span>Figma</span><span>Canva</span>
-            </div>
+        <div class="skill-grid">
+          <article class="skill-card skill-card">
+            <h3>Data & Analytics</h3>
+            <div class="token-list"><span class="token">Python</span><span class="token">Power BI</span><span class="token">Tableau</span><span class="token">Oracle SQL</span><span class="token">Excel</span><span class="token">SAS Enterprise Miner</span><span class="token">SAS Enterprise Guide</span></div>
           </article>
-
-          <article class="skills-card glass">
-            <h3>Core Strengths</h3>
-            <div class="strength-list">
-              <div><strong>Problem Solving</strong><span>Breaking down problems into clear, workable steps.</span></div>
-              <div><strong>Team Collaboration</strong><span>Working with others to organise ideas and deliver outputs.</span></div>
-              <div><strong>Time Management</strong><span>Managing tasks, deadlines and project priorities.</span></div>
-            </div>
+          <article class="skill-card skill-card">
+            <h3>Digital Tools</h3>
+            <div class="token-list"><span class="token">Power Apps</span><span class="token">Power Automate</span><span class="token">Figma</span><span class="token">Canva</span></div>
           </article>
-
-          <article class="skills-card glass">
-            <h3>Languages</h3>
-            <div class="language-list">
-              <span>Chinese Mandarin</span>
-              <span>English</span>
-              <span>Malay</span>
-            </div>
+          <article class="skill-card skill-card">
+            <h3>Languages & Strengths</h3>
+            <div class="token-list"><span class="token">Mandarin</span><span class="token">English</span><span class="token">Malay</span><span class="token">Problem Solving</span><span class="token">Team Collaboration</span><span class="token">Time Management</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="resume">
+    <section class="section" id="documents">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Documents</div>
-            <h2 class="section-title">PDF documents and certificates.</h2>
-          </div>
-          <p class="section-copy">
-            This is the only section with PDF preview. Use the search box to find and open supporting documents.
-          </p>
+        <div class="section-heading">
+          <div><div class="section-label">Evidence archive</div><h2>Documents</h2></div>
+          <p>Add a PDF path to one JavaScript list below. The page automatically categorises it into Career, Academic, Awards, Scholarships or Certifications.</p>
         </div>
 
-        <div class="document-shell glass">
-          <div class="document-grid">
-            <aside class="document-sidebar">
-              <input id="searchInput" class="search-box" type="text" placeholder="Search PDFs..." />
+        <div class="docs-shell">
+          <div class="docs-toolbar">
+            <div class="docs-path"><strong>portfolio</strong> / PDF / <span id="activePath">all documents</span></div>
+            <div class="file-count" id="fileCount">0 files</div>
+          </div>
 
-              <div class="doc-category-tabs" aria-label="Document categories">
-                <button class="doc-filter active" type="button" data-category="all">All</button>
-                <button class="doc-filter" type="button" data-category="resume">Resume</button>
-                <button class="doc-filter" type="button" data-category="result">Result</button>
-                <button class="doc-filter" type="button" data-category="certificate">Certificate</button>
-                <button class="doc-filter" type="button" data-category="honour">Honour and Award</button>
-                <button class="doc-filter" type="button" data-category="scholarship">Scholarship</button>
-              </div>
+          <div class="docs-grid">
+            <aside class="docs-sidebar">
+              <input id="docSearch" class="search" type="search" placeholder="Search documents..." aria-label="Search documents">
+              <div class="category-list" id="categoryList"></div>
 
-              <div class="doc-list">
-                <button class="doc-item active" data-category="resume" data-title="Resume / CV" data-file="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" data-date="Latest CV"><strong>Resume / CV</strong><span>Latest CV</span></button>
-                <button class="doc-item" data-category="result" data-title="Bachelor Degree Transcript" data-file="PDF/Transcript BSDA.pdf" data-date="Academic Record"><strong>Bachelor Degree Transcript</strong><span>Academic Record</span></button>
-                <button class="doc-item" data-category="result" data-title="Foundation in Arts Result" data-file="PDF/RESULT FIA.pdf" data-date="Completed"><strong>Foundation in Arts Result</strong><span>Completed</span></button>
-                <button class="doc-item" data-category="result" data-title="SPM Result" data-file="PDF/RESULT SPM.pdf" data-date="Completed"><strong>SPM Result</strong><span>Completed</span></button>
-                <button class="doc-item" data-category="honour" data-title="Dean List Award — September 2025" data-file="PDF/Dean List September 2025.pdf" data-date="Award Certificate"><strong>Dean List Award — September 2025</strong><span>Award Certificate</span></button>
-                <button class="doc-item" data-category="honour" data-title="Dean List Award — April 2025" data-file="PDF/Dean List April 2025.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2025</strong><span>Award Certificate</span></button>
-                <button class="doc-item" data-category="honour" data-title="Dean List Award — September 2024" data-file="PDF/Dean List September 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — September 2024</strong><span>Award Certificate</span></button>
-                <button class="doc-item" data-category="honour" data-title="Dean List Award — April 2024" data-file="PDF/Dean List April 2024.pdf" data-date="Award Certificate"><strong>Dean List Award — April 2024</strong><span>Award Certificate</span></button>
-                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 1)" data-file="PDF/Scholarship Year 1.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 1)</strong><span>Scholarship</span></button>
-                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 2)" data-file="PDF/Scholarship Year 2.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 2)</strong><span>Scholarship</span></button>
-                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah ACE Scholarship (Year 3)" data-file="PDF/Scholarship Year 3.pdf" data-date="Scholarship"><strong>Jeffrey Cheah ACE Scholarship (Year 3)</strong><span>Scholarship</span></button>
-                <button class="doc-item" data-category="scholarship" data-title="Jeffrey Cheah Entrance Scholarship" data-file="PDF/Scholarship FIA.pdf" data-date="Entrance Scholarship"><strong>Jeffrey Cheah Entrance Scholarship</strong><span>Scholarship</span></button>
-                <button class="doc-item" data-category="certificate" data-title="ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021" data-file="PDF/ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021.pdf" data-date="14 Aug 2021"><strong>ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021</strong><span>Certificate</span></button>
-                <button class="doc-item" data-category="certificate" data-title="Accounting Professional Avenue 2021 (2)" data-file="PDF/Accounting Professional Avenue 2021 2.pdf" data-date="24 Apr 2021"><strong>Accounting Professional Avenue 2021 2</strong><span>Certificate</span></button>
-
+              <div class="sidebar-file-section">
+                <div class="sidebar-file-heading">
+                  <span id="sidebarFileHeading">Documents</span>
+                  <span class="sidebar-file-count" id="sidebarFileCount">0</span>
+                </div>
+                <div class="file-browser sidebar-file-browser" id="fileBrowser"></div>
               </div>
             </aside>
 
-            <div class="document-viewer">
-              <div class="doc-top">
-                <div><div class="doc-title" id="previewTitle">Resume / CV</div><div class="doc-subtitle" id="previewDate">Latest CV</div></div>
-                <a class="btn btn-secondary" id="openDocBtn" href="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank">Open PDF</a>
+            <div class="docs-content">
+              <div class="doc-preview" id="docPreview">
+                <div class="preview-head">
+                  <div>
+                    <h3 id="previewTitle">Select a document</h3>
+                    <div class="preview-meta" id="previewMeta">Choose a PDF from the file browser above.</div>
+                  </div>
+                  <a id="openPdfButton" class="btn" href="#" target="_blank" rel="noreferrer" style="display:none">Open PDF</a>
+                </div>
+                <iframe id="pdfFrame" class="pdf-frame" title="PDF document preview" style="display:none"></iframe>
+                <div class="empty-state" id="previewEmpty">Select a PDF to preview it here.</div>
               </div>
-              <div class="viewer-box"><iframe id="pdfViewer" src="PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf" title="Resume and document PDF preview"></iframe></div>
             </div>
           </div>
         </div>
@@ -1927,111 +1629,298 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Contact</div>
-            <h2 class="section-title">Let’s connect.</h2>
-          </div>
-          <p class="section-copy">Replace the placeholder links below with your real email, LinkedIn and GitHub links before publishing.</p>
+        <div class="section-heading">
+          <div><div class="section-label">Contact</div><h2>Let's connect</h2></div>
+          <p>Replace the placeholder profile links with your actual email, LinkedIn and GitHub before publishing.</p>
         </div>
 
-        <div class="contact-layout">
-          <article class="contact-panel glass">
-            <h3>Portfolio Purpose</h3>
-            <p>This site presents academic background, achievements, projects, activities and supporting documents in a modern GitHub Pages format.</p>
-          </article>
-
-          <article class="contact-panel glass">
+        <div class="contact-box">
+          <div class="contact-block">
+            <h3>Portfolio purpose</h3>
+            <p>This site presents my academic background, practical work, achievements and supporting evidence in a clean professional format.</p>
+          </div>
+          <div class="contact-block">
             <h3>Links</h3>
             <div class="contact-links">
-              <a class="contact-link" href="mailto:your-email@example.com"><strong>Email</strong><span>your-email@example.com</span></a>
-              <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><strong>LinkedIn</strong><span>Professional profile</span></a>
-              <a class="contact-link" href="https://github.com/" target="_blank" rel="noreferrer"><strong>GitHub</strong><span>Projects and code</span></a>
+              <a href="mailto:your-email@example.com">your-email@example.com</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn profile</a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub profile</a>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">© 2026 Ooi Jin Yon. Data Analytics Portfolio for GitHub Pages.</div>
+  <footer>
+    <div class="container">© 2026 Ooi Jin Yon · Information Systems & Data Analytics</div>
   </footer>
 
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const docItems = Array.from(document.querySelectorAll(".doc-item"));
-    const docFilters = Array.from(document.querySelectorAll(".doc-filter"));
-    let activeCategory = "all";
+    /* ============================================================
+       DOCUMENT CONFIGURATION
+       ------------------------------------------------------------
+       This is the only list you need to maintain.
+
+       You can keep the current flat PDF folder:
+         "PDF/Transcript BSDA.pdf"
+
+       Or later reorganise the repository into folders:
+         "PDF/Academic/Bachelor/Transcript BSDA.pdf"
+         "PDF/Awards/Dean List/Dean List September 2025.pdf"
+
+       The categoriser checks BOTH folder names and filenames.
+       ============================================================ */
+    const DOCUMENT_FILES = [
+      "PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf",
+      "PDF/Transcript BSDA.pdf",
+      "PDF/RESULT FIA.pdf",
+      "PDF/RESULT SPM.pdf",
+      "PDF/Dean List September 2025.pdf",
+      "PDF/Dean List April 2025.pdf",
+      "PDF/Dean List September 2024.pdf",
+      "PDF/Dean List April 2024.pdf",
+      "PDF/Scholarship Year 1.pdf",
+      "PDF/Scholarship Year 2.pdf",
+      "PDF/Scholarship Year 3.pdf",
+      "PDF/Scholarship FIA.pdf",
+      "PDF/ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021.pdf",
+      "PDF/Accounting Professional Avenue 2021 2.pdf"
+    ];
+
+    const CATEGORY_ORDER = ["All", "Career", "Academic", "Awards", "Scholarships", "Certifications"];
+
+    function normalise(value) {
+      return decodeURIComponent(value).replace(/\\/g, "/").toLowerCase();
+    }
+
+    function basename(path) {
+      return decodeURIComponent(path.split("/").pop() || path);
+    }
+
+    function stripExtension(name) {
+      return name.replace(/\.pdf$/i, "");
+    }
+
+    function prettyTitle(path) {
+      const raw = stripExtension(basename(path));
+      const lower = raw.toLowerCase();
+
+      const exactNames = [
+        [/resume/i, "Resume / CV"],
+        [/transcript.*bsda|bsda.*transcript/i, "Bachelor Degree Transcript"],
+        [/result\s*fia/i, "Foundation in Arts Result"],
+        [/result\s*spm/i, "SPM Result"],
+        [/dean\s*list\s*september\s*2025/i, "Dean's List Award — September 2025"],
+        [/dean\s*list\s*april\s*2025/i, "Dean's List Award — April 2025"],
+        [/dean\s*list\s*september\s*2024/i, "Dean's List Award — September 2024"],
+        [/dean\s*list\s*april\s*2024/i, "Dean's List Award — April 2024"],
+        [/scholarship\s*year\s*1/i, "Jeffrey Cheah ACE Scholarship — Year 1"],
+        [/scholarship\s*year\s*2/i, "Jeffrey Cheah ACE Scholarship — Year 2"],
+        [/scholarship\s*year\s*3/i, "Jeffrey Cheah ACE Scholarship — Year 3"],
+        [/scholarship\s*fia/i, "Jeffrey Cheah Entrance Scholarship"],
+        [/amisaq/i, "ACCA-MMU Inter-School Accounting Quiz (AMISAQ) 2021"],
+        [/accounting professional avenue/i, "Accounting Professional Avenue 2021"]
+      ];
+
+      for (const [pattern, title] of exactNames) {
+        if (pattern.test(lower)) return title;
+      }
+
+      return raw
+        .replace(/[._-]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function inferDocumentMeta(path) {
+      const text = normalise(path);
+      const title = prettyTitle(path);
+      let category = "Certifications";
+      let subcategory = "Other Certificates";
+      let kind = "Certificate";
+
+      if (/resume|cv\b/.test(text)) {
+        category = "Career";
+        subcategory = "Resume";
+        kind = "Career Document";
+      } else if (/transcript/.test(text)) {
+        category = "Academic";
+        subcategory = "Bachelor Degree";
+        kind = "Academic Record";
+      } else if (/result\s*fia|foundation/.test(text)) {
+        category = "Academic";
+        subcategory = "Foundation";
+        kind = "Academic Result";
+      } else if (/result\s*spm|secondary|spm/.test(text)) {
+        category = "Academic";
+        subcategory = "Secondary Education";
+        kind = "Academic Result";
+      } else if (/dean\s*list|honou?r|award/.test(text)) {
+        category = "Awards";
+        subcategory = /dean\s*list/.test(text) ? "Dean's List" : "Other Awards";
+        kind = "Award Certificate";
+      } else if (/scholarship/.test(text)) {
+        category = "Scholarships";
+        subcategory = /fia|entrance/.test(text) ? "Entrance Scholarship" : "ACE Scholarship";
+        kind = "Scholarship Document";
+      } else if (/ccna|cisco/.test(text)) {
+        category = "Certifications";
+        subcategory = "Technology";
+        kind = "Certificate";
+      } else if (/acca|accounting|amisaq/.test(text)) {
+        category = "Certifications";
+        subcategory = "Competitions & Professional Activities";
+        kind = "Certificate";
+      }
+
+      /* Folder names can override the automatic guess when you reorganise files. */
+      if (/\/career\//.test(text)) category = "Career";
+      if (/\/academic\//.test(text)) category = "Academic";
+      if (/\/awards?\//.test(text)) category = "Awards";
+      if (/\/scholarships?\//.test(text)) category = "Scholarships";
+      if (/\/certifications?\//.test(text)) category = "Certifications";
+
+      return { path, title, category, subcategory, kind };
+    }
+
+    const documents = DOCUMENT_FILES.map(inferDocumentMeta);
+    let activeCategory = "All";
+    let selectedPath = null;
+
+    const categoryList = document.getElementById("categoryList");
+    const fileBrowser = document.getElementById("fileBrowser");
+    const docSearch = document.getElementById("docSearch");
+    const fileCount = document.getElementById("fileCount");
+    const activePath = document.getElementById("activePath");
     const previewTitle = document.getElementById("previewTitle");
-    const previewDate = document.getElementById("previewDate");
-    const pdfViewer = document.getElementById("pdfViewer");
-    const openDocBtn = document.getElementById("openDocBtn");
+    const previewMeta = document.getElementById("previewMeta");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const previewEmpty = document.getElementById("previewEmpty");
+    const openPdfButton = document.getElementById("openPdfButton");
 
-    function setActiveDoc(item) {
-      docItems.forEach(btn => btn.classList.remove("active"));
-      item.classList.add("active");
-      previewTitle.textContent = item.dataset.title;
-      previewDate.textContent = item.dataset.date;
-      pdfViewer.src = item.dataset.file;
-      openDocBtn.href = item.dataset.file;
+    function categoryCount(category) {
+      return category === "All" ? documents.length : documents.filter(doc => doc.category === category).length;
     }
 
-    docItems.forEach(item => {
-      item.addEventListener("click", () => setActiveDoc(item));
-    });
+    function renderCategories() {
+      categoryList.innerHTML = "";
+      CATEGORY_ORDER.forEach(category => {
+        const count = categoryCount(category);
+        if (category !== "All" && count === 0) return;
 
-    function filterDocuments() {
-      const keyword = searchInput ? searchInput.value.trim().toLowerCase() : "";
-
-      docItems.forEach(item => {
-        const text = item.innerText.toLowerCase();
-        const category = item.dataset.category || "all";
-        const matchesCategory = activeCategory === "all" || category === activeCategory;
-        const matchesSearch = text.includes(keyword);
-        item.style.display = matchesCategory && matchesSearch ? "" : "none";
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "category-button" + (category === activeCategory ? " active" : "");
+        button.innerHTML = `<span>${category === "All" ? "▣ All documents" : "▸ " + category}</span><span class="category-count">${count}</span>`;
+        button.addEventListener("click", () => {
+          activeCategory = category;
+          renderCategories();
+          renderFiles();
+        });
+        categoryList.appendChild(button);
       });
     }
 
-    docFilters.forEach(filter => {
-      filter.addEventListener("click", () => {
-        docFilters.forEach(btn => btn.classList.remove("active"));
-        filter.classList.add("active");
-        activeCategory = filter.dataset.category;
-        filterDocuments();
+    function filteredDocuments() {
+      const keyword = docSearch.value.trim().toLowerCase();
+      return documents.filter(doc => {
+        const categoryMatch = activeCategory === "All" || doc.category === activeCategory;
+        const searchMatch = !keyword || `${doc.title} ${doc.category} ${doc.subcategory} ${doc.kind} ${doc.path}`.toLowerCase().includes(keyword);
+        return categoryMatch && searchMatch;
       });
-    });
-
-    if (searchInput) {
-      searchInput.addEventListener("input", filterDocuments);
     }
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        const toggle = document.getElementById("menuToggle");
-        if (toggle) toggle.checked = false;
+    function renderFiles() {
+      const filtered = filteredDocuments();
+      fileBrowser.innerHTML = "";
+      fileCount.textContent = `${filtered.length} file${filtered.length === 1 ? "" : "s"}`;
+      activePath.textContent = activeCategory === "All" ? "all documents" : activeCategory.toLowerCase();
+
+      const sidebarFileHeading = document.getElementById("sidebarFileHeading");
+      const sidebarFileCount = document.getElementById("sidebarFileCount");
+      if (sidebarFileHeading) {
+        sidebarFileHeading.textContent = activeCategory === "All" ? "All files" : `${activeCategory} files`;
+      }
+      if (sidebarFileCount) {
+        sidebarFileCount.textContent = filtered.length;
+      }
+
+      if (!filtered.length) {
+        fileBrowser.innerHTML = '<div class="empty-state">No documents match this filter.</div>';
+        return;
+      }
+
+      const groups = new Map();
+      filtered.forEach(doc => {
+        const key = `${doc.category} / ${doc.subcategory}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(doc);
       });
-    });
-  
 
-    // PROJECT TAB FILTER
-    const tabChips = Array.from(document.querySelectorAll(".tab-chip"));
-    const projectCards = Array.from(document.querySelectorAll(".project-card-modern"));
+      groups.forEach((items, groupName) => {
+        const group = document.createElement("div");
+        group.className = "folder-group";
 
-    tabChips.forEach(tab => {
+        const heading = document.createElement("div");
+        heading.className = "folder-title";
+        heading.textContent = `▾ ${groupName}`;
+        group.appendChild(heading);
+
+        items.forEach(doc => {
+          const row = document.createElement("button");
+          row.type = "button";
+          row.className = "file-row" + (selectedPath === doc.path ? " active" : "");
+          row.innerHTML = `
+            <span class="file-icon">▤</span>
+            <span class="file-main"><span class="file-name">${doc.title}</span><span class="file-sub">${doc.subcategory}</span></span>
+            <span class="file-kind">PDF</span>
+          `;
+          row.addEventListener("click", () => selectDocument(doc));
+          group.appendChild(row);
+        });
+
+        fileBrowser.appendChild(group);
+      });
+    }
+
+    function selectDocument(doc) {
+      selectedPath = doc.path;
+      previewTitle.textContent = doc.title;
+      previewMeta.textContent = `${doc.category} / ${doc.subcategory} · ${doc.kind}`;
+      pdfFrame.src = doc.path;
+      pdfFrame.style.display = "block";
+      previewEmpty.style.display = "none";
+      openPdfButton.href = doc.path;
+      openPdfButton.style.display = "inline-flex";
+      renderFiles();
+    }
+
+    docSearch.addEventListener("input", renderFiles);
+    renderCategories();
+    renderFiles();
+    if (documents.length) selectDocument(documents[0]);
+
+    /* Project filter */
+    const projectTabs = Array.from(document.querySelectorAll("[data-project-filter]"));
+    const projectCards = Array.from(document.querySelectorAll("[data-project-group]"));
+    projectTabs.forEach(tab => {
       tab.addEventListener("click", () => {
-        tabChips.forEach(t => t.classList.remove("active"));
+        projectTabs.forEach(item => item.classList.remove("active"));
         tab.classList.add("active");
-
-        const selected = tab.dataset.tab;
-
+        const selected = tab.dataset.projectFilter;
         projectCards.forEach(card => {
-          const match = card.dataset.tab === selected;
-          card.style.display = match ? "" : "none";
+          card.style.display = selected === "all" || card.dataset.projectGroup === selected ? "" : "none";
         });
       });
     });
 
-</script>
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menuToggle").checked = false;
+      });
+    });
+  </script>
 </body>
 </html>
