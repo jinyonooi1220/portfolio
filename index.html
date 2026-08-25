@@ -1672,22 +1672,27 @@
        The categoriser checks BOTH folder names and filenames.
        ============================================================ */
     const DOCUMENT_FILES = [
-      "PDF/Resume.Ooi.JIn.Yon.20.12.25.pdf",
-      "PDF/Transcript BSDA.pdf",
-      "PDF/RESULT FIA.pdf",
-      "PDF/RESULT SPM.pdf",
-      "PDF/Dean List September 2025.pdf",
-      "PDF/Dean List April 2025.pdf",
-      "PDF/Dean List September 2024.pdf",
-      "PDF/Dean List April 2024.pdf",
-      "PDF/Scholarship Year 1.pdf",
-      "PDF/Scholarship Year 2.pdf",
-      "PDF/Scholarship Year 3.pdf",
-      "PDF/Scholarship FIA.pdf",
-      "PDF/ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021.pdf",
-      "PDF/Accounting Professional Avenue 2021 2.pdf"
+      "PDF/Academic/Bachelor Degree/Transcript BSDA.pdf",
+      "PDF/Academic/Foundation/RESULT FIA.pdf",
+      "PDF/Academic/Secondary Education/RESULT SPM.pdf",
+      "PDF/Awards/Dean's List/Dean List April 2024.pdf",
+      "PDF/Awards/Dean's List/Dean List April 2025.pdf",
+      "PDF/Awards/Dean's List/Dean List September 2024.pdf",
+      "PDF/Awards/Dean's List/Dean List September 2025.pdf",
+      "PDF/Career/Resume/Resume.Ooi.JIn.Yon.20.12.25.pdf",
+      "PDF/Certifications/ACCA-MMU InterInter-School Accounting Quiz (AMISAQ) 2021.pdf",
+      "PDF/Certifications/Accounting Professional Avenue 2021 2.pdf",
+      "PDF/Certifications/Accounting Professional Avenue 2021.pdf",
+      "PDF/Certifications/Cisco.pdf",
+      "PDF/Certifications/Paradox of Theron.pdf",
+      "PDF/Scholarships/Scholarship BSDA Year 1.pdf",
+      "PDF/Scholarships/Scholarship BSDA Year 2.pdf",
+      "PDF/Scholarships/Scholarship BSDA Year 3.pdf",
+      "PDF/Scholarships/Scholarship FIA.pdf"
     ];
 
+    // These paths match the uploaded PDF folder structure.
+    // Add new repository PDF paths to DOCUMENT_FILES when you add files later.
     const CATEGORY_ORDER = ["All", "Career", "Academic", "Awards", "Scholarships", "Certifications"];
 
     function normalise(value) {
@@ -1735,52 +1740,70 @@
     }
 
     function inferDocumentMeta(path) {
-      const text = normalise(path);
-      const title = prettyTitle(path);
-      let category = "Certifications";
-      let subcategory = "Other Certificates";
-      let kind = "Certificate";
+      const decoded = decodeURIComponent(path).replace(/\\/g, "/");
+      const parts = decoded.split("/").filter(Boolean);
+      const lowerParts = parts.map(p => p.toLowerCase());
 
-      if (/resume|cv\b/.test(text)) {
-        category = "Career";
-        subcategory = "Resume";
+      const title = prettyTitle(path);
+
+      // Folder-aware structure:
+      // PDF / Category / [Subcategory] / file.pdf
+      const pdfIndex = lowerParts.indexOf("pdf");
+      const categoryFolder = pdfIndex >= 0 ? parts[pdfIndex + 1] || "" : "";
+      const nestedFolders = pdfIndex >= 0 ? parts.slice(pdfIndex + 2, -1) : [];
+
+      const categoryMap = {
+        "career": "Career",
+        "academic": "Academic",
+        "awards": "Awards",
+        "scholarships": "Scholarships",
+        "certifications": "Certifications"
+      };
+
+      let category = categoryMap[categoryFolder.toLowerCase()] || "Certifications";
+      let subcategory = nestedFolders.length
+        ? nestedFolders[nestedFolders.length - 1]
+        : "General";
+
+      let kind = "PDF Document";
+
+      if (category === "Career") {
         kind = "Career Document";
-      } else if (/transcript/.test(text)) {
-        category = "Academic";
-        subcategory = "Bachelor Degree";
-        kind = "Academic Record";
-      } else if (/result\s*fia|foundation/.test(text)) {
-        category = "Academic";
-        subcategory = "Foundation";
-        kind = "Academic Result";
-      } else if (/result\s*spm|secondary|spm/.test(text)) {
-        category = "Academic";
-        subcategory = "Secondary Education";
-        kind = "Academic Result";
-      } else if (/dean\s*list|honou?r|award/.test(text)) {
-        category = "Awards";
-        subcategory = /dean\s*list/.test(text) ? "Dean's List" : "Other Awards";
-        kind = "Award Certificate";
-      } else if (/scholarship/.test(text)) {
-        category = "Scholarships";
-        subcategory = /fia|entrance/.test(text) ? "Entrance Scholarship" : "ACE Scholarship";
-        kind = "Scholarship Document";
-      } else if (/ccna|cisco/.test(text)) {
-        category = "Certifications";
-        subcategory = "Technology";
-        kind = "Certificate";
-      } else if (/acca|accounting|amisaq/.test(text)) {
-        category = "Certifications";
-        subcategory = "Competitions & Professional Activities";
-        kind = "Certificate";
+        if (subcategory === "General" && /resume|cv/i.test(decoded)) subcategory = "Resume";
       }
 
-      /* Folder names can override the automatic guess when you reorganise files. */
-      if (/\/career\//.test(text)) category = "Career";
-      if (/\/academic\//.test(text)) category = "Academic";
-      if (/\/awards?\//.test(text)) category = "Awards";
-      if (/\/scholarships?\//.test(text)) category = "Scholarships";
-      if (/\/certifications?\//.test(text)) category = "Certifications";
+      if (category === "Academic") {
+        kind = /transcript/i.test(decoded) ? "Academic Record" : "Academic Result";
+
+        if (subcategory === "General") {
+          if (/transcript|bsda/i.test(decoded)) subcategory = "Bachelor Degree";
+          else if (/fia|foundation/i.test(decoded)) subcategory = "Foundation";
+          else if (/spm|secondary/i.test(decoded)) subcategory = "Secondary Education";
+        }
+      }
+
+      if (category === "Awards") {
+        kind = "Award Certificate";
+        if (subcategory === "General" && /dean\s*list/i.test(decoded)) subcategory = "Dean's List";
+      }
+
+      if (category === "Scholarships") {
+        kind = "Scholarship Document";
+        if (subcategory === "General") {
+          if (/fia|entrance/i.test(decoded)) subcategory = "Entrance Scholarship";
+          else if (/bsda|year\s*[123]|ace/i.test(decoded)) subcategory = "ACE Scholarship";
+        }
+      }
+
+      if (category === "Certifications") {
+        kind = "Certificate";
+        if (subcategory === "General") {
+          if (/cisco|ccna/i.test(decoded)) subcategory = "Technology";
+          else if (/acca|accounting|amisaq/i.test(decoded)) subcategory = "Accounting & Professional Activities";
+          else if (/paradox/i.test(decoded)) subcategory = "Activities";
+          else subcategory = "Other Certificates";
+        }
+      }
 
       return { path, title, category, subcategory, kind };
     }
