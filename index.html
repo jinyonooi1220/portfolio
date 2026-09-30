@@ -1320,6 +1320,374 @@
       }
     }
 
+
+    /* ============================================================
+       2026 PORTFOLIO POLISH
+       Fixes the document browser overlap and strengthens hierarchy,
+       responsiveness and professional presentation.
+       ============================================================ */
+    :root {
+      --ink-strong: #1f2742;
+      --ink-soft: #65718a;
+      --panel-line: rgba(82, 96, 150, .105);
+      --panel-hover: rgba(91, 112, 246, .055);
+      --accent-soft: rgba(91, 112, 246, .085);
+      --cyan-soft: rgba(76, 181, 206, .085);
+    }
+
+    body { min-width: 320px; }
+
+    .container { width: min(calc(100% - 38px), 1140px); }
+
+    .nav-links a {
+      position: relative;
+      transition: color .18s ease, background .18s ease;
+    }
+    .nav-links a.nav-active:not(.nav-cta) {
+      color: #4f5caf;
+      background: rgba(91,112,246,.07);
+    }
+
+    .hero-grid { grid-template-columns: minmax(0, 1.5fr) minmax(300px, .68fr); }
+    .hero-copy { max-width: 700px; }
+    .hero-actions { gap: 8px; }
+    .hero-actions .btn { min-height: 40px; }
+
+    .profile-row {
+      grid-template-columns: 98px minmax(0,1fr);
+      align-items: start;
+    }
+    .profile-row strong { color: #323a54; }
+
+    .section-heading p { line-height: 1.65; }
+
+    .repo-card,
+    .achievement-card,
+    .skill-card {
+      isolation: isolate;
+    }
+    .repo-card { min-height: 220px; }
+    .repo-top { align-items: flex-start; }
+    .repo-name { line-height: 1.35; }
+    .repo-visibility { margin-left: auto; flex: 0 0 auto; }
+
+    .tabs { gap: 8px; }
+    .tab-button {
+      margin-bottom: -1px;
+      border: 1px solid transparent;
+      border-bottom: 2px solid transparent;
+      border-radius: 10px 10px 0 0;
+    }
+    .tab-button:hover { background: rgba(91,112,246,.045); }
+    .tab-button.active {
+      color: #424da4;
+      background: rgba(91,112,246,.06);
+      border-bottom-color: #6b78ef;
+    }
+
+    .token {
+      background: rgba(255,255,255,.88);
+      border-color: rgba(82,96,150,.12);
+      color: #536077;
+    }
+
+    /* Documents — primary bug fix + redesign */
+    .docs-shell {
+      border-radius: 24px;
+      border-color: var(--panel-line);
+      background: rgba(255,255,255,.90);
+      box-shadow: 0 18px 50px rgba(48,64,125,.075);
+    }
+
+    .docs-toolbar {
+      min-height: 54px;
+      padding: 12px 16px;
+      background: linear-gradient(180deg, rgba(248,250,255,.98), rgba(244,247,255,.92));
+      border-bottom-color: var(--panel-line);
+    }
+
+    .docs-path {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 7px;
+      color: #778198;
+    }
+    .docs-path strong { color: #3f4962; }
+    #activePath {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-count {
+      border-color: rgba(91,112,246,.12);
+      background: rgba(255,255,255,.82);
+      color: #5c68a8;
+      font-weight: 700;
+    }
+
+    .docs-grid {
+      grid-template-columns: minmax(300px, 330px) minmax(0, 1fr) !important;
+      min-height: 690px;
+    }
+
+    .docs-sidebar {
+      min-width: 0;
+      min-height: 690px;
+      max-height: 790px;
+      padding: 16px 14px 14px;
+      background: linear-gradient(180deg, #fbfcff 0%, #f8faff 100%);
+      border-right: 1px solid var(--panel-line);
+    }
+
+    .search {
+      height: 40px;
+      padding: 0 12px 0 13px;
+      border-color: rgba(82,96,150,.15);
+      border-radius: 11px;
+      background: rgba(255,255,255,.96);
+      font-size: .78rem;
+      box-shadow: 0 1px 0 rgba(48,64,125,.025);
+    }
+    .search::placeholder { color: #9aa4b7; }
+
+    .category-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .category-button {
+      min-width: 0;
+      min-height: 38px;
+      padding: 8px 9px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: #637089;
+      background: transparent;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .category-button > span:first-child {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .category-button:hover {
+      border-color: rgba(91,112,246,.08);
+      background: var(--panel-hover);
+    }
+    .category-button.active {
+      border-color: rgba(91,112,246,.13);
+      background: var(--accent-soft);
+      color: #4f5caf;
+    }
+    .category-count {
+      min-width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      color: #7a84a0;
+      font-size: .64rem;
+      font-weight: 800;
+    }
+
+    .sidebar-file-section {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--panel-line);
+    }
+    .sidebar-file-heading {
+      position: relative;
+      z-index: 4;
+      min-height: 31px;
+      padding: 0 7px 9px;
+      background: #f9fbff;
+      color: #6f7a92;
+      font-size: .68rem;
+      letter-spacing: .07em;
+    }
+    .sidebar-file-count { flex: 0 0 auto; }
+
+    .sidebar-file-browser {
+      position: relative;
+      padding: 0 2px 8px 0;
+      scroll-padding-top: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(91,112,246,.20) transparent;
+    }
+
+    /* CRITICAL FIX: folder headings were sticky + transparent, causing overlap. */
+    .sidebar-file-browser .folder-title {
+      position: static !important;
+      top: auto !important;
+      z-index: auto !important;
+      display: grid;
+      gap: 2px;
+      margin: 8px 4px 4px;
+      padding: 8px 7px 7px;
+      border: 0;
+      border-bottom: 1px solid rgba(82,96,150,.08);
+      background: transparent !important;
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.25;
+    }
+    .folder-category {
+      color: #8a95aa;
+      font-size: .61rem;
+      font-weight: 850;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+    .folder-subcategory {
+      color: #65718a;
+      font-size: .67rem;
+      font-weight: 850;
+      letter-spacing: .015em;
+      overflow-wrap: anywhere;
+    }
+
+    .sidebar-file-browser .folder-group {
+      margin: 0;
+      border-top: 0;
+    }
+    .sidebar-file-browser .folder-group + .folder-group {
+      margin-top: 3px;
+    }
+
+    .sidebar-file-browser .file-row {
+      grid-template-columns: 20px minmax(0,1fr);
+      align-items: start;
+      gap: 9px;
+      min-height: 54px;
+      margin: 2px 0;
+      padding: 9px 8px 9px 9px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      transition: background .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .sidebar-file-browser .file-row:hover {
+      border-color: rgba(91,112,246,.08);
+      background: rgba(91,112,246,.045);
+    }
+    .sidebar-file-browser .file-row.active {
+      border-color: rgba(76,181,206,.13);
+      background: rgba(76,181,206,.085);
+      box-shadow: inset 3px 0 0 #58aee1;
+    }
+    .sidebar-file-browser .file-icon {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 26px;
+      padding-top: 2px;
+      color: #66758f;
+      font-size: .86rem;
+    }
+    .sidebar-file-browser .file-main { min-width: 0; }
+    .sidebar-file-browser .file-name {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      white-space: normal;
+      text-overflow: clip;
+      overflow-wrap: anywhere;
+      color: #2e3853;
+      font-size: .76rem;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+    .sidebar-file-browser .file-sub {
+      display: block;
+      margin-top: 3px;
+      overflow: hidden;
+      color: #8490a7;
+      font-size: .64rem;
+      line-height: 1.3;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .docs-content { background: #fff; }
+    .doc-preview {
+      min-height: 690px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.99), rgba(250,251,255,.98));
+    }
+    .preview-head {
+      min-height: 52px;
+      margin-bottom: 14px;
+    }
+    .preview-head h3 {
+      color: #2a334d;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+    .preview-meta { color: #8490a7; line-height: 1.5; }
+    .pdf-frame {
+      height: 605px !important;
+      border-color: rgba(82,96,150,.12);
+      border-radius: 14px;
+      background: #f5f7fb;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
+    }
+
+    .contact-box {
+      border-color: var(--panel-line);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(48,64,125,.055);
+    }
+
+    @media (max-width: 980px) {
+      .docs-grid { grid-template-columns: 290px minmax(0,1fr) !important; }
+      .category-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 820px) {
+      .container { width: min(calc(100% - 24px), 1140px); }
+      .docs-grid { grid-template-columns: 1fr !important; }
+      .docs-sidebar {
+        min-height: auto;
+        max-height: none;
+        border-right: 0;
+        border-bottom: 1px solid var(--panel-line);
+      }
+      .category-list { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .sidebar-file-section { max-height: 430px; }
+      .sidebar-file-browser { max-height: 360px !important; }
+      .doc-preview { min-height: auto; }
+      .pdf-frame { height: 540px !important; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 18px), 1140px); }
+      .hero-grid > div:first-child { padding: 22px; }
+      .hero h1 { font-size: clamp(2.1rem, 13vw, 3.2rem); }
+      .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .profile-row { grid-template-columns: 88px minmax(0,1fr); gap: 8px; }
+      .category-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .docs-toolbar { align-items: center; flex-direction: row; }
+      .docs-path { font-size: .72rem; }
+      .doc-preview { padding: 14px; }
+      .pdf-frame { height: 470px !important; border-radius: 10px; }
+      .contact-block { padding: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+
   </style>
 </head>
 
@@ -1340,6 +1708,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
         <a href="#documents">Documents</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
@@ -1358,7 +1727,8 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View projects</a>
-            <a class="btn" href="#documents">Open documents</a>
+            <a class="btn" href="PDF/Career/Resume/Resume.Ooi.JIn.Yon.20.12.25.pdf" target="_blank" rel="noreferrer">View résumé</a>
+            <a class="btn" href="#documents">Evidence archive</a>
             <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
@@ -1382,7 +1752,7 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="section-label">Overview</div><h2>About me</h2></div>
-          <p>A concise professional introduction instead of a highly decorative profile section.</p>
+          <p>A focused overview of my background, interests and the areas I work with most.</p>
         </div>
 
         <article class="readme">
@@ -1473,7 +1843,7 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="section-label">Work</div><h2>Selected projects & coursework</h2></div>
-          <p>Repository-style cards keep the focus on what was done, the tools used and the practical outcome.</p>
+          <p>Selected academic and practical work, with emphasis on the problem, tools and contribution.</p>
         </div>
 
         <div class="tabs" aria-label="Project filters">
@@ -1562,19 +1932,19 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="section-label">Capabilities</div><h2>Skills</h2></div>
-          <p>Grouped by practical use rather than self-rated progress bars.</p>
+          <p>Technical tools and transferable strengths grouped by how I apply them in practice.</p>
         </div>
 
         <div class="skill-grid">
-          <article class="skill-card skill-card">
+          <article class="skill-card">
             <h3>Data & Analytics</h3>
             <div class="token-list"><span class="token">Python</span><span class="token">Power BI</span><span class="token">Tableau</span><span class="token">Oracle SQL</span><span class="token">Excel</span><span class="token">SAS Enterprise Miner</span><span class="token">SAS Enterprise Guide</span></div>
           </article>
-          <article class="skill-card skill-card">
+          <article class="skill-card">
             <h3>Digital Tools</h3>
             <div class="token-list"><span class="token">Power Apps</span><span class="token">Power Automate</span><span class="token">Figma</span><span class="token">Canva</span></div>
           </article>
-          <article class="skill-card skill-card">
+          <article class="skill-card">
             <h3>Languages & Strengths</h3>
             <div class="token-list"><span class="token">Mandarin</span><span class="token">English</span><span class="token">Malay</span><span class="token">Problem Solving</span><span class="token">Team Collaboration</span><span class="token">Time Management</span></div>
           </article>
@@ -1586,7 +1956,7 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="section-label">Evidence archive</div><h2>Documents</h2></div>
-          <p>Add a PDF path to one JavaScript list below. The page automatically categorises it into Career, Academic, Awards, Scholarships or Certifications.</p>
+          <p>Browse supporting evidence by category, search the archive, and preview each PDF without leaving the portfolio.</p>
         </div>
 
         <div class="docs-shell">
@@ -1614,7 +1984,7 @@
                 <div class="preview-head">
                   <div>
                     <h3 id="previewTitle">Select a document</h3>
-                    <div class="preview-meta" id="previewMeta">Choose a PDF from the file browser above.</div>
+                    <div class="preview-meta" id="previewMeta">Choose a PDF from the file list.</div>
                   </div>
                   <a id="openPdfButton" class="btn" href="#" target="_blank" rel="noreferrer" style="display:none">Open PDF</a>
                 </div>
@@ -1631,7 +2001,7 @@
       <div class="container">
         <div class="section-heading">
           <div><div class="section-label">Contact</div><h2>Let's connect</h2></div>
-          <p>Replace the placeholder profile links with your actual email, LinkedIn and GitHub before publishing.</p>
+          <p>Professional contact links and portfolio profiles in one place.</p>
         </div>
 
         <div class="contact-box">
@@ -1848,11 +2218,21 @@
 
     function filteredDocuments() {
       const keyword = docSearch.value.trim().toLowerCase();
-      return documents.filter(doc => {
-        const categoryMatch = activeCategory === "All" || doc.category === activeCategory;
-        const searchMatch = !keyword || `${doc.title} ${doc.category} ${doc.subcategory} ${doc.kind} ${doc.path}`.toLowerCase().includes(keyword);
-        return categoryMatch && searchMatch;
-      });
+      const categoryRank = new Map(CATEGORY_ORDER.map((category, index) => [category, index]));
+
+      return documents
+        .filter(doc => {
+          const categoryMatch = activeCategory === "All" || doc.category === activeCategory;
+          const searchMatch = !keyword || `${doc.title} ${doc.category} ${doc.subcategory} ${doc.kind} ${doc.path}`.toLowerCase().includes(keyword);
+          return categoryMatch && searchMatch;
+        })
+        .sort((a, b) => {
+          const categoryDiff = (categoryRank.get(a.category) ?? 99) - (categoryRank.get(b.category) ?? 99);
+          if (categoryDiff) return categoryDiff;
+          const subcategoryDiff = a.subcategory.localeCompare(b.subcategory);
+          if (subcategoryDiff) return subcategoryDiff;
+          return a.title.localeCompare(b.title);
+        });
     }
 
     function renderFiles() {
@@ -1888,12 +2268,18 @@
 
         const heading = document.createElement("div");
         heading.className = "folder-title";
-        heading.textContent = `▾ ${groupName}`;
+        const [groupCategory, ...subParts] = groupName.split(" / ");
+        const groupSubcategory = subParts.join(" / ") || "General";
+        heading.innerHTML = `
+          <span class="folder-category">${groupCategory}</span>
+          <span class="folder-subcategory">${groupSubcategory}</span>
+        `;
         group.appendChild(heading);
 
         items.forEach(doc => {
           const row = document.createElement("button");
           row.type = "button";
+          row.dataset.path = doc.path;
           row.className = "file-row" + (selectedPath === doc.path ? " active" : "");
           row.innerHTML = `
             <span class="file-icon">▤</span>
@@ -1917,13 +2303,17 @@
       previewEmpty.style.display = "none";
       openPdfButton.href = doc.path;
       openPdfButton.style.display = "inline-flex";
-      renderFiles();
+
+      fileBrowser.querySelectorAll(".file-row").forEach(row => {
+        row.classList.toggle("active", row.dataset.path === doc.path);
+      });
     }
 
     docSearch.addEventListener("input", renderFiles);
     renderCategories();
     renderFiles();
-    if (documents.length) selectDocument(documents[0]);
+    const initialDocument = filteredDocuments()[0] || documents[0];
+    if (initialDocument) selectDocument(initialDocument);
 
     /* Project filter */
     const projectTabs = Array.from(document.querySelectorAll("[data-project-filter]"));
@@ -1939,11 +2329,30 @@
       });
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    navSectionLinks.forEach(link => {
       link.addEventListener("click", () => {
         document.getElementById("menuToggle").checked = false;
       });
     });
+
+    /* Keep navigation context visible while scrolling. */
+    const observedSections = navSectionLinks
+      .map(link => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    if ("IntersectionObserver" in window) {
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        navSectionLinks.forEach(link => {
+          link.classList.toggle("nav-active", link.getAttribute("href") === `#${visible.target.id}`);
+        });
+      }, { rootMargin: "-24% 0px -62% 0px", threshold: [0, .15, .35] });
+      observedSections.forEach(section => sectionObserver.observe(section));
+    }
   </script>
 </body>
 </html>
