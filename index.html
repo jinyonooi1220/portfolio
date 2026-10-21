@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ooi Jin Yon — Information Systems and Data Analytics portfolio featuring projects, experience, achievements and supporting documents." />
+  <meta name="description" content="Ooi Jin Yon — Information Systems and Data Analytics portfolio featuring degree coursework, experience, achievements and supporting documents." />
   <title>Ooi Jin Yon | Data Analytics Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1723,9 +1723,6 @@
     .repo-card:hover, .achievement-card:hover, .skill-card:hover, .timeline-item:hover { transform: translateY(-3px); box-shadow: 0 17px 36px rgba(30,36,73,.085); }
     .timeline-item::before, .about-card::before, .award-card::before, .project-card::before, .skill-card::before, .contact-card::before { background: #bbb6ec; width: 3px; }
     .tab-button.active { color: #5750b9; border-bottom-color: #655ce7; }
-    .project-to-archive { display: inline-flex; gap: 18px; margin-top: 22px; padding: 10px 4px; color: #5d55c2; font-size: .85rem; font-weight: 800; }
-    .project-to-archive span { transition: transform .2s ease; }
-    .project-to-archive:hover span { transform: translate(3px,-3px); }
     /* Course library: independent from #documents and its JS */
     .section-coursework { position: relative; }
     .coursework-heading { margin-bottom: 24px; }
@@ -2030,7 +2027,6 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#coursework">Coursework</a>
         <a href="#achievements">Achievements</a>
         <a href="#skills">Skills</a>
@@ -2051,9 +2047,8 @@
             Bachelor of Information Systems (Honours) graduate from Sunway University, specialising in Data Analytics. My work includes data analysis, research, reporting and application development.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-primary" href="#coursework">View coursework</a>
             <a class="btn" href="PDF/Resume/Resume Ooi JIn Yon (07.10.26).pdf" target="_blank" rel="noreferrer">View Resume</a>
-            <a class="btn" href="#coursework">Coursework</a>
             <a class="btn" href="https://www.linkedin.com/in/jin-yon-ooi-b42852261" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
@@ -2162,47 +2157,6 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-heading">
-          <div><div class="section-label">Work</div><h2>Projects</h2></div>
-          
-        </div>
-
-        <div class="tabs" aria-label="Project filters">
-          <button class="tab-button active" data-project-filter="all">All</button>
-          <button class="tab-button" data-project-filter="year2">Year 2</button>
-          <button class="tab-button" data-project-filter="other">Other</button>
-        </div>
-
-        <div class="repo-grid" id="projectGrid">
-          <article class="repo-card" data-project-group="year2">
-            <div class="repo-top"><span class="repo-icon">01.</span><span class="repo-name">Information Systems Analysis & Design</span><span class="repo-visibility">Coursework</span></div>
-            <p>Designed and documented system improvements using user requirements, workflow analysis and interface prototyping.</p>
-            <div class="repo-meta"><span><span class="tag-dot"></span>Figma</span><span>System Design</span><span>Prototype</span><span>Year 2 · Semester 3</span></div>
-          </article>
-
-          <article class="repo-card" data-project-group="year2">
-            <div class="repo-top"><span class="repo-icon">02.</span><span class="repo-name">IS Management & Strategy</span><span class="repo-visibility">Coursework</span></div>
-            <p>Analysed business and information systems strategy through structured group work, reporting and presentation.</p>
-            <div class="repo-meta"><span><span class="tag-dot purple"></span>Strategy</span><span>Analysis</span><span>Report</span><span>Year 2 · Semester 3</span></div>
-          </article>
-
-          <article class="repo-card" data-project-group="year2">
-            <div class="repo-top"><span class="repo-icon">03.</span><span class="repo-name">Enterprise Architecture</span><span class="repo-visibility">Coursework</span></div>
-            <p>Explored enterprise-level architecture concepts and applied structured thinking to organisational technology design.</p>
-            <div class="repo-meta"><span><span class="tag-dot orange"></span>Architecture</span><span>CSVLOD</span><span>Group Work</span><span>Year 2 · Semester 2</span></div>
-          </article>
-
-          <article class="repo-card" data-project-group="other">
-            <div class="repo-top"><span class="repo-icon">04.</span><span class="repo-name">AI Travel Assistant Pitch</span><span class="repo-visibility">Competition</span></div>
-            <p>Collaborated in a team to enhance an existing application and present an AI-powered travel assistant prototype.</p>
-            <div class="repo-meta"><span><span class="tag-dot"></span>AI Concept</span><span>Pitching</span><span>Teamwork</span><span>Aug 2025</span></div>
-          </article>
-        </div>
-        <a class="project-to-archive" href="#coursework">All coursework <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
 
     <section class="section section-coursework" id="coursework">
       <div class="container">
@@ -2240,9 +2194,9 @@
 
           <div class="cw-years" id="cwYearCards" aria-label="Browse by academic year">
             <button type="button" class="cw-year-card active" data-cw-year="all" aria-pressed="true"><span class="cw-year-index">ALL YEARS</span><strong>All files</strong><span class="cw-year-bottom"><span id="cwCountAll">—</span> <span aria-hidden="true">↗</span></span></button>
-            <button type="button" class="cw-year-card" data-cw-year="year1" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 1</span><strong>BSDA Y1</strong><span class="cw-year-bottom"><span id="cwCountYear1">—</span> <span aria-hidden="true">↗</span></span></button>
-            <button type="button" class="cw-year-card" data-cw-year="year2" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 2</span><strong>BSDA Y2</strong><span class="cw-year-bottom"><span id="cwCountYear2">—</span> <span aria-hidden="true">↗</span></span></button>
-            <button type="button" class="cw-year-card" data-cw-year="year3" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 3</span><strong>BSDA Y3</strong><span class="cw-year-bottom"><span id="cwCountYear3">—</span> <span aria-hidden="true">↗</span></span></button>
+            <button type="button" class="cw-year-card" data-cw-year="year1" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 1</span><strong>Year 1</strong><span class="cw-year-bottom"><span id="cwCountYear1">—</span> <span aria-hidden="true">↗</span></span></button>
+            <button type="button" class="cw-year-card" data-cw-year="year2" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 2</span><strong>Year 2</strong><span class="cw-year-bottom"><span id="cwCountYear2">—</span> <span aria-hidden="true">↗</span></span></button>
+            <button type="button" class="cw-year-card" data-cw-year="year3" aria-pressed="false"><span class="cw-year-index">DEGREE · YEAR 3</span><strong>Year 3</strong><span class="cw-year-bottom"><span id="cwCountYear3">—</span> <span aria-hidden="true">↗</span></span></button>
             <button type="button" class="cw-year-card" data-cw-year="final" aria-pressed="false"><span class="cw-year-index">FINAL REPORTS</span><strong>Reports</strong><span class="cw-year-bottom"><span id="cwCountFinal">—</span> <span aria-hidden="true">↗</span></span></button>
           </div>
 
@@ -2702,19 +2656,6 @@
     const initialDocument = filteredDocuments()[0] || documents[0];
     if (initialDocument) selectDocument(initialDocument);
 
-    /* Project filter */
-    const projectTabs = Array.from(document.querySelectorAll("[data-project-filter]"));
-    const projectCards = Array.from(document.querySelectorAll("[data-project-group]"));
-    projectTabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        projectTabs.forEach(item => item.classList.remove("active"));
-        tab.classList.add("active");
-        const selected = tab.dataset.projectFilter;
-        projectCards.forEach(card => {
-          card.style.display = selected === "all" || card.dataset.projectGroup === selected ? "" : "none";
-        });
-      });
-    });
 
     const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
     navSectionLinks.forEach(link => {
@@ -2759,7 +2700,7 @@
       ]
     };
     const CW_EXTENSIONS = new Set(["pdf", "doc", "docx", "ppt", "pptx", "xls", "xlsx", "csv", "txt", "png", "jpg", "jpeg", "webp", "gif", "zip", "mp4", "webm", "ipynb", "py", "html"]);
-    const CW_YEAR_NAMES = {all:"All files",year1:"BSDA Y1",year2:"BSDA Y2",year3:"BSDA Y3",final:"Reports",other:"Other files"};
+    const CW_YEAR_NAMES = {all:"All files",year1:"Year 1",year2:"Year 2",year3:"Year 3",final:"Reports",other:"Other files"};
     const cwState = { items: [], active: "all", search: "", sort: "az", shown: 12, loaded: false };
     const cwEl = id => document.getElementById(id);
     const cwPathUrl = path => path.split("/").map(encodeURIComponent).join("/");
